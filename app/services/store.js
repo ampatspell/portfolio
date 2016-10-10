@@ -1,15 +1,17 @@
 import { Store } from 'sofa';
+import environment from '../config/environment';
 
-const url = 'http://127.0.0.1:5984';
+const { url, name: main } = environment.portfolio.database;
 
 const mapping = {
-  main: 'paulis',
+  main,
   users: '_users'
 };
 
 export default Store.extend({
 
   databaseOptionsForIdentifier(identifier) {
+    console.log(mapping);
     let name = mapping[identifier];
     if(!name) {
       return;
