@@ -1,0 +1,10 @@
+syntax: glob
+
+.DS_Store
+.gitignore
+.gitkeep
+
+node_modules/*
+bower_components/*
+tmp/*
+dist/*

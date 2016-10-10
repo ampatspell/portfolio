@@ -1,0 +1,27 @@
+@import "reset.less";
+@import 'https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700&subset=latin-ext';
+// https://fonts.google.com/specimen/Inconsolata
+// kopā ar Noto Sans
+
+@font-family: 'Ubuntu Mono', monospace;
+
+.font-family() {
+  font-family: @font-family;
+}
+
+.font-size(@size: 16px) {
+  font-size: @size;
+}
+
+body {
+  .font-family;
+  .font-size(14px);
+}
+
+.ui-block {
+
+}
+
+.ui-row {
+  padding: 10px;
+}
