@@ -13,9 +13,6 @@ Router.map(function() {
   });
   this.route('backend', function() {
   });
-  this.route('sketches', function() {
-    this.route('backend');
-  });
 });
 
 export default Router;

@@ -1,11 +1,17 @@
 {{#ui-backend-columns as |cols|}}
   {{#cols.column class='navigation'}}
-    1
+    {{#ui-backend-navigation as |nav|}}
+      {{nav.item icon='eye'}}
+      {{nav.item icon='list' selected=true}}
+      {{nav.item icon='gear'}}
+      {{nav.item icon='power-off'}}
+    {{/ui-backend-navigation}}
   {{/cols.column}}
   {{#cols.column class='master'}}
-    2
+    {{ui-backend-header title='Navigation'}}
+    {{ui-backend-tree}}
   {{/cols.column}}
   {{#cols.column class='detail'}}
-    3
+    {{ui-backend-header title='Autorfotogrāfija / Piezīmes'}}
   {{/cols.column}}
 {{/ui-backend-columns}}
