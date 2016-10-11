@@ -1,7 +1,7 @@
-<div class="ui-block">
-  <div class="ui-row">
+<div class="portfolio-frontend theme-paulis">
+  <div class="index">
     {{#if store.session.isAuthenticated}}
-      Logged in as {{store.session.name}} {{#link-to 'session.delete'}}Logout{{/link-to}}
+      Logged in as {{store.session.name}}. {{#link-to 'session.delete'}}Logout{{/link-to}} {{#link-to 'backend'}}Backend{{/link-to}}
     {{else}}
       {{#link-to 'session.new'}}Login{{/link-to}}
     {{/if}}
