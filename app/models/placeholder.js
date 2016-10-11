@@ -4,7 +4,7 @@ import Section from './section';
 export default Section.extend({
 
   id: prefix('section:placeholder:'),
-  type: type('placeholder'),
+  type: type('section:placeholder'),
 
   body: attr('string')
 
