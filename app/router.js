@@ -13,6 +13,7 @@ Router.map(function() {
   });
   this.route('backend', function() {
     this.route('content', function() {
+      this.route('new');
     });
     this.route('settings', function() {
     });
