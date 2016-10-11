@@ -1,17 +1,24 @@
+import Ember from 'ember';
 import { Store } from 'sofa';
 import environment from '../config/environment';
 
-const { url, name: main } = environment.portfolio.database;
+const {
+  computed: { oneWay }
+} = Ember;
+
+const database = environment.portfolio.database;
+const url = database.url;
 
 const mapping = {
-  main,
+  main: database.name,
   users: '_users'
 };
 
 export default Store.extend({
 
+  session: oneWay('db.main.couch.session'),
+
   databaseOptionsForIdentifier(identifier) {
-    console.log(mapping);
     let name = mapping[identifier];
     if(!name) {
       return;

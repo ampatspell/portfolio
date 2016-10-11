@@ -1,21 +1,40 @@
 @import "reset.less";
-@import 'https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700&subset=latin-ext';
-// https://fonts.google.com/specimen/Inconsolata
-// kopā ar Noto Sans
+@import 'https://fonts.googleapis.com/css?family=Inconsolata:400,700|Noto+Sans&subset=latin-ext';
 
-@font-family: 'Ubuntu Mono', monospace;
-
-.font-family() {
-  font-family: @font-family;
+.font-header(@size: 34px) {
+  font-family: 'Noto Sans', sans-serif;
+  font-size: @size;
+  line-height: ceil(@size * 1.15);
 }
 
-.font-size(@size: 16px) {
+.font-body(@size: 15px) {
+  font-family: 'Inconsolata', monospace;
   font-size: @size;
+  line-height: ceil(@size * 1.6);
 }
 
 body {
-  .font-family;
-  .font-size(14px);
+  .font-body;
+  cursor: default;
+  -webkit-font-smoothing: subpixel-antialiased;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+*[data-ember-action] {
+  cursor: pointer;
+}
+
+a {
+  color: #000;
+}
+
+h1 {
+  .font-header;
+  margin-bottom: 1rem;
 }
 
 .ui-block {

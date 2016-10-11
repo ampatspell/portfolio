@@ -1,5 +1,9 @@
 <div class="ui-block">
   <div class="ui-row">
-    Portfolio
+    {{#if store.session.isAuthenticated}}
+      Logged in as {{store.session.name}} {{#link-to 'session.delete'}}Logout{{/link-to}}
+    {{else}}
+      {{#link-to 'session.new'}}Login{{/link-to}}
+    {{/if}}
   </div>
 </div>

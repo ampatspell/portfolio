@@ -5,5 +5,6 @@ export default {
     let db = store.get('db.main');
     window.db = db;
     window.store = store;
+    window.log = console.log.bind(console);
   }
 }

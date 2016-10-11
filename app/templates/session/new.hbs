@@ -1,0 +1,7 @@
+<div class="ui-block">
+  <div class="ui-row">
+    <p>{{input placeholder='name' value=model.name}}</p>
+    <p>{{input placeholder='password' value=model.password type='password'}}</p>
+    <p><button {{action (route-action 'save')}}>Login</button></p>
+  </div>
+</div>
