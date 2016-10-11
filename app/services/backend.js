@@ -14,8 +14,8 @@ const routes = [
 
 export default Ember.Service.extend({
 
-  items: computed(function() {
-    const Item = getOwner(this).lookup('services/backend-navigation/item:main');
+  navigationItems: computed(function() {
+    const Item = getOwner(this).lookup('services/backend/navigation-item:main');
     return Ember.A(routes).map(props => {
       return Item.create(props);
     });
