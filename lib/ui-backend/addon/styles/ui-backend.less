@@ -1,0 +1,25 @@
+@ui-backend-columns-navigation-width: 70px;
+
+.ui-backend {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  overflow: hidden;
+  > .ui-backend-column {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    &.navigation {
+      left: 0;
+      width: @ui-backend-columns-navigation-width;
+      background: #222;
+      color: #fff;
+    }
+    &.content {
+      left: @ui-backend-columns-navigation-width;
+      right: 0;
+    }
+  }
+}

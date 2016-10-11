@@ -1,0 +1,18 @@
+.ui-backend-master-detail {
+  > .ui-backend-master-detail-column {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    @master: 320px;
+    &.master {
+      left: 0;
+      width: @master;
+      border-right: 1px solid #eee;
+      overflow-y: scroll;
+    }
+    &.detail {
+      left: @master;
+      right: 0;
+    }
+  }
+}

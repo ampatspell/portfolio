@@ -1,17 +1,16 @@
-{{#ui-backend-columns as |cols|}}
-  {{#cols.column class='navigation'}}
+{{#ui-backend as |backend|}}
+
+  {{#backend.navigation}}
     {{#ui-backend-navigation as |nav|}}
       {{nav.item icon='eye'}}
       {{nav.item icon='list' selected=true}}
       {{nav.item icon='gear'}}
       {{nav.item icon='power-off'}}
     {{/ui-backend-navigation}}
-  {{/cols.column}}
-  {{#cols.column class='master'}}
-    {{ui-backend-header title='Navigation'}}
-    {{ui-backend-tree}}
-  {{/cols.column}}
-  {{#cols.column class='detail'}}
-    {{ui-backend-header title='Autorfotogrāfija / Piezīmes'}}
-  {{/cols.column}}
-{{/ui-backend-columns}}
+  {{/backend.navigation}}
+
+  {{#backend.content}}
+    {{yield}}
+  {{/backend.content}}
+
+{{/ui-backend}}

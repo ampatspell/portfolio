@@ -12,6 +12,10 @@ Router.map(function() {
     this.route('delete');
   });
   this.route('backend', function() {
+    this.route('content', function() {
+    });
+    this.route('settings', function() {
+    });
   });
 });
 
