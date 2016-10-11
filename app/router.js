@@ -12,7 +12,9 @@ Router.map(function() {
     this.route('delete');
   });
   this.route('backend', function() {
-
+  });
+  this.route('sketches', function() {
+    this.route('backend');
   });
 });
 

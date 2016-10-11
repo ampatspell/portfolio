@@ -1,0 +1,35 @@
+.ui-backend-tree {
+  .ui-backend-tree-item {
+    > .content {
+      padding: 10px;
+      > .title {
+        .font-header(15px, 18px);
+      }
+      > .info {
+        .font-body(13px, 15px);
+      }
+      border-bottom: 1px solid #eee;
+      &:hover {
+        background: lighten(#000, 98%);
+      }
+    }
+    &.selected {
+      > .content {
+        background: lighten(#000, 97%);
+      }
+    }
+    &:first-child {
+      > .content {
+        border-top: 1px solid #eee;
+      }
+    }
+    > .nested {
+      > .ui-backend-tree-item {
+        > .content {
+          border-top: none;
+          padding-left: 30px;
+        }
+      }
+    }
+  }
+}

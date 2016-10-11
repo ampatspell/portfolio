@@ -1,0 +1,26 @@
+.ui-backend-navigation {
+  margin-top: 20px;
+  width: @ui-backend-columns-navigation-width;
+  display: table;
+  > .item {
+    display: table-row;
+    width: @ui-backend-columns-navigation-width;
+    height: @ui-backend-columns-navigation-width - 5px;
+    cursor: pointer;
+    > .fa {
+      color: #ccc;
+      font-size: 25px;
+      display: table-cell;
+      vertical-align: middle;
+      text-align: center;
+    }
+    &.selected {
+      > .fa {
+        color: #fff;
+      }
+    }
+    &:hover {
+      background: #333;
+    }
+  }
+}

@@ -1,16 +1,16 @@
 @import "reset.less";
 @import 'https://fonts.googleapis.com/css?family=Inconsolata:400,700|Noto+Sans&subset=latin-ext';
 
-.font-header(@size: 34px) {
+.font-header(@size: 34px, @lineheight: ceil(@size * 1.5)) {
   font-family: 'Noto Sans', sans-serif;
   font-size: @size;
-  line-height: ceil(@size * 1.15);
+  line-height: @lineheight;
 }
 
-.font-body(@size: 15px) {
+.font-body(@size: 15px, @lineheight: ceil(@size * 1.6)) {
   font-family: 'Inconsolata', monospace;
   font-size: @size;
-  line-height: ceil(@size * 1.6);
+  line-height: @lineheight;
 }
 
 body {
