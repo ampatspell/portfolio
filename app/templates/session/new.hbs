@@ -1,7 +1,15 @@
-<div class="ui-block">
-  <div class="ui-row">
-    <p>{{input placeholder='name' value=model.name}}</p>
-    <p>{{input placeholder='password' value=model.password type='password'}}</p>
-    <p><button {{action (route-action 'save')}}>Login</button></p>
+<div class="ui-backend-screen-session-new">
+  <div class="content">
+    {{#ui-backend-block class="padded"}}
+      {{#ui-backend-row}}
+        {{input placeholder='name' value=model.name}}
+      {{/ui-backend-row}}
+      {{#ui-backend-row}}
+        {{input placeholder='password' value=model.password type='password'}}
+      {{/ui-backend-row}}
+      {{#ui-backend-row}}
+        <button {{action (route-action 'save')}}>Login</button>
+      {{/ui-backend-row}}
+    {{/ui-backend-block}}
   </div>
 </div>

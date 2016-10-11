@@ -53,7 +53,8 @@
   },
   "ember-addon": {
     "paths": [
-      "lib/public"
+      "lib/public",
+      "lib/ui-backend"
     ]
   }
 }
