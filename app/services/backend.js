@@ -12,6 +12,10 @@ const routes = [
   { icon: 'power-off', route: 'session.delete' }
 ];
 
+const sections = [
+  'placeholder'
+];
+
 export default Ember.Service.extend({
 
   navigationItems: computed(function() {
@@ -19,6 +23,10 @@ export default Ember.Service.extend({
     return Ember.A(routes).map(props => {
       return Item.create(props);
     });
-  }).readOnly()
+  }).readOnly(),
+
+  sectionModelNames: computed(function() {
+    return Ember.A(sections);
+  }).readOnly(),
 
 });
