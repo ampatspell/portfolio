@@ -1,4 +1,5 @@
 @ui-backend-columns-navigation-width: 70px;
+@ui-backend-columns-master-width: 300px;
 
 .ui-backend-columns {
   position: absolute;
@@ -7,12 +8,12 @@
   bottom: 0;
   right: 0;
   overflow: hidden;
-  > .ui-backend-column {
+  > .ui-backend-columns-column {
     position: absolute;
     top: 0;
     bottom: 0;
     @navigation: @ui-backend-columns-navigation-width;
-    @master: 300px;
+    @master: @ui-backend-columns-master-width;
     &.navigation {
       left: 0;
       width: @navigation;
@@ -25,7 +26,6 @@
       border-right: 1px solid #eee;
       overflow-y: scroll;
     }
-
     &.detail {
       left: @navigation + @master;
       right: 0;
