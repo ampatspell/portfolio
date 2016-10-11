@@ -28,7 +28,8 @@ module.exports = function(environment) {
       database: {
         url:  dev.db.url,
         name: dev.db.name
-      }
+      },
+      admins: [ '_admin', 'portfolio-admin' ],
     }
   };
 

@@ -8,7 +8,7 @@ export default Ember.Route.extend({
   actions: {
     save() {
       this.currentModel.save().then(() => {
-        this.transitionTo('index');
+        this.transitionTo('backend');
       }, err => {
         console.log(err);
       });

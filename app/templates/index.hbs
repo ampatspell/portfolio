@@ -1,9 +1,5 @@
 <div class="portfolio-frontend theme-paulis">
   <div class="index">
-    {{#if store.session.isAuthenticated}}
-      Logged in as {{store.session.name}}. {{#link-to 'session.delete'}}Logout{{/link-to}} {{#link-to 'backend'}}Backend{{/link-to}}
-    {{else}}
-      {{#link-to 'session.new'}}Login{{/link-to}}
-    {{/if}}
+    {{#link-to 'backend'}}{{fa-icon 'gear'}}{{/link-to}}
   </div>
 </div>
