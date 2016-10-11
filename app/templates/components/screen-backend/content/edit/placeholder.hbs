@@ -1,0 +1,7 @@
+{{ui-backend-header title=(if model.isNew 'New placeholder' 'Edit placeholder')}}
+
+{{input value=model.slug}}
+{{input value=model.title}}
+{{input value=model.body}}
+
+<button {{action attrs.save}}>Save</button>

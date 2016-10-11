@@ -1,5 +1,13 @@
-{{ui-backend-header title='New section'}}
+{{#if model}}
 
-{{#each backend.sectionModelNames as |name|}}
-  {{name}}
-{{/each}}
+  {{screen-backend/content/edit model=model saved=(action (route-action 'showSection'))}}
+
+{{else}}
+
+  {{ui-backend-header title='Choose new section type'}}
+
+  {{#each backend.sectionModelNames as |name|}}
+    <div {{action 'selectModelName' name}}>{{name}}</div>
+  {{/each}}
+
+{{/if}}

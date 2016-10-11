@@ -7,6 +7,12 @@ const {
 export default Ember.Component.extend({
   classNameBindings: [ ':screen-backend-content-new' ],
 
-  backend: service()
+  backend: service(),
+
+  actions: {
+    selectModelName(name) {
+      this.set('model', this.get('store.db.main').model(name));
+    }
+  }
 
 });
