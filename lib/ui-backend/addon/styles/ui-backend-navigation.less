@@ -7,16 +7,21 @@
     width: @ui-backend-columns-navigation-width;
     height: @ui-backend-columns-navigation-width - 5px;
     cursor: pointer;
-    > .fa {
-      color: #ccc;
-      font-size: 25px;
+    > a {
+      display: inline-block;
       display: table-cell;
       vertical-align: middle;
       text-align: center;
+      > .fa {
+        color: #ccc;
+        font-size: 25px;
+      }
     }
     &.selected {
-      > .fa {
-        color: #fff;
+      > a {
+        > .fa {
+          color: #fff;
+        }
       }
     }
     &:hover {

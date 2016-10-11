@@ -2,10 +2,9 @@
 
   {{#backend.navigation}}
     {{#ui-backend-navigation as |nav|}}
-      {{nav.item icon='eye'}}
-      {{nav.item icon='list' selected=true}}
-      {{nav.item icon='gear'}}
-      {{nav.item icon='power-off'}}
+      {{#each navigationItems as |item|}}
+        {{nav.item icon=item.icon selected=item.selected route=item.route}}
+      {{/each}}
     {{/ui-backend-navigation}}
   {{/backend.navigation}}
 
