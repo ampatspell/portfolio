@@ -13,7 +13,8 @@ const routes = [
 ];
 
 const sections = [
-  { name: 'placeholder', title: 'Placeholder', description: 'Use this to mark page as coming soon' }
+  { name: 'placeholder', title: 'Placeholder', description: 'Use this to mark page as coming soon' },
+  { name: 'category',    title: 'Category', description: 'Section group' },
 ];
 
 export default Ember.Service.extend({

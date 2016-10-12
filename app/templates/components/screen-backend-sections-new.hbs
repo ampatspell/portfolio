@@ -11,7 +11,7 @@
 
   {{#ui-backend-block}}
     {{#each backend.sectionModels as |model|}}
-      {{#ui-backend-row action=(action 'select' model.name)}}
+      {{#ui-backend-row action=(action 'select' model.name) class="compact"}}
         {{model.title}}
         <span class="small">{{model.description}}</span>
       {{/ui-backend-row}}
