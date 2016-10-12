@@ -23,6 +23,10 @@ export default Ember.Component.extend({
       let model = this.get('model');
       this.set('model', null);
       model.destroy();
+    },
+    saved() {
+      let model = this.get('model');
+      this.attrs.saved(model);
     }
   },
 

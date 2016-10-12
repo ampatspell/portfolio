@@ -17,13 +17,13 @@ export default Ember.Component.extend({
 
   actions: {
     delete() {
-      this.attrs.delete();
+      this.attrs.delete(this.get('section'));
     },
     edit() {
-      this.attrs.edit();
+      this.attrs.edit(this.get('section'));
     },
     new() {
-      this.attrs.new();
+      this.attrs.new(this.get('section'));
     }
   }
 });
