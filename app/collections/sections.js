@@ -8,13 +8,7 @@ const {
 
 export default Collection.extend({
 
-  // TODO: collection.modelName should take base class
-  modelName: null,
-
-  match: computed('models.[]', function() {
-    return this.get('models').filter(model => {
-      return Section.detectInstance(model);
-    });
-  }).readOnly(),
+  modelName: 'section',
+  queryName: 'all-sections',
 
 });
