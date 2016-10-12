@@ -6,7 +6,7 @@ const {
 } = Ember;
 
 export default Ember.Component.extend({
-  classNameBindings: [ ':screen-backend-content-new' ],
+  classNameBindings: [ ':screen-backend-sections-new' ],
 
   backend: service(),
 
