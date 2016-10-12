@@ -5,7 +5,10 @@ export default Ember.Component.extend({
 
   actions: {
     delete() {
-      this.attrs.delete(this.get('section'));
+      this.attrs.delete();
+    },
+    edit() {
+      this.attrs.edit();
     }
   }
 });

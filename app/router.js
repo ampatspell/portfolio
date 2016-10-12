@@ -15,7 +15,7 @@ Router.map(function() {
     this.route('content', function() {
       this.route('new');
       this.route('section', { path: '/:section_id' }, function() {
-
+        this.route('edit');
       });
     });
     this.route('settings', function() {
