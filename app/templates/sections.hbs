@@ -2,8 +2,6 @@
   <div class="index">
     <div>{{#link-to 'backend'}}{{fa-icon 'gear'}}{{/link-to}}</div>
     <br/>
-    {{#each store.db.main.visibleSections as |section|}}
-      <div>{{#link-to 'sections.section' section}}{{section.title_}}{{/link-to}}</div>
-    {{/each}}
+    {{outlet}}
   </div>
 </div>

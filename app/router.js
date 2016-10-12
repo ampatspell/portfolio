@@ -13,6 +13,11 @@ Router.map(function() {
     this.route('delete');
   });
 
+  this.route('sections', function() {
+    this.route('section', { path: '/:section_id' }, function() {
+    });
+  });
+
   this.route('backend', function() {
     this.route('sections', function() {
       this.route('new');
