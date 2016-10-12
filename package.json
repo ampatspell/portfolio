@@ -1,6 +1,6 @@
 {
   "name": "@ampatspell/portfolio",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Photopgraphy portfolio site",
   "private": true,
   "directories": {
@@ -19,7 +19,7 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "@ampatspell/ember-cli-sofa": "^2.0.0-pre.15",
+    "@ampatspell/ember-cli-sofa": "^2.0.0-pre.16",
     "broccoli-asset-rev": "^2.4.5",
     "ember-ajax": "^2.4.1",
     "ember-cli": "2.9.0-beta.2",
