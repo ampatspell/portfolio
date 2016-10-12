@@ -5,14 +5,11 @@
 
     {{#ui-backend-tree new=(action (route-action 'new'))}}
 
-      {{log sections}}
-
       {{#each sections as |item|}}
-        {{log item}}
         <div class="ui-backend-tree-item">
           <div class="content">
-            <div class="title">{{section.title}}</div>
-            <div class="info">{{section.modelName}}</div>
+            <div class="title">{{item.title}}</div>
+            <div class="info">{{item.modelName}}</div>
           </div>
         </div>
       {{/each}}

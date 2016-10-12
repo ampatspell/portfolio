@@ -1,3 +1,5 @@
+/* global emit */
+
 const section = {
   views: {
     'all': {

@@ -7,4 +7,4 @@ export default {
     window.store = store;
     window.log = console.log.bind(console);
   }
-}
+};

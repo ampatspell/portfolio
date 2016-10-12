@@ -6,8 +6,8 @@ export default Model.extend({
   slug: attr('string'),
   title: attr('string'),
 
-  createdAt: attr('date', { key: 'created_at' }),
-  updatedAt: attr('date', { key: 'updated_at' }),
+  createdAt: attr('date'),
+  updatedAt: attr('date'),
 
   willCreate() {
     this.set('id', id(12));

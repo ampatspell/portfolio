@@ -7,9 +7,11 @@ const {
 
 export default Ember.Route.extend({
 
+  errorReporter: service(),
+
   model() {
     return this.get('store.session').restore().then(() => undefined, err => {
-      this.get('error-reporter').report(err);
+      this.get('errorReporter').report(err);
       return resolve();
     });
   }

@@ -11,17 +11,9 @@ export default Ember.Route.extend({
     }
   },
 
-  model() {
-    // TODO: collection with query
-    let main = this.get('store.db.main');
-    let collection = main.get('sections');
-    return main.find({ ddoc: 'section', view: 'all' }).then(() => {
-      return collection;
-    });
-  },
-
   actions: {
-    new(parentCategory) {
+    new(/*parentCategory*/) {
+      // TODO: parent categroy
       this.transitionTo('backend.content.new');
     }
   }

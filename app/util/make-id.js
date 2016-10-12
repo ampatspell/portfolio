@@ -5,4 +5,4 @@ export default (len=8) => {
     text += possible.charAt(Math.floor(Math.random() * possible.length));
   }
   return text;
-}
+};
