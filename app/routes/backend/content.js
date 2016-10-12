@@ -12,6 +12,9 @@ export default Ember.Route.extend({
       this.transitionTo('backend.content.new');
     },
     select(section) {
+      if(section.get('isNew')) {
+        return;
+      }
       this.transitionTo('backend.content.section', section);
     }
   }

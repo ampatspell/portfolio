@@ -1,6 +1,6 @@
 {{#if model}}
 
-  {{screen-backend/content/edit
+  {{screen-backend-content-edit
       model=model
       saved=(action (route-action 'showSection'))
       cancelled=(action 'cancelled')}}
@@ -11,7 +11,7 @@
 
   {{#ui-backend-block}}
     {{#each backend.sectionModels as |model|}}
-      {{#ui-backend-row action=(action 'selectModelName' model.name)}}
+      {{#ui-backend-row action=(action 'select' model.name)}}
         {{model.title}}
         <span class="small">{{model.description}}</span>
       {{/ui-backend-row}}

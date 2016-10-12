@@ -14,7 +14,7 @@ export default Ember.Component.extend({
     if(!name) {
       return;
     }
-    return `screen-backend/content/edit/${name}`;
+    return `screen-backend-content-edit-${name}`;
   }).readOnly(),
 
   actions: {
