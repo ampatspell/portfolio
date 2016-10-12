@@ -1,9 +1,13 @@
-<div class="content">
-  <div class="title">{{title}}</div>
-  <div class="info">{{description}}</div>
+<div class="content" {{action 'select'}}>
+  {{yield model}}
 </div>
-<div class="nested">
-  {{yield (hash
-    item=(component 'ui-backend-tree/item')
-  )}}
-</div>
+
+{{#with (get model arrayKey) as |array|}}
+  <div class="nested">
+    {{#each array as |nested|}}
+      {{#ui-backend-tree/item model=nested arrayKey=arrayKey action=action as |out|}}
+        {{yield out}}
+      {{/ui-backend-tree/item}}
+    {{/each}}
+  </div>
+{{/with}}

@@ -10,11 +10,13 @@ export default Ember.Component.extend({
 
   backend: service(),
 
+  category: null,
   model: null,
 
   actions: {
     select(modelName) {
-      let model = this.get('store.db.main').model(modelName, { visible: true });
+      let category = this.get('category');
+      let model = this.get('store.db.main').model(modelName, { category, visible: true });
       this.set('model', model);
     },
     cancelled() {

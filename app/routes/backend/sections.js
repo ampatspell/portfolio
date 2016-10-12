@@ -7,8 +7,7 @@ export default Ember.Route.extend({
   },
 
   actions: {
-    new(/*parentCategory*/) {
-      // TODO: parent categroy
+    new() {
       this.transitionTo('backend.sections.new');
     },
     select(section) {

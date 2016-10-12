@@ -22,6 +22,7 @@ Router.map(function() {
     this.route('sections', function() {
       this.route('new');
       this.route('section', { path: '/:section_id' }, function() {
+        this.route('new');
         this.route('edit');
       });
     });

@@ -21,6 +21,9 @@ export default Ember.Component.extend({
     },
     edit() {
       this.attrs.edit();
+    },
+    new() {
+      this.attrs.new();
     }
   }
 });

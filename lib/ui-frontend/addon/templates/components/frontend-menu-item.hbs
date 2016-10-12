@@ -1,0 +1,8 @@
+<div class="title">{{#link-to 'sections.section' section}}{{section.title_}}{{/link-to}}</div>
+{{#if section.sections}}
+  <div class="nested">
+    {{#each section.sections as |section|}}
+      {{frontend-menu-item section=section}}
+    {{/each}}
+  </div>
+{{/if}}

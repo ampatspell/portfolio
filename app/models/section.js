@@ -1,5 +1,5 @@
 import Ember from 'ember';
-import { Model, prefix, attr } from 'sofa';
+import { Model, prefix, attr, belongsTo } from 'sofa';
 import id from '../util/make-id';
 import { fallback } from '../util/computed';
 
@@ -14,6 +14,7 @@ export default Model.extend({
 
   slug: attr('string'),
   visible: attr('boolean'),
+  category: belongsTo('category', { inverse: 'sections' }),
 
   title: attr('string'),
   title_: fallback('title', 'Untitled'),
@@ -34,6 +35,8 @@ export default Model.extend({
     }
     return `/${slug}`;
   }).readOnly(),
+
+  isCategory: false,
 
   willCreate() {
     this.set('id', id(12));

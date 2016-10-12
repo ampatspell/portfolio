@@ -6,6 +6,10 @@ const {
 
 export default Ember.Route.extend({
 
+  model() {
+    return this.modelFor('backend.sections.section');
+  },
+
   actions: {
     delete() {
       let model = this.currentModel;
@@ -16,6 +20,10 @@ export default Ember.Route.extend({
     edit() {
       let model = this.currentModel;
       this.transitionTo('backend.sections.section.edit', model);
+    },
+    new() {
+      let model = this.currentModel;
+      this.transitionTo('backend.sections.section.new', model);
     }
   }
 

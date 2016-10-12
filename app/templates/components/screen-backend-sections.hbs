@@ -4,10 +4,9 @@
 
     {{ui-backend-header title='Navigation'}}
 
-    {{#ui-backend-tree new=(action (route-action 'new')) as |tree|}}
-      {{#each sections as |item|}}
-        {{tree.item title=item.title_ description=item.modelScreenName action=(route-action 'select' item)}}
-      {{/each}}
+    {{#ui-backend-tree new=(action (route-action 'new')) array=roots arrayKey='sections' select=(action (route-action 'select')) as |item|}}
+      <div class="title">{{item.title_}}</div>
+      <div class="info">{{item.modelScreenName}}</div>
     {{/ui-backend-tree}}
 
   {{/md.master}}

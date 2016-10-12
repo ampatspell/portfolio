@@ -1,87 +1,11 @@
 <div class="ui-backend-tree-item" {{action attrs.new}}>
   <div class="content">
-    <div class="title">Create new</div>
+    <div class="title">Add new section</div>
   </div>
 </div>
 
-{{yield (hash
-  item=(component 'ui-backend-tree/item')
-)}}
-
-{{!-- <div class="ui-backend-tree-item">
-  <div class="content">
-    <div class="title">News</div>
-    <div class="info">posts</div>
-  </div>
-</div>
-<div class="ui-backend-tree-item">
-  <div class="content">
-    <div class="title">BIO</div>
-    <div class="info">page</div>
-  </div>
-</div>
-<div class="ui-backend-tree-item">
-  <div class="content">
-    <div class="title">Autorfotogrāfija</div>
-    <div class="info">section</div>
-  </div>
-  <div class="nested">
-    <div class="ui-backend-tree-item">
-      <div class="content">
-        <div class="title">Pilsētvide</div>
-        <div class="info">collection</div>
-      </div>
-    </div>
-    <div class="ui-backend-tree-item">
-      <div class="content">
-        <div class="title">Ielu fotogrāfija</div>
-        <div class="info">collection</div>
-      </div>
-    </div>
-    <div class="ui-backend-tree-item selected">
-      <div class="content">
-        <div class="title">Piezīmes</div>
-        <div class="info">collection</div>
-      </div>
-    </div>
-    <div class="ui-backend-tree-item">
-      <div class="content">
-        <div class="title">Knuts</div>
-        <div class="info">collection</div>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="ui-backend-tree-item">
-  <div class="content">
-    <div class="title">Reportāžas</div>
-    <div class="info">section</div>
-  </div>
-  <div class="nested">
-    <div class="ui-backend-tree-item">
-      <div class="content">
-        <div class="title">Komēta</div>
-        <div class="info">collection</div>
-      </div>
-    </div>
-    <div class="ui-backend-tree-item">
-      <div class="content">
-        <div class="title">ISSP 2016</div>
-        <div class="info">collection</div>
-      </div>
-    </div>
-    <div class="ui-backend-tree-item">
-      <div class="content">
-        <div class="title">ISSP 2017</div>
-        <div class="info">collection</div>
-      </div>
-    </div>
-    <div class="ui-backend-tree-item">
-      <div class="content">
-        <div class="title">Laba Daba 2014</div>
-        <div class="info">collection</div>
-      </div>
-    </div>
-  </div>
-</div>
- --}}
+{{#each array as |model|}}
+  {{#ui-backend-tree/item model=model arrayKey=arrayKey action=select as |out|}}
+    {{yield out}}
+  {{/ui-backend-tree/item}}
+{{/each}}
