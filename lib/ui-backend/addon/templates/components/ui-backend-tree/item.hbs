@@ -1,0 +1,9 @@
+<div class="content">
+  <div class="title">{{title}}</div>
+  <div class="info">{{description}}</div>
+</div>
+<div class="nested">
+  {{yield (hash
+    item=(component 'ui-backend-tree/item')
+  )}}
+</div>

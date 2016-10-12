@@ -3,10 +3,10 @@
     > .content {
       padding: 10px;
       > .title {
-        .font-header(15px, 18px);
+        .font-body(15px, 18px);
       }
       > .info {
-        .font-body(13px, 15px);
+        .font-body(13px, 17px);
       }
       border-bottom: 1px solid #eee;
       &:hover {
@@ -21,6 +21,11 @@
     &:first-child {
       > .content {
         border-top: 1px solid #eee;
+      }
+    }
+    &.action {
+      > .content {
+        .pointer;
       }
     }
     > .nested {

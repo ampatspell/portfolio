@@ -4,7 +4,9 @@
   </div>
 </div>
 
-{{yield}}
+{{yield (hash
+  item=(component 'ui-backend-tree/item')
+)}}
 
 {{!-- <div class="ui-backend-tree-item">
   <div class="content">
