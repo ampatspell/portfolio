@@ -14,6 +14,9 @@ Router.map(function() {
   this.route('backend', function() {
     this.route('content', function() {
       this.route('new');
+      this.route('section', { path: '/:section_id' }, function() {
+
+      });
     });
     this.route('settings', function() {
     });

@@ -23,6 +23,9 @@ export default Ember.Component.extend({
       model.save().then(() => {
         this.attrs.saved(model);
       });
+    },
+    cancel() {
+      this.attrs.cancelled();
     }
   }
 

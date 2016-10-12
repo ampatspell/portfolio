@@ -9,13 +9,6 @@ export default Ember.Route.extend({
     } else if(!session.get('isAdmin')) {
       return this.transitionTo('index');
     }
-  },
-
-  actions: {
-    new(/*parentCategory*/) {
-      // TODO: parent categroy
-      this.transitionTo('backend.content.new');
-    }
   }
 
 });

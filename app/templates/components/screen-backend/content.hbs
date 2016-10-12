@@ -1,19 +1,13 @@
 {{#ui-backend-master-detail as |md|}}
 
   {{#md.master}}
+
     {{ui-backend-header title='Navigation'}}
 
-    {{#ui-backend-tree new=(action (route-action 'new'))}}
-
+    {{#ui-backend-tree new=(action (route-action 'new')) as |tree|}}
       {{#each sections as |item|}}
-        <div class="ui-backend-tree-item">
-          <div class="content">
-            <div class="title">{{item.title}}</div>
-            <div class="info">{{item.modelName}}</div>
-          </div>
-        </div>
+        {{tree.item title=item.title_ description=item.modelScreenName action=(route-action 'select' item)}}
       {{/each}}
-
     {{/ui-backend-tree}}
 
   {{/md.master}}

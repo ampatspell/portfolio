@@ -13,7 +13,7 @@ const routes = [
 ];
 
 const sections = [
-  'placeholder'
+  { name: 'placeholder', title: 'Placeholder', description: 'Use this to mark page as coming soon' }
 ];
 
 export default Ember.Service.extend({
@@ -25,8 +25,12 @@ export default Ember.Service.extend({
     });
   }).readOnly(),
 
-  sectionModelNames: computed(function() {
+  sectionModels: computed(function() {
     return Ember.A(sections);
   }).readOnly(),
+
+  sectionModelByName(name) {
+    return this.get('sectionModels').findBy('name', name);
+  }
 
 });
