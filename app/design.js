@@ -20,6 +20,14 @@ const section = {
         }
         emit(doc._id, null);
       }
+    },
+    'by-slug': {
+      map(doc) {
+        if(doc._id.split(':')[0] !== 'section') {
+          return;
+        }
+        emit(doc.slug, null);
+      }
     }
   }
 };

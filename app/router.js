@@ -14,7 +14,7 @@ Router.map(function() {
   });
 
   this.route('sections', function() {
-    this.route('section', { path: '/:section_id' }, function() {
+    this.route('section', { path: '/:section_slug' }, function() {
     });
   });
 
