@@ -7,7 +7,7 @@ const {
 
 const routes = [
   { icon: 'eye',       route: 'index' },
-  { icon: 'list',      route: 'backend.content' },
+  { icon: 'list',      route: 'backend.sections' },
   { icon: 'gear',      route: 'backend.settings' },
   { icon: 'power-off', route: 'session.delete' }
 ];

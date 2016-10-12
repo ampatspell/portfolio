@@ -10,12 +10,12 @@ export default Ember.Route.extend({
     delete() {
       let model = this.currentModel;
       model.delete().then(() => {
-        this.transitionTo('backend.content');
+        this.transitionTo('backend.sections');
       });
     },
     edit() {
       let model = this.currentModel;
-      this.transitionTo('backend.content.section.edit', model);
+      this.transitionTo('backend.sections.section.edit', model);
     }
   }
 

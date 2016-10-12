@@ -9,13 +9,13 @@ export default Ember.Route.extend({
   actions: {
     new(/*parentCategory*/) {
       // TODO: parent categroy
-      this.transitionTo('backend.content.new');
+      this.transitionTo('backend.sections.new');
     },
     select(section) {
       if(section.get('isNew')) {
         return;
       }
-      this.transitionTo('backend.content.section', section);
+      this.transitionTo('backend.sections.section', section);
     }
   }
 

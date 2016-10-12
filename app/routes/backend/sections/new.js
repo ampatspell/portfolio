@@ -5,7 +5,7 @@ export default Ember.Route.extend({
   actions: {
     showSection(/*model*/) {
       // TODO: show actual model
-      this.transitionTo('backend.content');
+      this.transitionTo('backend.sections');
     }
   }
 

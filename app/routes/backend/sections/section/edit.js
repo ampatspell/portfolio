@@ -9,7 +9,7 @@ export default Ember.Route.extend({
   actions: {
     done() {
       let model = this.currentModel;
-      this.transitionTo('backend.content.section', model);
+      this.transitionTo('backend.sections.section', model);
     }
   }
 
