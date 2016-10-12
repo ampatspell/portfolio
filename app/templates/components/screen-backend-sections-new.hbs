@@ -9,9 +9,9 @@
 
   {{ui-backend-header title='Choose new section type'}}
 
-  {{#ui-backend-block}}
+  {{#ui-backend-block class='compact'}}
     {{#each backend.sectionModels as |model|}}
-      {{#ui-backend-row action=(action 'select' model.name) class="compact"}}
+      {{#ui-backend-row action=(action 'select' model.name)}}
         {{model.title}}
         <span class="small">{{model.description}}</span>
       {{/ui-backend-row}}

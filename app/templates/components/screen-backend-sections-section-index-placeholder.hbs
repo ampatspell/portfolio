@@ -1,6 +1,8 @@
 {{#ui-backend-block}}
+  {{ui-backend-row-value value=section.body}}
+{{/ui-backend-block}}
+
+{{#ui-backend-block class='compact'}}
   {{ui-backend-row-value title='Slug' value=section.slug}}
-  {{ui-backend-row-value title='Title' value=section.title_}}
-  {{ui-backend-row-value title='Body' value=section.body}}
   {{ui-backend-row-value title='Visibility' value=(if section.visible 'visible' 'hidden')}}
 {{/ui-backend-block}}

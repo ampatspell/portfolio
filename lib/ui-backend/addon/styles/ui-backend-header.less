@@ -1,8 +1,19 @@
 .ui-backend-header {
-  margin-top: 20px;
+  margin-top: 30px;
   padding: 10px;
   > .content {
-    .font-header(18px, 44px);
+    > .title {
+      .font-header(18px);
+    }
+    > .subtitle {
+      .font-body(13px);
+    }
+  }
+}
+
+.ui-backend-master-detail-column.master {
+  .ui-backend-header {
+    margin-bottom: 20px;
   }
 }
 
