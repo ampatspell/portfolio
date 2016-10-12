@@ -13,8 +13,9 @@ export default Model.extend({
   id: prefix(),
 
   slug: attr('string'),
-  title: attr('string'),
+  visible: attr('boolean'),
 
+  title: attr('string'),
   title_: fallback('title', 'Untitled'),
 
   createdAt: attr('date'),

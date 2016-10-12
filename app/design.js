@@ -9,6 +9,17 @@ const section = {
         }
         emit(doc._id, null);
       }
+    },
+    'visible': {
+      map(doc) {
+        if(doc._id.split(':')[0] !== 'section') {
+          return;
+        }
+        if(!doc.visible) {
+          return;
+        }
+        emit(doc._id, null);
+      }
     }
   }
 };

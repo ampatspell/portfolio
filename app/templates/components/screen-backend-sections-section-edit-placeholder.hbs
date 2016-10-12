@@ -3,7 +3,8 @@
 {{#ui-backend-block}}
   {{ui-backend-row-input title='Slug' value=model.slug}}
   {{ui-backend-row-input title='Title' value=model.title}}
-  {{ui-backend-row-input title='Body' value=model.body}}
+  {{ui-backend-row-textarea title='Body' value=model.body}}
+  {{ui-backend-row-checkbox title='Visible' value=model.visible}}
   {{#ui-backend-row}}
     {{ui-backend-button title='Save' action=attrs.save}}
     {{#if model.isNew}}

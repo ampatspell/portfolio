@@ -15,7 +15,8 @@ const collection = name => {
 
 export default Database.extend({
 
-  sections: collection('sections'),
+  allSections: collection('all-sections'),
+  visibleSections: collection('visible-sections'),
 
   insertDesignDocuments() {
     let promises = [];

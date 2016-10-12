@@ -14,7 +14,7 @@ export default Ember.Component.extend({
 
   actions: {
     select(modelName) {
-      let model = this.get('store.db.main').model(modelName);
+      let model = this.get('store.db.main').model(modelName, { visible: true });
       this.set('model', model);
     },
     cancelled() {

@@ -1,6 +1,5 @@
 import Ember from 'ember';
 import { Collection } from 'sofa';
-import Section from '../models/section';
 
 const {
   computed
@@ -9,6 +8,10 @@ const {
 export default Collection.extend({
 
   modelName: 'section',
-  queryName: 'all-sections',
+  queryName: 'visible-sections',
+
+  match: computed('models.@each.visible', function() {
+    return this.get('models').filterBy('visible', true);
+  })
 
 });

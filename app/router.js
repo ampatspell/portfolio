@@ -7,10 +7,12 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+
   this.route('session', function() {
     this.route('new');
     this.route('delete');
   });
+
   this.route('backend', function() {
     this.route('sections', function() {
       this.route('new');
@@ -21,6 +23,7 @@ Router.map(function() {
     this.route('settings', function() {
     });
   });
+
 });
 
 export default Router;

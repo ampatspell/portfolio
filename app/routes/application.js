@@ -2,7 +2,7 @@ import Ember from 'ember';
 
 const {
   inject: { service },
-  RSVP: { resolve }
+  RSVP: { all, resolve }
 } = Ember;
 
 export default Ember.Route.extend({
@@ -10,10 +10,13 @@ export default Ember.Route.extend({
   errorReporter: service(),
 
   model() {
-    return this.get('store.session').restore().then(() => undefined, err => {
-      this.get('errorReporter').report(err);
-      return resolve();
-    });
+    return all([
+      this.get('store.session').restore().then(() => undefined, err => {
+        this.get('errorReporter').report(err);
+        return resolve();
+      }),
+      this.get('store.db.main.visibleSections.promise')
+    ]);
   }
 
 });

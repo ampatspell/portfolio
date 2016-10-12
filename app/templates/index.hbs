@@ -1,5 +1,8 @@
 <div class="portfolio-frontend theme-paulis">
   <div class="index">
-    {{#link-to 'backend'}}{{fa-icon 'gear'}}{{/link-to}}
+    <div>{{#link-to 'backend'}}{{fa-icon 'gear'}}{{/link-to}}</div>
+    {{#each store.db.main.visibleSections as |section|}}
+      <div>{{section.modelScreenName}} {{section.title_}}</div>
+    {{/each}}
   </div>
 </div>
