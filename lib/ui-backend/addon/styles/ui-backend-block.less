@@ -7,15 +7,16 @@
     > .small {
       font-size: 13px;
     }
-    &.input {
-      padding: 0 20px 5px 20px;
+    &.input,
+    &.textarea {
+      padding: 0 20px 10px 20px;
       > .title {
-        font-size: 13px;
+        .font(13px);
       }
     }
     &.checkbox {
       > input {
-        font-size: 18px;
+        .font(18px);
       }
       > .title {
         display: inline-block;

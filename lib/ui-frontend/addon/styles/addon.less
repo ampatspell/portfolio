@@ -1,4 +1,11 @@
+.font(@size: 13px, @lineheight: ceil(@size * 1.5)) {
+  font-family: 'Roboto Mono', monospace;
+  font-size: @size;
+  line-height: @lineheight;
+}
+
 .portfolio-frontend {
   padding: 40px;
+  .font;
   @import "frontend-menu.less";
 }
