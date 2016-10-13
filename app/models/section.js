@@ -1,6 +1,7 @@
 import Ember from 'ember';
 import { Model, prefix, attr, belongsTo } from 'sofa';
 import id from '../util/make-id';
+import slugify from '../util/slugify';
 import { fallback } from '../util/computed';
 
 const {
@@ -18,6 +19,11 @@ export default Model.extend({
 
   title: attr('string'),
   title_: fallback('title', 'Untitled'),
+
+  slugifiedTitle: computed('title', function() {
+    let title = this.get('title');
+    return slugify(title);
+  }).readOnly(),
 
   createdAt: attr('date'),
   updatedAt: attr('date'),
@@ -43,13 +49,17 @@ export default Model.extend({
     let now = new Date();
     this.setProperties({
       createdAt: now,
-      updatedAt: now
+      updatedAt: now,
+      slug: this.get('slugifiedTitle')
     });
   },
 
   willSave() {
     let now = new Date();
-    this.set('updatedAt', now);
+    this.setProperties({
+      updatedAt: now,
+      slug: this.get('slugifiedTitle')
+    });
   },
 
 });
