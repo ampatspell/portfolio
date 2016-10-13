@@ -19,13 +19,10 @@ export default Ember.Component.extend({
 
   actions: {
     save() {
-      let model = this.get('model');
-      model.save().then(() => {
-        this.attrs.saved(model);
-      });
+      this.attrs.save(this.get('model'));
     },
     cancel() {
-      this.attrs.cancelled(this.get('model'));
+      this.attrs.cancel(this.get('model'));
     }
   }
 

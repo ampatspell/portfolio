@@ -2,8 +2,8 @@
 
   {{screen-backend-sections-section-edit
       model=model
-      saved=(action 'saved')
-      cancelled=(action 'cancelled')}}
+      save=attrs.save
+      cancel=(action 'cancel')}}
 
 {{else}}
 
@@ -16,6 +16,12 @@
         <span class="small">{{model.description}}</span>
       {{/ui-backend-row}}
     {{/each}}
+  {{/ui-backend-block}}
+
+  {{#ui-backend-block}}
+    {{#ui-backend-row}}
+      {{ui-backend-button title='Cancel' action=attrs.cancel}}
+    {{/ui-backend-row}}
   {{/ui-backend-block}}
 
 {{/if}}

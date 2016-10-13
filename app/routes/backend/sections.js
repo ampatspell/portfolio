@@ -13,6 +13,9 @@ export default Ember.Route.extend({
       }
       this.transitionTo('backend.sections.section', section);
     },
+    deselectSection() {
+      this.transitionTo('backend.sections');
+    },
     newSection(category) {
       if(category) {
         this.transitionTo('backend.sections.section.new', category);
@@ -22,6 +25,11 @@ export default Ember.Route.extend({
     },
     editSection(section) {
       this.transitionTo('backend.sections.section.edit', section);
+    },
+    saveSection(section) {
+      section.save().then(() => {
+        this.transitionTo('backend.sections.section', section);
+      });
     },
     deleteSection(section) {
       section.delete().then(() => {

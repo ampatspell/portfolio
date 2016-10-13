@@ -19,14 +19,10 @@ export default Ember.Component.extend({
       let model = this.get('store.db.main').model(modelName, { category, visible: true });
       this.set('model', model);
     },
-    cancelled() {
+    cancel() {
       let model = this.get('model');
       this.set('model', null);
       model.destroy();
-    },
-    saved() {
-      let model = this.get('model');
-      this.attrs.saved(model);
     }
   },
 
