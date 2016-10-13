@@ -7,13 +7,21 @@ const {
 export default Ember.Component.extend({
   classNameBindings: [ ':screen-bakend-sections' ],
 
-  roots: computed('sections.@each.category', function() {
-    return this.get('sections').filterBy('category', null);
-  }).readOnly(),
+  roots: computed('sections.@each.{category,position}', {
+    get() {
+      return this.get('sections').filterBy('category', null).sort('position');
+    },
+    set(key, value) {
+      value.forEach((model, idx) => {
+        model.set('position', idx);
+      });
+      return value;
+    }
+  }),
 
   actions: {
-    select(model) {
-      this.attrs.select(model);
+    sort(array) {
+      array.map(model => model.save());
     }
   }
 

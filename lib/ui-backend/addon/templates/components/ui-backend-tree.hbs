@@ -4,8 +4,12 @@
   </div>
 </div>
 
-{{#each array as |model|}}
-  {{#ui-backend-tree/item model=model arrayKey=arrayKey action=select as |out|}}
-    {{yield out}}
-  {{/ui-backend-tree/item}}
-{{/each}}
+{{#sortable-objects class='sortable' sortableObjectList=array sortEndAction=(action 'sort') sortingScope="tree" useSwap=false}}
+  {{#each array as |model|}}
+    {{#draggable-object class='draggable' content=model overrideClass='' isSortable=true sortingScope="tree"}}
+      {{#ui-backend-tree/item model=model arrayKey=arrayKey action=select sort=(action 'sort') as |out|}}
+        {{yield out}}
+      {{/ui-backend-tree/item}}
+    {{/draggable-object}}
+  {{/each}}
+{{/sortable-objects}}
