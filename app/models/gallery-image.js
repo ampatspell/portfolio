@@ -11,6 +11,7 @@ export default Model.extend({
   id: prefix(),
   position: attr('integer'),
   filename: attr('string'),
+  caption: attr('string'),
 
   gallery: belongsTo('gallery', { inverse: 'images' }),
 

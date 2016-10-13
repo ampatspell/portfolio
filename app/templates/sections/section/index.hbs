@@ -9,6 +9,8 @@
   {{#if model.images.isLoaded}}
     {{#each model.sortedImages as |image|}}
       <div><img src={{image.attachments.original.url}} style="max-width: 100%"/></div>
+      <div>{{if image.caption image.caption image.filename}}</div>
+      <br/>
     {{/each}}
   {{else if model.images.isLoading}}
     Loading images…

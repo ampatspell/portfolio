@@ -1,10 +1,40 @@
 {{ui-backend-header title=(if model.isNew 'New gallery' 'Edit gallery')}}
 
 {{#ui-backend-block}}
+
   {{ui-backend-row-input title='Title' value=model.title}}
-  {{ui-backend-row-checkbox title='Visible' value=model.visible}}
+  {{ui-backend-row-checkbox title='Gallery is public' value=model.visible}}
+
+{{/ui-backend-block}}
+
+{{#ui-backend-block class='images'}}
+
+  {{#if model.images.isLoading}}
+
+    {{#ui-backend-row}}Loading…{{/ui-backend-row}}
+
+  {{else if model.images.isLoaded}}
+
+    {{#each model.sortedImages as |image|}}
+      {{#ui-backend-row class='image'}}
+        <div class="image">
+          {{ui-backend-background-image class='image' url=image.attachments.original.url}}
+        </div>
+        <div class="info">
+          <div class="item filename">{{image.filename}}</div>
+          <div class="item">{{input class='caption' placeholder='caption' value=image.caption}}</div>
+        </div>
+      {{/ui-backend-row}}
+    {{/each}}
+
+  {{/if}}
+
+{{/ui-backend-block}}
+
+{{#ui-backend-block}}
+
   {{#ui-backend-row}}
-    {{ui-backend-button title='Save' action=attrs.save}}
+    {{ui-backend-button title='Save' action=(action 'save')}}
     {{#if model.isNew}}
       {{ui-backend-button title='Cancel' action=attrs.cancel}}
     {{/if}}

@@ -3,7 +3,7 @@
     {{#if section.images}}
       {{#ui-backend-grid class='images' array=sortable sort=(action 'sort') as |image|}}
         {{ui-backend-background-image class='image' url=image.attachments.original.url}}
-        <div class="description">{{image.filename}}</div>
+        <div class="description">{{if image.caption image.caption image.filename}}</div>
       {{/ui-backend-grid}}
     {{else}}
       {{#ui-backend-row}}No images added{{/ui-backend-row}}
