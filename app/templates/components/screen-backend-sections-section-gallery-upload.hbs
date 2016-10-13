@@ -2,6 +2,12 @@
 
 {{#ui-backend-block}}
   {{#ui-backend-row}}
+  {{/ui-backend-row}}
+{{/ui-backend-block}}
+
+{{#ui-backend-block}}
+  {{#ui-backend-row}}
+    {{ui-backend-file multiple=true action=(action 'files')}}
     {{ui-backend-button title='Cancel' action=(action 'cancel')}}
   {{/ui-backend-row}}
 {{/ui-backend-block}}
