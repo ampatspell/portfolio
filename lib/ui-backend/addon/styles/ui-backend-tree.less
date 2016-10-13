@@ -31,8 +31,16 @@
     > .nested {
       > .ui-backend-tree-item {
         > .content {
-          border-top: none;
           padding-left: 30px;
+          border-top: none;
+        }
+        > .nested {
+          > .ui-backend-tree-item {
+            > .content {
+              padding-left: 60px;
+              border-top: none;
+            }
+          }
         }
       }
     }
