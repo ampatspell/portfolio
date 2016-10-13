@@ -1,5 +1,9 @@
 <div class="content">
-  {{#each array as |object|}}
-    <div class="item">{{yield object}}</div>
-  {{/each}}
+  {{#sortable-objects class='sortable' sortableObjectList=array sortEndAction=(action 'sort') useSwap=false}}
+    {{#each array as |object|}}
+      {{#draggable-object class='draggable' content=object overrideClass='' isSortable=true}}
+        <div class="item">{{yield object}}</div>
+      {{/draggable-object}}
+    {{/each}}
+  {{/sortable-objects}}
 </div>

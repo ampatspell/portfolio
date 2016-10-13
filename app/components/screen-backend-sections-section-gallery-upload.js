@@ -25,14 +25,20 @@ export default Ember.Component.extend({
       this.clear();
     },
     save() {
-      let gallery = this.get('section');
-      all(this.get('images').map(image => {
-        image.set('gallery', gallery);
-        return image.save();
-      })).then(() => {
-        return gallery.save();
-      }).then(() => {
-        this.transitionTo('backend.sections.section', gallery);
+      this.get('section.images.promise').then(() => {
+        let position = Math.max(Math.max(...this.get('section.images').mapBy('position')) + 1, 0);
+        let gallery = this.get('section');
+        all(this.get('images').map((image, idx) => {
+          image.setProperties({
+            position: position + idx,
+            gallery: gallery
+          });
+          return image.save();
+        })).then(() => {
+          return gallery.save();
+        }).then(() => {
+          this.transitionTo('backend.sections.section', gallery);
+        });
       });
     },
     cancel() {

@@ -7,7 +7,7 @@
 <br/>
 {{#if model.isGallery}}
   {{#if model.images.isLoaded}}
-    {{#each model.images as |image|}}
+    {{#each model.sortedImages as |image|}}
       <div><img src={{image.attachments.original.url}} style="max-width: 100%"/></div>
     {{/each}}
   {{else if model.images.isLoading}}

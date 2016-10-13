@@ -3,7 +3,8 @@ import { prefix, type, attr, hasMany } from 'sofa';
 import Section from './section';
 
 const {
-  RSVP: { all }
+  RSVP: { all },
+  computed: { sort }
 } = Ember;
 
 export default Section.extend({
@@ -12,6 +13,9 @@ export default Section.extend({
   type: type('section:gallery'),
 
   images: hasMany('gallery-image', { inverse: 'gallery', query: 'gallery-images' }),
+
+  sortedImagesDesc: [ 'position' ],
+  sortedImages: sort('images', 'sortedImagesDesc'),
 
   isGallery: true,
 

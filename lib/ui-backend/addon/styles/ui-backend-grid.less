@@ -1,28 +1,35 @@
 .ui-backend-grid {
   > .content {
     padding: 10px;
-    .clearfix;
-    > .item {
-      float: left;
-      width: 150px;
-      height: 150px;
+    > .sortable {
+      .clearfix;
+      > .draggable {
+        > .item {
+          float: left;
+          width: 150px;
+          height: 150px;
+        }
+      }
     }
   }
   &.images {
     > .content {
-      > .item {
-        border: 1px solid #eee;
-        margin-bottom: -1px;
-        margin-right: -1px;
-        padding: 10px;
-        > .image {
-          width: 130px;
-          height: 115px;
-        }
-        > .description {
-          padding-top: 5px;
-          text-align: center;
-          .font(10px);
+      > .sortable {
+        > .draggable {
+          > .item {
+            margin-bottom: -1px;
+            margin-right: -1px;
+            padding: 10px;
+            > .image {
+              width: 130px;
+              height: 115px;
+            }
+            > .description {
+              padding-top: 5px;
+              text-align: center;
+              .font(10px);
+            }
+          }
         }
       }
     }
