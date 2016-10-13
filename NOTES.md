@@ -36,6 +36,7 @@ Sākam ar index + pa vienai bildei ar '<- 1 ->'
 
 # TODO
 
+* Load gallery images when opening backend section for editing, view
 * Open requested page after login
 * Warnings on delete
 * Gallery representation style setting, list of available ones
