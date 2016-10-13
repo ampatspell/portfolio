@@ -1,6 +1,6 @@
 {
   "name": "@ampatspell/portfolio",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "description": "Photopgraphy portfolio site",
   "private": true,
   "directories": {
@@ -10,7 +10,10 @@
   "scripts": {
     "build": "ember build",
     "start": "ember server",
-    "test": "ember test"
+    "test": "ember test",
+    "bump": "npm version patch; hg ci -m \"bump `node -e \"console.log(require('./package.json').version)\"`\"; hg push",
+    "deploy-staging": "ember deploy staging",
+    "deploy": "npm run bump; npm run deploy-staging"
   },
   "repository": "",
   "engines": {
