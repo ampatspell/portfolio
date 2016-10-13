@@ -34,12 +34,20 @@ export default Model.extend({
     return this.get('backend').sectionModelByName(modelName).title;
   }).readOnly(),
 
-  path: computed('slug', function() {
+  path: computed('slug', 'category.path', function() {
     let slug = this.get('slug');
     if(!slug) {
       return;
     }
-    return `/${slug}`;
+    let category = this.get('category');
+    if(category) {
+      let c = category.get('path');
+      if(!c) {
+        return;
+      }
+      return `${c}/${slug}`;
+    }
+    return slug;
   }).readOnly(),
 
   isCategory: false,
