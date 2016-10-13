@@ -9,7 +9,7 @@ const {
 export default Ember.Component.extend({
   classNameBindings: [ ':screen-backend-sections-section-index-text' ],
 
-  // TODO: hasMany is not sortable. this for some weird reason works
+  // TODO: hasMany is not sortable. this is overwritten on 1st reorder
   sortable: computed('section.sortedImages.@each.position', function() {
     return this.get('section.sortedImages');
   }),
