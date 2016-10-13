@@ -22,7 +22,10 @@
 {{#ui-backend-block}}
   {{#ui-backend-row}}
     {{ui-backend-file multiple=true action=(action 'files')}}
-    {{ui-backend-button title='Save' action=(action 'save')}}
+    {{#if images}}
+      {{ui-backend-button title='Clear' action=(action 'clear')}}
+      {{ui-backend-button title='Save' action=(action 'save')}}
+    {{/if}}
     {{ui-backend-button title='Cancel' action=(action 'cancel')}}
   {{/ui-backend-row}}
 {{/ui-backend-block}}

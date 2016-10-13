@@ -9,3 +9,9 @@ export const fallback = (key, defaultValue) => {
     return this.get(key) || defaultValue;
   }).readOnly();
 };
+
+export const array = () => {
+  return computed(function() {
+    return Ember.A();
+  }).readOnly();
+}
