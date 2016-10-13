@@ -1,13 +1,8 @@
 {{ui-backend-header title=section.title_ subtitle=subtitle}}
 
-{{component componentName section=section}}
-
-{{#ui-backend-block}}
-  {{#ui-backend-row}}
-    {{#if section.isCategory}}
-      {{ui-backend-button title='Add new section' action=(action 'new')}}
-    {{/if}}
-    {{ui-backend-button title='Edit' action=(action 'edit')}}
-    {{ui-backend-button title='Delete' action=(action 'delete')}}
-  {{/ui-backend-row}}
-{{/ui-backend-block}}
+{{component componentName
+    section=section
+    edit=(action 'edit')
+    delete=(action 'delete')
+    new=(action 'new')
+}}

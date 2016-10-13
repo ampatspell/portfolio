@@ -1,2 +1,6 @@
 {{#ui-backend-block}}
 {{/ui-backend-block}}
+
+{{#ui-backend-section-actions edit=attrs.edit delete=attrs.delete}}
+  {{ui-backend-button title='Upload images' action=(action 'upload')}}
+{{/ui-backend-section-actions}}

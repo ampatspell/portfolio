@@ -24,6 +24,9 @@ Router.map(function() {
       this.route('section', { path: '/:section_id' }, function() {
         this.route('new');
         this.route('edit');
+        this.route('gallery', function() {
+          this.route('upload');
+        });
       });
     });
     this.route('settings', function() {
