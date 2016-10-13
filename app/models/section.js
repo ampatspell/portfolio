@@ -21,7 +21,7 @@ export default Model.extend({
   title_: fallback('title', 'Untitled'),
 
   slugifiedTitle: computed('title', function() {
-    let title = this.get('title');
+    let title = this.get('title') || 'untitled';
     return slugify(title);
   }).readOnly(),
 
