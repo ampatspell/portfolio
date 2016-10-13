@@ -32,7 +32,7 @@ export default Ember.Route.extend({
       });
     },
     deleteSection(section) {
-      section.delete().then(() => {
+      section.deleteNested().then(() => {
         this.transitionTo('backend.sections');
       });
     }

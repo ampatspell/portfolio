@@ -70,4 +70,8 @@ export default Model.extend({
     });
   },
 
+  deleteNested() {
+    return this.delete();
+  }
+
 });
