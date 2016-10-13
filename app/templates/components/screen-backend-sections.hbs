@@ -4,6 +4,9 @@
 
     {{ui-backend-header title='Navigation'}}
 
+    {{ui-backend-sections-tree array=roots select=(route-action 'selectSection')}}
+
+{{!--
     {{#ui-backend-tree
         array=roots
         arrayKey='sections'
@@ -11,10 +14,11 @@
         new=(action (route-action 'newSection'))
         select=(action (route-action 'selectSection')) as |item|}}
 
-      <div class="title">{{item.title_}}</div>
+      <div class="title">{{item.title_}} ({{item.position}})</div>
       <div class="info">{{item.modelScreenName}}</div>
 
     {{/ui-backend-tree}}
+ --}}
 
   {{/md.master}}
 

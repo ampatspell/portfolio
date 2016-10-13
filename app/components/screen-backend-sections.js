@@ -9,7 +9,7 @@ export default Ember.Component.extend({
 
   roots: computed('sections.@each.{category,position}', {
     get() {
-      return this.get('sections').filterBy('category', null).sort('position');
+      return this.get('sections').filterBy('category', null).sortBy('position');
     },
     set(key, value) {
       value.forEach((model, idx) => {

@@ -1,6 +1,6 @@
 .ui-backend-tree {
   .ui-backend-tree-item {
-    > .content {
+    .content {
       padding: 10px;
       > .title {
         .font(15px, 18px);
@@ -13,25 +13,28 @@
         background: lighten(#000, 98%);
       }
     }
+    &.faded {
+      opacity: 0.5;
+    }
     &.selected {
-      > .content {
+      .content {
         background: lighten(#000, 97%);
       }
     }
     &.action {
-      > .content {
+      .content {
         .pointer;
       }
     }
-    > .nested {
+    .nested {
       > .ui-backend-tree-item {
-        > .content {
+        .content {
           padding-left: 30px;
           border-top: none;
         }
-        > .nested {
+        .nested {
           > .ui-backend-tree-item {
-            > .content {
+            .content {
               padding-left: 60px;
               border-top: none;
             }
