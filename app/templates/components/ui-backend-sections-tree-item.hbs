@@ -4,12 +4,12 @@
       <div class="title">{{model.title_}}</div>
       <div class="info">{{model.modelScreenName}} {{model.position}}</div>
     </div>
-    {{#if nested}}
-      <div class="nested">
-        {{#each nested as |model|}}
-          {{ui-backend-sections-tree-item model=model select=attrs.select}}
-        {{/each}}
-      </div>
-    {{/if}}
   {{/draggable-object-target}}
 {{/draggable-object}}
+{{#if nested}}
+  <div class="nested">
+    {{#each nested as |nestedModel|}}
+      {{ui-backend-sections-tree-item model=nestedModel select=attrs.select}}
+    {{/each}}
+  </div>
+{{/if}}

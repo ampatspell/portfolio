@@ -30,7 +30,7 @@ export default Ember.Component.extend({
       this.set('faded', false);
     },
     drop(model) {
-      console.log('drop', model+'');
+      console.log('drop', model.get('title_'), 'on', this.get('model.title_'));
     }
   }
 
