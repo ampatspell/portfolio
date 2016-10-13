@@ -23,6 +23,14 @@ export default Ember.Component.extend({
     return `Hidden ${modelScreenName.toLowerCase()}`;
   }).readOnly(),
 
+  url: computed('section.path', function() {
+    let path = this.get('section.path');
+    if(!path) {
+      return;
+    }
+    return `${window.location.origin}/${path}`;
+  }).readOnly(),
+
   actions: {
     delete() {
       this.attrs.delete(this.get('section'));
