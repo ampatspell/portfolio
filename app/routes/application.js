@@ -15,7 +15,7 @@ export default Ember.Route.extend({
         this.get('errorReporter').report(err);
         return resolve();
       }),
-      this.get('store.db.main.visibleSections.promise')
+      this.get('store.db.main.sections.promise')
     ]);
   }
 
