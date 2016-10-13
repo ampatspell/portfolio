@@ -1,19 +1,15 @@
 {{#ui-backend-block}}
   {{#if section.images.isLoaded}}
-    {{#each section.images as |image|}}
-      {{#ui-backend-row}}
-        <div><img src={{image.attachments.original.url}}/></div>
-        <div>{{image.filename}}</div>
-      {{/ui-backend-row}}
+    {{#if section.images}}
+      {{#ui-backend-grid class='images' array=section.images as |image|}}
+        {{ui-backend-background-image class='image' url=image.attachments.original.url}}
+        <div class="description">{{image.filename}}</div>
+      {{/ui-backend-grid}}
     {{else}}
-      {{#ui-backend-row}}
-        No images added
-      {{/ui-backend-row}}
-    {{/each}}
+      {{#ui-backend-row}}No images added{{/ui-backend-row}}
+    {{/if}}
   {{else}}
-    {{#ui-backend-row}}
-      Loading images…
-    {{/ui-backend-row}}
+    {{#ui-backend-row}}Loading images…{{/ui-backend-row}}
   {{/if}}
 {{/ui-backend-block}}
 
