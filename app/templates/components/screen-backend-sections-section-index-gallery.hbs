@@ -1,4 +1,20 @@
 {{#ui-backend-block}}
+  {{#if section.images.isLoaded}}
+    {{#each section.images as |image|}}
+      {{#ui-backend-row}}
+        <div><img src={{image.attachments.original.url}}/></div>
+        <div>{{image.filename}}</div>
+      {{/ui-backend-row}}
+    {{else}}
+      {{#ui-backend-row}}
+        No images added
+      {{/ui-backend-row}}
+    {{/each}}
+  {{else}}
+    {{#ui-backend-row}}
+      Loading images…
+    {{/ui-backend-row}}
+  {{/if}}
 {{/ui-backend-block}}
 
 {{#ui-backend-section-actions edit=attrs.edit delete=attrs.delete}}

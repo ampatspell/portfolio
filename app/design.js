@@ -13,6 +13,20 @@ const section = {
   }
 };
 
+const galleryimage = {
+  views: {
+    'by-gallery': {
+      map(doc) {
+        if(doc.type !== 'gallery-image') {
+          return;
+        }
+        emit(doc.gallery, null);
+      }
+    }
+  }
+};
+
 export default {
-  section
+  section,
+  'gallery-image': galleryimage
 };
