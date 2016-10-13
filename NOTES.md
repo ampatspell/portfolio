@@ -36,6 +36,7 @@ Sākam ar index + pa vienai bildei ar '<- 1 ->'
 
 # TODO
 
+* Open requested page after login
 * Gallery representation style setting, list of available ones
 * Reorder sections
 * Markdown for posts and blog (and preview while editing)
