@@ -13,8 +13,9 @@ const routes = [
 ];
 
 const sections = [
-  { name: 'text',     title: 'Text Page', description: 'Single markdown formatted text page' },
-  { name: 'category', title: 'Category',  description: 'Section group' },
+  { name: 'text',     title: 'Page',     description: 'Single markdown formatted text page' },
+  { name: 'category', title: 'Category', description: 'Section group' },
+  { name: 'gallery',  title: 'Gallery',  description: 'Image gallery' },
 ];
 
 export default Ember.Service.extend({
