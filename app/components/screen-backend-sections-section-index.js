@@ -28,7 +28,7 @@ export default Ember.Component.extend({
     if(!path) {
       return;
     }
-    return `${window.location.origin}/${path}`;
+    return `${window.location.origin}/sections/${path}`;
   }).readOnly(),
 
   actions: {
