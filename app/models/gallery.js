@@ -25,6 +25,10 @@ export default Section.extend({
     }).then(() => {
       return this.delete();
     });
+  },
+
+  loadNested() {
+    return this.get('images.promise');
   }
 
 });

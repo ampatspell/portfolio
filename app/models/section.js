@@ -5,6 +5,7 @@ import slugify from '../util/slugify';
 import { fallback } from '../util/computed';
 
 const {
+  RSVP: { resolve },
   inject: { service },
   computed
 } = Ember;
@@ -70,6 +71,10 @@ export default Model.extend({
 
   deleteNested() {
     return this.delete();
+  },
+
+  loadNested() {
+    return resolve();
   }
 
 });
