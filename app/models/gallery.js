@@ -13,6 +13,8 @@ export default Section.extend({
 
   images: hasMany('gallery-image', { inverse: 'gallery', query: 'gallery-images' }),
 
+  isGallery: true,
+
   deleteNested() {
     return this.get('images.promise').then(images => {
       return all(images.map(image => image.delete()));

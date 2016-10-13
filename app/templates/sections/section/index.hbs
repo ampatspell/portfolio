@@ -5,4 +5,14 @@
 <div>{{model.modelScreenName}}: {{model.title_}}</div>
 <div>{{model.body}}</div>
 <br/>
+{{#if model.isGallery}}
+  {{#if model.images.isLoaded}}
+    {{#each model.images as |image|}}
+      <div><img src={{image.attachments.original.url}} style="max-width: 100%"/></div>
+    {{/each}}
+  {{else if model.images.isLoading}}
+    Loading images…
+  {{/if}}
+{{/if}}
+<br/>
 <div>{{#link-to 'index'}}&larr;{{/link-to}}</div>

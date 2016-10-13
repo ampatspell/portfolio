@@ -13,8 +13,6 @@ export default Section.extend({
 
   sections: hasMany('section', { inverse: 'category', persist: false }),
 
-  isCategory: true,
-
   deleteNested() {
     return all(this.get('sections').map(section => section.deleteNested())).then(() => {
       return this.delete();

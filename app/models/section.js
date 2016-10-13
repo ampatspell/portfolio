@@ -50,8 +50,6 @@ export default Model.extend({
     return slug;
   }).readOnly(),
 
-  isCategory: false,
-
   willCreate() {
     this.set('id', id(12));
     let now = new Date();
