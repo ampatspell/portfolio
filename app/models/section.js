@@ -14,6 +14,7 @@ export default Model.extend({
 
   id: prefix(),
 
+  position: attr('integer'),
   slug: attr('string'),
   visible: attr('boolean'),
   category: belongsTo('category', { inverse: 'sections' }),
