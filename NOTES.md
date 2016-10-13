@@ -33,3 +33,10 @@ Sākam ar index + pa vienai bildei ar '<- 1 ->'
 * Kolekcija ir bildes
 * Viens logins ar db _admin
 * Bildei var būt nosaukums, īss komentārs.
+
+# TODO
+
+* Gallery representation style setting, list of available ones
+* Reorder sections
+* Markdown for posts and blog (and preview while editing)
+* Blog editor
