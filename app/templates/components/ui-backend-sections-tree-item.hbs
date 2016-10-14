@@ -1,11 +1,7 @@
-{{#draggable-object class='draggable' content=model isSortable=true}}
-  {{#draggable-object-target action=(action 'drop') dragOverAction=(action 'over') dragOutAction=(action 'out')}}
-    <div class="content" {{action 'click'}}>
-      <div class="title">{{model.title_}}</div>
-      <div class="info">{{model.modelScreenName}} {{model.position}}</div>
-    </div>
-  {{/draggable-object-target}}
-{{/draggable-object}}
+<div class="content" {{action 'click'}}>
+  <div class="title">{{model.title_}}</div>
+  <div class="info">{{model.modelScreenName}} <span style="font-size: 11px">pos: {{model.position}}</span></div>
+</div>
 {{#if nested}}
   <div class="nested">
     {{#each nested as |nestedModel|}}

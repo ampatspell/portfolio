@@ -1,13 +1,12 @@
 import Ember from 'ember';
+import { Draggable } from 'ui-draggable';
 
 const {
   computed
 } = Ember;
 
-export default Ember.Component.extend({
-  classNameBindings: [ ':ui-backend-tree-item', 'faded:faded' ],
-
-  faded: false,
+export default Ember.Component.extend(Draggable, {
+  classNameBindings: [ ':ui-backend-tree-item' ],
 
   nested: computed('model.sections', function() {
     let sections = this.get('model.sections');
@@ -22,15 +21,6 @@ export default Ember.Component.extend({
       if(this.attrs.select) {
         this.attrs.select(this.get('model'));
       }
-    },
-    over() {
-      this.set('faded', true);
-    },
-    out() {
-      this.set('faded', false);
-    },
-    drop(model) {
-      console.log('drop', model.get('title_'), 'on', this.get('model.title_'));
     }
   }
 

@@ -10,7 +10,7 @@
       }
       border-bottom: 1px solid #eee;
       &:hover {
-        background: lighten(#000, 98%);
+        // background: lighten(#000, 98%);
       }
     }
     &.faded {
@@ -42,5 +42,26 @@
         }
       }
     }
+  }
+}
+
+.dragging {
+  background: #fff;
+  opacity: 0.75;
+}
+
+.over {
+  background: rgba(0,255,0,0.1);
+}
+
+.dragging {
+  .over {
+    background: #fff;
+  }
+}
+
+.over {
+  .dragging {
+    background: rgba(0,255,0,0.1);
   }
 }

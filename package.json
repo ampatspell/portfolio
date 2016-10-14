@@ -58,6 +58,7 @@
   "ember-addon": {
     "paths": [
       "lib/ui-backend",
+      "lib/ui-draggable",
       "lib/ui-frontend"
     ]
   }

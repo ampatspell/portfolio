@@ -1,7 +1,7 @@
 <div class="content">
-  {{#sortable-objects class='sortable' sortableObjectList=array sortEndAction=(action 'sort') useSwap=false}}
+  {{#sortable-objects class='sortable' sortableObjectList=array sortEndAction=(action 'sort') useSwap=false sortingScope='grid'}}
     {{#each array as |object|}}
-      {{#draggable-object class='draggable' content=object overrideClass='' isSortable=true}}
+      {{#draggable-object class='draggable' content=object overrideClass='' isSortable=true sortingScope='grid'}}
         <div class="item">{{yield object}}</div>
       {{/draggable-object}}
     {{/each}}
