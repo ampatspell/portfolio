@@ -44,3 +44,10 @@ Sākam ar index + pa vienai bildei ar '<- 1 ->'
 * Blog editor
 
 * [done] Load gallery images when opening backend section for editing, view
+
+
+## NEW
+
+* Galerijas apraksts
+* Bilžu nosaukumi ir textarea
+* login name autocapitalization=off
