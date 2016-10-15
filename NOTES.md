@@ -36,18 +36,16 @@ Sākam ar index + pa vienai bildei ar '<- 1 ->'
 
 # TODO
 
-* Reorder sections
 * Warnings on delete
 * Open requested page after login
 * Gallery representation style setting, list of available ones
 * Markdown for posts and blog (and preview while editing)
 * Blog editor
 
-* [done] Load gallery images when opening backend section for editing, view
 
-
-## NEW
+## DONE
 
 * [done] Galerijas apraksts
 * [done] Bilžu nosaukumi ir textarea
 * [done] login name autocapitalization=off
+* [done] Reorder sections
