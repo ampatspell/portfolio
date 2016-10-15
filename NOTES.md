@@ -38,9 +38,7 @@ Sākam ar index + pa vienai bildei ar '<- 1 ->'
 
 * Open requested page after login
 * Gallery representation style setting, list of available ones
-* Markdown for posts and blog (and preview while editing)
 * Blog editor
-
 
 ## DONE
 
@@ -49,3 +47,4 @@ Sākam ar index + pa vienai bildei ar '<- 1 ->'
 * [done] login name autocapitalization=off
 * [done] Reorder sections
 * [done] Warnings on delete
+* [done] Markdown for posts and blog
