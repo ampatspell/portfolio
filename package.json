@@ -51,8 +51,10 @@
     "ember-route-action-helper": "2.0.0",
     "glob": "^4.5.3",
     "http-proxy": "^1.15.1",
+    "install": "0.8.1",
     "loader.js": "^4.0.10",
-    "morgan": "^1.7.0"
+    "morgan": "^1.7.0",
+    "ui-markdown": "0.1.12"
   },
   "ember-addon": {
     "paths": [

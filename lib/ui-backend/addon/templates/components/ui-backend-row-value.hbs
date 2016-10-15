@@ -1,4 +1,9 @@
 {{#if title}}
   <div class="title">{{title}}</div>
 {{/if}}
-<div class="value">{{value}}</div>
+{{#if markdown}}
+  {{markdown-convert content=value class="markdown value"}}
+{{else}}
+  <div class="value">{{value}}</div>
+{{/if}}
+
