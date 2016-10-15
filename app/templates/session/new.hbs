@@ -1,13 +1,1 @@
-<div class="screen-session-new">
-  {{#ui-backend-block class="compact"}}
-    {{#ui-backend-row}}
-      {{input placeholder='name' value=model.name autocapitalize="off" autocorrect="off"}}
-    {{/ui-backend-row}}
-    {{#ui-backend-row}}
-      {{input placeholder='password' value=model.password type='password'}}
-    {{/ui-backend-row}}
-    {{#ui-backend-row}}
-      <button {{action (route-action 'save')}}>Login</button>
-    {{/ui-backend-row}}
-  {{/ui-backend-block}}
-</div>
+{{screen-backend/session-new}}
