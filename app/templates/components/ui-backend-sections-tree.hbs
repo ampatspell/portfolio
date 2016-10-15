@@ -1,3 +1,13 @@
+<div class="ui-backend-tree-item">
+  <div class="content" {{action attrs.new}}>Add new section</div>
+</div>
+
 {{#each roots as |model|}}
-  {{ui-backend-sections-tree-item model=model select=attrs.select}}
+  {{ui-backend-sections-tree-item model=model select=attrs.select reorder=(action 'reorder')}}
 {{/each}}
+
+<div>
+  {{#each roots as |root|}}
+    <div>{{root.position}} {{root.title_}}</div>
+  {{/each}}
+</div>

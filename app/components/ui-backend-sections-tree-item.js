@@ -16,6 +16,10 @@ export default Ember.Component.extend(Draggable, {
     return sections.sortBy('position');
   }).readOnly(),
 
+  onDrop() {
+    this.attrs.reorder(...arguments);
+  },
+
   actions: {
     click() {
       if(this.attrs.select) {

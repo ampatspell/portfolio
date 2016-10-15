@@ -5,7 +5,7 @@
 {{#if nested}}
   <div class="nested">
     {{#each nested as |nestedModel|}}
-      {{ui-backend-sections-tree-item model=nestedModel select=attrs.select}}
+      {{ui-backend-sections-tree-item model=nestedModel select=attrs.select reorder=attrs.reorder}}
     {{/each}}
   </div>
 {{/if}}

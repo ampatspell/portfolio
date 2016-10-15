@@ -4,7 +4,7 @@
 
     {{ui-backend-header title='Navigation'}}
 
-    {{ui-backend-sections-tree sections=sections select=(route-action 'selectSection')}}
+    {{ui-backend-sections-tree sections=sections new=(route-action 'newSection') select=(route-action 'selectSection')}}
 
 {{!--
     {{#ui-backend-tree

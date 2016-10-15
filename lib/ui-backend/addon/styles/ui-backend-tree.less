@@ -1,6 +1,6 @@
 .ui-backend-tree {
   .ui-backend-tree-item {
-    .content {
+    > .content {
       padding: 10px;
       > .title {
         .font(15px, 18px);
@@ -9,35 +9,28 @@
         .font(13px, 17px);
       }
       border-bottom: 1px solid #eee;
-      &:hover {
-        // background: lighten(#000, 98%);
-      }
-    }
-    &.faded {
-      opacity: 0.5;
-    }
-    &.selected {
-      .content {
-        background: lighten(#000, 97%);
-      }
     }
     &.action {
       .content {
         .pointer;
       }
     }
-    &.placeholder {
-      background: rgba(50, 255, 20, 0.1);
+    &.dragging {
+      background: rgba(50, 255, 20, 0.05);
+      opacity: 0.75;
+      > .content {
+        border-bottom: 1px solid rgba(50, 255, 20, 0.1);
+      }
     }
-    .nested {
+    > .nested {
       > .ui-backend-tree-item {
-        .content {
+        > .content {
           padding-left: 30px;
           border-top: none;
         }
-        .nested {
+        > .nested {
           > .ui-backend-tree-item {
-            .content {
+            > .content {
               padding-left: 60px;
               border-top: none;
             }
@@ -46,8 +39,4 @@
       }
     }
   }
-}
-
-.dragging {
-  opacity: 0.25;
 }
