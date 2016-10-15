@@ -8,7 +8,7 @@ const {
 export default Ember.Component.extend(Draggable, {
   classNameBindings: [ ':ui-backend-tree-item' ],
 
-  nested: computed('model.sections', function() {
+  nested: computed('model.sections.@each.position', function() {
     let sections = this.get('model.sections');
     if(!sections) {
       return;
