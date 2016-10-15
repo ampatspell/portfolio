@@ -29,6 +29,9 @@ export default Ember.Component.extend({
     },
     upload() {
       this.transitionTo('backend.sections.section.gallery.upload', this.get('section'));
+    },
+    delete(image) {
+      image.delete();
     }
   }
 });

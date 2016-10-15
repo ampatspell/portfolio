@@ -14,15 +14,23 @@
         margin-bottom: -1px;
         margin-right: -1px;
         padding: 10px;
+        position: relative;
         > .image {
           width: 130px;
           height: 115px;
         }
         > .description {
           padding-top: 5px;
-          text-align: center;
+          padding-right: 10px;
+          text-align: left;
           .font(10px);
           .ellipsis;
+        }
+        > .delete {
+          position: absolute;
+          bottom: 2px;
+          right: 10px;
+          font-size: 12px;
         }
         &.dragging {
           opacity: 0.5;

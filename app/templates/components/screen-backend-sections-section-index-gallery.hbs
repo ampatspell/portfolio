@@ -8,6 +8,7 @@
       {{#ui-backend-grid class='images' array=section.sortedImages reorder=(action 'reorder') as |image|}}
         {{ui-backend-background-image class='image' url=image.attachments.original.url}}
         <div class="description">{{if image.description image.description image.filename}}</div>
+        <div class="delete" {{action 'delete' image}}>{{fa-icon 'trash-o' class='icon'}}</div>
       {{/ui-backend-grid}}
     {{else}}
       {{#ui-backend-row}}No images added{{/ui-backend-row}}
