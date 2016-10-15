@@ -36,7 +36,6 @@ Sākam ar index + pa vienai bildei ar '<- 1 ->'
 
 # TODO
 
-* Warnings on delete
 * Open requested page after login
 * Gallery representation style setting, list of available ones
 * Markdown for posts and blog (and preview while editing)
@@ -49,3 +48,4 @@ Sākam ar index + pa vienai bildei ar '<- 1 ->'
 * [done] Bilžu nosaukumi ir textarea
 * [done] login name autocapitalization=off
 * [done] Reorder sections
+* [done] Warnings on delete
