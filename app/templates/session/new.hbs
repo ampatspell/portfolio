@@ -1,7 +1,7 @@
 <div class="screen-session-new">
   {{#ui-backend-block class="compact"}}
     {{#ui-backend-row}}
-      {{input placeholder='name' value=model.name}}
+      {{input placeholder='name' value=model.name autocapitalize="off" autocorrect="off"}}
     {{/ui-backend-row}}
     {{#ui-backend-row}}
       {{input placeholder='password' value=model.password type='password'}}

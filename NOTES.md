@@ -48,6 +48,6 @@ Sākam ar index + pa vienai bildei ar '<- 1 ->'
 
 ## NEW
 
-* Galerijas apraksts
-* Bilžu nosaukumi ir textarea
-* login name autocapitalization=off
+* [done] Galerijas apraksts
+* [done] Bilžu nosaukumi ir textarea
+* [done] login name autocapitalization=off

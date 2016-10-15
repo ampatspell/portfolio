@@ -12,6 +12,8 @@ export default Section.extend({
   id: prefix('section:'),
   type: type('section:gallery'),
 
+  description: attr('string'),
+
   images: hasMany('gallery-image', { inverse: 'gallery', query: 'gallery-images' }),
 
   sortedImagesDesc: [ 'position' ],
