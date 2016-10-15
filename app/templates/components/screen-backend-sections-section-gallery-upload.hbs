@@ -1,31 +1,47 @@
 {{ui-backend-header title=section.title_ subtitle='Upload images'}}
 
-{{#ui-backend-block}}
-  {{#each images as |image|}}
-    {{#ui-backend-row}}
-      {{#if image.attachments.original.isLoaded}}
-        <div><img src={{image.attachments.original.url}}/></div>
-      {{else if image.attachments.original.isLoading}}
-        <div>Loading…</div>
-      {{else}}
-        <div>Erorr loading</div>
-      {{/if}}
-      <div>{{image.filename}}</div>
-    {{/ui-backend-row}}
-  {{else}}
-    {{#ui-backend-row}}
-      No images added
-    {{/ui-backend-row}}
-  {{/each}}
-{{/ui-backend-block}}
+{{#if isSaving}}
 
-{{#ui-backend-block}}
-  {{#ui-backend-row}}
-    {{ui-backend-file multiple=true action=(action 'files')}}
-    {{#if images}}
-      {{ui-backend-button title='Clear' action=(action 'clear')}}
-      {{ui-backend-button title='Save' action=(action 'save')}}
-    {{/if}}
-    {{ui-backend-button title='Cancel' action=(action 'cancel')}}
-  {{/ui-backend-row}}
-{{/ui-backend-block}}
+  {{#ui-backend-block}}
+    {{#ui-backend-row}}
+      {{#if total}}
+        Uploading image {{pos}} of {{total}}…
+      {{else}}
+        Uploading images…
+      {{/if}}
+    {{/ui-backend-row}}
+  {{/ui-backend-block}}
+
+{{else}}
+
+  {{#ui-backend-block}}
+    {{#each images as |image|}}
+      {{#ui-backend-row}}
+        {{#if image.attachments.original.isLoaded}}
+          <div><img src={{image.attachments.original.url}}/></div>
+        {{else if image.attachments.original.isLoading}}
+          <div>Loading…</div>
+        {{else}}
+          <div>Erorr loading</div>
+        {{/if}}
+        <div>{{image.filename}}</div>
+      {{/ui-backend-row}}
+    {{else}}
+      {{#ui-backend-row}}
+        No images added
+      {{/ui-backend-row}}
+    {{/each}}
+  {{/ui-backend-block}}
+
+  {{#ui-backend-block}}
+    {{#ui-backend-row}}
+      {{ui-backend-file multiple=true action=(action 'files')}}
+      {{#if images}}
+        {{ui-backend-button title='Clear' action=(action 'clear')}}
+        {{ui-backend-button title='Save' action=(action 'save')}}
+      {{/if}}
+      {{ui-backend-button title='Cancel' action=(action 'cancel')}}
+    {{/ui-backend-row}}
+  {{/ui-backend-block}}
+
+{{/if}}

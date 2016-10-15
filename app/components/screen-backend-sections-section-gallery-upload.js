@@ -11,6 +11,10 @@ export default Ember.Component.extend({
 
   images: array(),
 
+  pos: 0,
+  total: 0,
+  isSaving: false,
+
   actions: {
     files(files) {
       let db = this.get('section.database');
@@ -25,7 +29,20 @@ export default Ember.Component.extend({
       this.clear();
     },
     save() {
+      if(this.get('isSaving')) {
+        return;
+      }
+      this.setProperties({
+        isSaving: true,
+        pos: 0,
+        total: 0
+      });
       this.get('section.images.promise').then(() => {
+        this.setProperties({
+          isSaving: true,
+          pos: 0,
+          total: this.get('images.length')
+        });
         let position = Math.max(Math.max(...this.get('section.images').mapBy('position')) + 1, 0);
         let gallery = this.get('section');
         all(this.get('images').map((image, idx) => {
@@ -33,11 +50,15 @@ export default Ember.Component.extend({
             position: position + idx,
             gallery: gallery
           });
-          return image.save();
+          return image.save().then(() => this.incrementProperty('pos'));
         })).then(() => {
           return gallery.save();
         }).then(() => {
           this.transitionTo('backend.sections.section', gallery);
+        }).finally(() => {
+          if(!this._isDestroying) {
+            this.set('isSaving', false);
+          }
         });
       });
     },
