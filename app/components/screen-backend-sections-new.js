@@ -15,8 +15,15 @@ export default Ember.Component.extend({
 
   actions: {
     select(modelName) {
+      let db = this.get('store.db.main');
+      let position;
       let category = this.get('category');
-      let model = this.get('store.db.main').model(modelName, { category, visible: true });
+      if(category) {
+        position = (category.get('sortedSections.lastObject.position') || -1) + 1;
+      } else {
+        position = (db.get('sections.sortedRootSections.lastObject.position') || -1) + 1;
+      }
+      let model = db.model(modelName, { category, position, visible: true });
       this.set('model', model);
     },
     cancel() {
