@@ -1,7 +1,8 @@
 import Ember from 'ember';
 
 const {
-  computed
+  computed,
+  RSVP: { all }
 } = Ember;
 
 export default Ember.Component.extend({
@@ -13,18 +14,12 @@ export default Ember.Component.extend({
 
   actions: {
     reorder(model, pos, relative) {
-      console.log(model.get('title_'), pos, relative.get('title_'));
-
       let category = relative.get('category');
       let array = category ? category.get('sections').sortBy('position') : this.get('roots');
 
       array.removeObject(model);
 
-      console.log('before', array.mapBy('title_'));
-
       let idx = array.indexOf(relative);
-      console.log('idx', idx);
-
       if(pos === 'before') {
         array.insertAt(idx, model);
       } else {
@@ -37,7 +32,9 @@ export default Ember.Component.extend({
 
       model.set('category', category);
 
-      console.log('after', array.mapBy('title_'));
+      model.save().then(() => {
+        return all(array.map(model => model.save()));
+      });
     }
   }
 
