@@ -1,7 +1,7 @@
 {{#ui-backend-block}}
   {{#if section.images.isLoaded}}
     {{#if section.images}}
-      {{#ui-backend-grid class='images' array=sortable sort=(action 'sort') as |image|}}
+      {{#ui-backend-grid class='images' array=section.sortedImages reorder=(action 'reorder') as |image|}}
         {{ui-backend-background-image class='image' url=image.attachments.original.url}}
         <div class="description">{{if image.caption image.caption image.filename}}</div>
       {{/ui-backend-grid}}
@@ -16,4 +16,3 @@
 {{#ui-backend-section-actions edit=attrs.edit delete=attrs.delete}}
   {{ui-backend-button title='Upload images' action=(action 'upload')}}
 {{/ui-backend-section-actions}}
-

@@ -1,6 +1,6 @@
 <div class="content">
   {{#each array as |object|}}
-    {{#ui-backend-grid-item model=object}}
+    {{#ui-backend-grid-item reorder=attrs.reorder model=object}}
       {{yield object}}
     {{/ui-backend-grid-item}}
   {{/each}}
