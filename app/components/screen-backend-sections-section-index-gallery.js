@@ -1,11 +1,14 @@
 import Ember from 'ember';
 
 const {
+  inject: { service },
   RSVP: { all }
 } = Ember;
 
 export default Ember.Component.extend({
   classNameBindings: [ ':screen-backend-sections-section-index-text' ],
+
+  confirm: service(),
 
   actions: {
     reorder(model, pos, relative) {
@@ -31,7 +34,11 @@ export default Ember.Component.extend({
       this.transitionTo('backend.sections.section.gallery.upload', this.get('section'));
     },
     delete(image) {
-      image.delete();
+      this.get('confirm').show(
+        'Delete image',
+        'Are you sure you want to delete this image?',
+        'Delete'
+      ).then(() => image.delete());
     }
   }
 });

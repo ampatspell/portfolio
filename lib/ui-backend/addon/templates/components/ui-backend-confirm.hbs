@@ -1,0 +1,13 @@
+{{#with confirm.alert as |alert|}}
+  <div class="content">
+    <div class="alert">
+      <div class="title">{{alert.title}}</div>
+      <div class="message">{{alert.message}}</div>
+      <div class="buttons">
+        {{#each alert.buttons as |button|}}
+          {{ui-backend-button title=button.title action=(action 'click' button)}}
+        {{/each}}
+      </div>
+    </div>
+  </div>
+{{/with}}

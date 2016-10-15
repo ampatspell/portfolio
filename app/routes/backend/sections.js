@@ -1,6 +1,12 @@
 import Ember from 'ember';
 
+const {
+  inject: { service }
+} = Ember;
+
 export default Ember.Route.extend({
+
+  confirm: service(),
 
   model() {
     return this.get('store.db.main.sections.promise');
@@ -32,7 +38,11 @@ export default Ember.Route.extend({
       });
     },
     deleteSection(section) {
-      section.deleteNested().then(() => {
+      this.get('confirm').show(
+        'Delete section',
+        'Are you sure you want to delete this section?',
+        'Delete'
+      ).then(() => section.deleteNested()).then(() => {
         this.transitionTo('backend.sections');
       });
     }
