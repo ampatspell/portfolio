@@ -11,7 +11,7 @@ export default Ember.Component.extend({
   actions: {
     reorder(model, pos, relative) {
       let category = relative.get('category');
-      let array = category ? category.get('sections').sortBy('position') : this.get('roots').map(model => model);
+      let array = category ? category.get('sections').sortBy('position') : this.get('sections.sortedRootSections').map(model => model);
 
       array.removeObject(model);
 
