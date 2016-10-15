@@ -38,6 +38,6 @@ export default Ember.Component.extend({
     if(model && model.get('isNew')) {
       model.destroy();
     }
-  }),
+  })
 
 });
