@@ -2,9 +2,9 @@
   <div class="title">{{model.title_}}</div>
   <div class="info">{{model.modelScreenName}}</div>
 </div>
-{{#if nested}}
+{{#if model.sortedSections}}
   <div class="nested">
-    {{#each nested as |nestedModel|}}
+    {{#each model.sortedSections as |nestedModel|}}
       {{ui-backend-sections-tree-item model=nestedModel select=attrs.select reorder=attrs.reorder}}
     {{/each}}
   </div>

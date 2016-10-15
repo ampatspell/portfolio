@@ -1,21 +1,20 @@
 import Ember from 'ember';
 
 const {
-  computed,
-  RSVP: { all }
+  computed: { readOnly },
+  RSVP: { all },
+  copy
 } = Ember;
 
 export default Ember.Component.extend({
   classNameBindings: [ ':ui-backend-tree' ],
 
-  roots: computed('sections.@each.{category,position}', function() {
-    return this.get('sections').filterBy('category', null).sortBy('position');
-  }).readOnly(),
+  roots: readOnly('sections.roots'),
 
   actions: {
     reorder(model, pos, relative) {
       let category = relative.get('category');
-      let array = category ? category.get('sections').sortBy('position') : this.get('roots');
+      let array = category ? category.get('sections').sortBy('position') : this.get('roots').map(model => model);
 
       array.removeObject(model);
 

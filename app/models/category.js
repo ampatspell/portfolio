@@ -3,6 +3,7 @@ import { prefix, type, attr, hasMany } from 'sofa';
 import Section from './section';
 
 const {
+  computed: { sort, filterBy },
   RSVP: { all }
 } = Ember;
 
@@ -12,6 +13,11 @@ export default Section.extend({
   type: type('section:category'),
 
   sections: hasMany('section', { inverse: 'category', persist: false }),
+
+  sortedSectionsDesc: [ 'position' ],
+  sortedSections: sort('sections', 'sortedSectionsDesc'),
+
+  sortedVisibleSections: filterBy('sortedSections', 'visible', true),
 
   deleteNested() {
     return all(this.get('sections').map(section => section.deleteNested())).then(() => {
