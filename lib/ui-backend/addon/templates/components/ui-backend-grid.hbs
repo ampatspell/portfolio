@@ -1,9 +1,7 @@
 <div class="content">
-  {{#sortable-objects class='sortable' sortableObjectList=array sortEndAction=(action 'sort') useSwap=false sortingScope='grid'}}
-    {{#each array as |object|}}
-      {{#draggable-object class='draggable' content=object overrideClass='' isSortable=true sortingScope='grid'}}
-        <div class="item">{{yield object}}</div>
-      {{/draggable-object}}
-    {{/each}}
-  {{/sortable-objects}}
+  {{#each array as |object|}}
+    {{#ui-backend-grid-item model=object}}
+      {{yield object}}
+    {{/ui-backend-grid-item}}
+  {{/each}}
 </div>
