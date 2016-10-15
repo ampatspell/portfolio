@@ -1,20 +1,7 @@
 {{frontend-menu sections=store.db.main.sections}}
 <br/>
 <br/>
-<div>{{model.path}}</div>
-<div>{{model.modelScreenName}}: {{model.title_}}</div>
-<div>{{model.body}}</div>
+{{frontend-section section=model}}
 <br/>
-{{#if model.isGallery}}
-  {{#if model.images.isLoaded}}
-    {{#each model.sortedImages as |image|}}
-      <div><img src={{image.attachments.original.url}} style="max-width: 100%"/></div>
-      <div>{{if image.description image.description image.filename}}</div>
-      <br/>
-    {{/each}}
-  {{else if model.images.isLoading}}
-    Loading images…
-  {{/if}}
-{{/if}}
 <br/>
 <div>{{#link-to 'index'}}&larr;{{/link-to}}</div>

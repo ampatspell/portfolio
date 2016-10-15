@@ -1,0 +1,22 @@
+{{#if section.description}}
+  {{markdown-convert content=section.description class='description markdown'}}
+{{/if}}
+
+{{#if section.images.isLoading}}
+  <div>Loading…</div>
+{{else if section.images.isError}}
+  <div>Sorry, images failed to load</div>
+{{else if section.images.isLoaded}}
+  {{#if section.images.length}}
+    <div class="images">
+      {{#each section.sortedImages as |image|}}
+        <div class="image">
+          <div class="image"><img src={{image.attachments.original.url}}/></div>
+          {{markdown-convert content=image.description class='description markdown'}}
+        </div>
+      {{/each}}
+    </div>
+  {{else}}
+    This gallery is empty
+  {{/if}}
+{{/if}}
