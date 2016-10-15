@@ -1,11 +1,11 @@
 import Ember from 'ember';
-import { Draggable } from 'ui-draggable';
+import { Reorderable } from 'ui-draggable';
 
 const {
   computed
 } = Ember;
 
-export default Ember.Component.extend(Draggable, {
+export default Ember.Component.extend(Reorderable, {
   classNameBindings: [ ':ui-backend-tree-item' ],
 
   nested: computed('model.sections.@each.position', function() {
@@ -16,7 +16,7 @@ export default Ember.Component.extend(Draggable, {
     return sections.sortBy('position');
   }).readOnly(),
 
-  onDrop() {
+  reorderModels() {
     this.attrs.reorder(...arguments);
   },
 
