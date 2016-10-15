@@ -2,6 +2,6 @@
   <div class="content" {{action attrs.new}}>Add new section</div>
 </div>
 
-{{#each roots as |model|}}
+{{#each sections.sortedRootSections as |model|}}
   {{ui-backend-sections-tree-item model=model select=attrs.select reorder=(action 'reorder')}}
 {{/each}}

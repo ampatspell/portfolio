@@ -1,15 +1,12 @@
 import Ember from 'ember';
 
 const {
-  computed: { readOnly },
   RSVP: { all },
   copy
 } = Ember;
 
 export default Ember.Component.extend({
   classNameBindings: [ ':ui-backend-tree' ],
-
-  roots: readOnly('sections.roots'),
 
   actions: {
     reorder(model, pos, relative) {

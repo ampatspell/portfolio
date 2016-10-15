@@ -18,7 +18,7 @@ export default Collection.extend({
   modelName: 'section',
   queryName: 'sections',
 
-  visibleRoots: root(true),
-  roots:        root(null),
+  sortedVisibleRootSections: root(true),
+  sortedRootSections:        root(null),
 
 });
