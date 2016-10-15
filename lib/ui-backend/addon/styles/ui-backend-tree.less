@@ -26,6 +26,9 @@
         .pointer;
       }
     }
+    &.placeholder {
+      background: rgba(50, 255, 20, 0.1);
+    }
     .nested {
       > .ui-backend-tree-item {
         .content {
@@ -46,22 +49,6 @@
 }
 
 .dragging {
-  background: #fff;
-  opacity: 0.75;
-}
-
-.over {
-  background: rgba(0,255,0,0.1);
-}
-
-.dragging {
-  .over {
-    background: #fff;
-  }
-}
-
-.over {
-  .dragging {
-    background: rgba(0,255,0,0.1);
-  }
+  opacity: 0.01;
+  height: 0;
 }
