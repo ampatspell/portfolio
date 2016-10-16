@@ -13,7 +13,7 @@ Router.map(function() {
     this.route('delete');
   });
 
-  this.route('sections', function() {
+  this.route('sections', { path: 'pages' }, function() {
     this.route('section', { path: '/*path' }, function() {
     });
   });

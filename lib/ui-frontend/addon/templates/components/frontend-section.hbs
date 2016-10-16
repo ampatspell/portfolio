@@ -1,4 +1,6 @@
-<div class="title">{{section.title_}}</div>
+{{#unless section.isIndex}}
+  <div class="title">{{section.title_}}</div>
+{{/unless}}
 <div class="content">
   {{component componentName section=section}}
 </div>

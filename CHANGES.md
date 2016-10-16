@@ -1,3 +1,8 @@
+## 0.1.19
+
+* [new] public section URLs now starts with `/pages`
+* [new] support optional `index` section
+
 ## 0.1.18
 
 * [new] error and not found pages
