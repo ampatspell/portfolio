@@ -8,7 +8,7 @@ export default Base.extend({
 
   actions: {
     new() {
-
+      this.transitionTo('backend.sections.new');
     }
   }
 

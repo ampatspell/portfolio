@@ -1,0 +1,23 @@
+{{#ui-backend-block}}
+  {{ui-backend-row-value value=section.description markdown=true}}
+{{/ui-backend-block}}
+
+{{#ui-backend-block}}
+  {{#if section.images.isLoaded}}
+    {{#if section.images}}
+      {{#ui-backend-grid class='images' array=section.sortedImages reorder=(action 'reorder') as |image|}}
+        {{ui-backend-background-image class='image' url=image.attachments.original.url}}
+        <div class="description">{{if image.description image.description image.filename}}</div>
+        <div class="delete" {{action 'deleteImage' image}}>{{fa-icon 'trash-o' class='icon'}}</div>
+      {{/ui-backend-grid}}
+    {{else}}
+      {{#ui-backend-row}}No images added{{/ui-backend-row}}
+    {{/if}}
+  {{else}}
+    {{#ui-backend-row}}Loading images…{{/ui-backend-row}}
+  {{/if}}
+{{/ui-backend-block}}
+
+{{#ui-backend-section-actions edit=(action 'edit') delete=(action 'delete')}}
+  {{ui-backend-button title='Upload images' action=(action 'upload')}}
+{{/ui-backend-section-actions}}
