@@ -4,17 +4,24 @@
     top: 0;
     bottom: 0;
     @master: 320px;
+    @master-tablet: 180px;
     &.master {
       left: 0;
       width: @master;
       border-right: 1px solid #eee;
       overflow-y: scroll;
+      @media @tablet {
+        width: @master-tablet;
+      }
     }
     &.detail {
       left: @master;
       right: 0;
       overflow-y: scroll;
       padding-bottom: 20px;
+      @media @tablet {
+        left: @master-tablet;
+      }
     }
   }
 }
