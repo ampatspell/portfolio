@@ -1,5 +1,5 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  classNameBindings: [ ':screen-bakend-sections' ]
+  classNameBindings: [ ':screen-backend-sections-index' ],
 });

@@ -6,14 +6,14 @@
 
     {{ui-backend-sections-tree
         sections=sections
-        new=(route-action 'newSection')
-        select=(route-action 'selectSection')
+        new=(action 'new')
+        select=(action 'select')
     }}
 
   {{/md.master}}
 
   {{#md.detail}}
-    {{outlet}}
+    {{yield}}
   {{/md.detail}}
 
 {{/ui-backend-master-detail}}
