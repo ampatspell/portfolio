@@ -20,6 +20,8 @@ const sections = [
 
 export default Ember.Service.extend({
 
+  title: 'Paulis Jakušonoks',
+
   navigationItems: computed(function() {
     const Item = getOwner(this).lookup('services/backend/navigation-item:main');
     return Ember.A(routes).map(props => {
