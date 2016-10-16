@@ -3,10 +3,12 @@
 let config = require('../config');
 let deploy = config.deploy;
 
+let db = `${deploy.url}/${deploy.name}`;
+
 module.exports = function(deployTarget) {
   var ENV = {
     couchdb: {
-      db: `${deploy.url}/${deploy.name}`
+      db: db
     },
     rewrites: {
       top: [
@@ -24,7 +26,7 @@ module.exports = function(deployTarget) {
   }
 
   if (deployTarget === 'staging') {
-    ENV.couchdb.db = `${production.db.url}/${production.db.name}-staging`;
+    ENV.couchdb.db = `${db}-staging`;
   }
 
   if (deployTarget === 'production') {
