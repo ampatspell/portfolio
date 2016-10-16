@@ -1,4 +1,6 @@
 module.exports = {
+  title: 'Portfolio',
+  admin: 'portfolio-admin',
   development: {
     db: {
       url: '/api',

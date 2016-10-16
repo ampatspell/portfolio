@@ -25,11 +25,12 @@ module.exports = function(environment) {
       version: pkg.version
     },
     portfolio: {
+      title: config.title,
       database: {
-        url:  dev.db.url,
-        name: dev.db.name
+        url:  '/api',
+        name: 'portfolio-dev'
       },
-      admins: [ '_admin', 'portfolio-admin' ],
+      admins: [ '_admin', config.admin ],
     }
   };
 

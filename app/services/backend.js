@@ -1,4 +1,5 @@
 import Ember from 'ember';
+import environment from '../config/environment';
 
 const {
   computed,
@@ -20,7 +21,7 @@ const sections = [
 
 export default Ember.Service.extend({
 
-  title: 'Paulis Jakušonoks',
+  title: environment.portfolio.title,
 
   navigationItems: computed(function() {
     const Item = getOwner(this).lookup('services/backend/navigation-item:main');
