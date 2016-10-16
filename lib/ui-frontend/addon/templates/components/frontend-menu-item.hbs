@@ -1,4 +1,8 @@
-<div class="title">{{#link-to 'sections.section' section}}{{section.title_}}{{/link-to}}</div>
+{{#if section.isLink}}
+  <div class="title"><a href={{section.url}} rel="noopener noreferrer" target={{if section.tab '_blank'}}>{{section.title_}}</a></div>
+{{else}}
+  <div class="title">{{#link-to 'sections.section' section}}{{section.title_}}{{/link-to}}</div>
+{{/if}}
 {{#if section.sortedVisibleSections}}
   <div class="nested">
     {{#each section.sortedVisibleSections as |section|}}

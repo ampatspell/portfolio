@@ -7,6 +7,8 @@ export default Section.extend({
   type: type('section:link'),
 
   url: attr('string'),
-  tab: attr('boolean'),
+  tab: attr('boolean', { initial: true }),
+
+  isLink: true,
 
 });
