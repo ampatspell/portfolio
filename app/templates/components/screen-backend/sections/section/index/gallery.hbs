@@ -18,6 +18,6 @@
   {{/if}}
 {{/ui-backend-block}}
 
-{{#ui-backend-section-actions edit=(action 'edit') delete=(action 'delete')}}
+{{#screen-backend/sections/section/index/ui-actions section=section}}
   {{ui-backend-button title='Upload images' action=(action 'upload')}}
-{{/ui-backend-section-actions}}
+{{/screen-backend/sections/section/index/ui-actions}}

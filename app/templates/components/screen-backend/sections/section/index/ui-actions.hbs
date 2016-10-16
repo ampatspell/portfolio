@@ -1,0 +1,7 @@
+{{#ui-backend-block}}
+  {{#ui-backend-row}}
+    {{yield}}
+    {{ui-backend-button title='Edit' action=(action 'edit')}}
+    {{ui-backend-button title='Delete' action=(action 'delete')}}
+  {{/ui-backend-row}}
+{{/ui-backend-block}}
