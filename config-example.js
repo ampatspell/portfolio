@@ -1,22 +1,8 @@
 module.exports = {
   title: 'Portfolio',
   admin: 'portfolio-admin',
-  development: {
-    db: {
-      url: '/api',
-      name: 'portfolio-dev'
-    }
-  },
-  staging: {
-    db: {
-      url: 'http://...:...@server:5984',
-      name: 'portfolio-paulis-staging'
-    }
-  },
-  production: {
-    db: {
-      url: 'http://...:...@server:5984',
-      name: 'portfolio-paulis'
-    }
+  deploy: {
+    url: 'http://...@...:5984',
+    name: 'portfolio-paulis'
   }
 };
