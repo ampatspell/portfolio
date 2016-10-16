@@ -33,6 +33,8 @@ Router.map(function() {
     });
   });
 
+  this.route('notfound', { path: '*path' });
+
 });
 
 export default Router;

@@ -1,0 +1,11 @@
+<div class="message">
+  <p>Sorry, something went wrong</p>
+  <p class="faded">
+    {{#if model.error}}
+      {{model.error}}{{#if model.reason}}: {{model.reason}}{{/if}}
+    {{else}}
+      {{model.message}}
+    {{/if}}
+  </p>
+</div>
+<div class="message">{{#link-to 'index'}}&larr;{{/link-to}}</div>

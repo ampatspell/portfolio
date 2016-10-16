@@ -2,6 +2,16 @@
 
   @menu-width-desktop: 230px;
 
+  > .screen-frontend-error,
+  > .screen-frontend-notfound {
+    > .message {
+      padding: 40px 40px 0 40px;
+      > .faded {
+        color: lighten(#000, 75%);
+      }
+    }
+  }
+
   > .frontend-gear {
     position: fixed;
     top: 30px;
@@ -57,6 +67,14 @@
   }
 
   @media @mobile {
+
+    > .screen-frontend-error,
+    > .screen-frontend-notfound {
+      > .message {
+        padding: 20px 20px 0 20px;
+      }
+    }
+
     > .frontend-menu {
       padding: 20px 20px 40px 20px;
     }
