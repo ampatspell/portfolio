@@ -6,10 +6,7 @@ const {
   inject: { service }
 } = Ember;
 
-const {
-  name,
-  version
-} = environment.APP;
+const app = environment.APP;
 
 export default Ember.Route.extend({
 
@@ -17,8 +14,8 @@ export default Ember.Route.extend({
 
   model() {
     return hash({
-      name,
-      version,
+      name:    app.name,
+      version: app.version,
       changes: this.get('sideload').asset('CHANGES.md'),
     });
   }

@@ -14,4 +14,4 @@ export const array = () => {
   return computed(function() {
     return Ember.A();
   }).readOnly();
-}
+};

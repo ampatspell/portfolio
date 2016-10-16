@@ -1,6 +1,3 @@
-import Ember from 'ember';
 import Base from '../-base';
 
-export default Base.extend({
-
-});
+export default Base.extend({});

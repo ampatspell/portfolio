@@ -1,5 +1,5 @@
 import Ember from 'ember';
-import { prefix, type, attr, hasMany } from 'sofa';
+import { prefix, type, hasMany } from 'sofa';
 import Section from './section';
 
 const {

@@ -3,15 +3,14 @@ import Ember from 'ember';
 const {
   computed,
   on,
-  RSVP: { defer },
-  Error
+  RSVP: { defer }
 } = Ember;
 
 const cb = (fn) => {
   return function() {
     fn.call(this, this.get('deferred'));
     this.get('service').alertDidFinish();
-  }
+  };
 };
 
 const Alert = Ember.Object.extend({
@@ -45,7 +44,7 @@ const Alert = Ember.Object.extend({
   }),
 
   reject: cb(function(deferred) {
-    let err = new Error('Confirm rejected');
+    let err = new Ember.Error('Confirm rejected');
     err.confirm = true;
     deferred.reject(err);
   }),

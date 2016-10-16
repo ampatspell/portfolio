@@ -1,10 +1,5 @@
-import Ember from 'ember';
 import { Model, prefix, attr, belongsTo } from 'sofa';
 import makeid from '../util/make-id';
-
-const {
-  RSVP: { all }
-} = Ember;
 
 export default Model.extend({
 
