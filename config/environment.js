@@ -1,10 +1,6 @@
 /* jshint node: true */
 
 let config = require('../config');
-let dev = config.development;
-let staging = config.staging;
-let prod = config.production;
-
 let pkg = require('../package');
 
 module.exports = function(environment) {

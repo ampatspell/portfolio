@@ -1,13 +1,12 @@
 /* jshint node: true */
 
 let config = require('../config');
-let staging = config.staging;
-let production = config.production;
+let deploy = config.deploy;
 
 module.exports = function(deployTarget) {
   var ENV = {
     couchdb: {
-      db: `${staging.db.url}/${staging.db.name}`
+      db: `${deploy.url}/${deploy.name}`
     },
     rewrites: {
       top: [
@@ -25,10 +24,10 @@ module.exports = function(deployTarget) {
   }
 
   if (deployTarget === 'staging') {
+    ENV.couchdb.db = `${production.db.url}/${production.db.name}-staging`;
   }
 
   if (deployTarget === 'production') {
-    ENV.couchdb.db = `${production.db.url}/${production.db.name}`;
   }
 
   return ENV;
