@@ -1,3 +1,7 @@
+## 0.1.18
+
+* [new] error and not found pages
+
 ## 0.1.17
 
 * [new] `link` section which opens url in same or new tab
