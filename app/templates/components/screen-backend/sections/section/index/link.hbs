@@ -1,0 +1,6 @@
+{{#ui-backend-block}}
+  {{ui-backend-row-value title='URL' value=section.url}}
+  {{ui-backend-row-value title='Opens in new tab' value=(if section.tab 'Yes' 'No')}}
+{{/ui-backend-block}}
+
+{{screen-backend/sections/section/index/ui-actions section=section}}

@@ -6,11 +6,11 @@
 
   {{ui-backend-header title='Choose new section type'}}
 
-  {{#ui-backend-block class='compact'}}
+  {{#ui-backend-block class='models'}}
     {{#each backend.sectionModels as |model|}}
-      {{#ui-backend-row action=(action 'select' model.name)}}
-        {{model.title}}
-        <span class="small">{{model.description}}</span>
+      {{#ui-backend-row class='model' action=(action 'select' model.name)}}
+        <div class="title">{{model.title}}</div>
+        <div class="description">{{model.description}}</div>
       {{/ui-backend-row}}
     {{/each}}
   {{/ui-backend-block}}
