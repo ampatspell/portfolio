@@ -1,0 +1,13 @@
+{{ui-backend-header title=(if section.isNew 'New category' 'Edit category')}}
+
+{{#ui-backend-block}}
+  {{ui-backend-row-input title='Title' value=section.title}}
+  {{ui-backend-row-checkbox title='Category is visible' value=section.visible}}
+  {{#ui-backend-row}}
+    {{ui-backend-button title='Save' action=(action 'save')}}
+    {{#if section.isNew}}
+      {{ui-backend-button title='Cancel' action=(action 'cancel')}}
+    {{/if}}
+  {{/ui-backend-row}}
+
+{{/ui-backend-block}}

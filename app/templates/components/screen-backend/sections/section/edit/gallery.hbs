@@ -1,0 +1,44 @@
+{{ui-backend-header title=(if section.isNew 'New gallery' 'Edit gallery')}}
+
+{{#ui-backend-block}}
+
+  {{ui-backend-row-input title='Title' value=section.title}}
+  {{ui-backend-row-textarea title='Description' value=section.description}}
+  {{ui-backend-row-checkbox title='Gallery is public' value=section.visible}}
+
+{{/ui-backend-block}}
+
+{{#ui-backend-block class='images'}}
+
+  {{#if section.images.isLoading}}
+
+    {{#ui-backend-row}}Loading…{{/ui-backend-row}}
+
+  {{else if section.images.isLoaded}}
+
+    {{#each section.sortedImages as |image|}}
+      {{#ui-backend-row class='image'}}
+        <div class="image">
+          {{ui-backend-background-image class='image' url=image.attachments.original.url}}
+        </div>
+        <div class="info">
+          <div class="item filename">{{image.filename}}</div>
+          <div class="item description">{{textarea placeholder='description' value=image.description}}</div>
+        </div>
+      {{/ui-backend-row}}
+    {{/each}}
+
+  {{/if}}
+
+{{/ui-backend-block}}
+
+{{#ui-backend-block}}
+
+  {{#ui-backend-row}}
+    {{ui-backend-button title='Save' action=(action 'save')}}
+    {{#if section.isNew}}
+      {{ui-backend-button title='Cancel' action=(action 'cancel')}}
+    {{/if}}
+  {{/ui-backend-row}}
+
+{{/ui-backend-block}}

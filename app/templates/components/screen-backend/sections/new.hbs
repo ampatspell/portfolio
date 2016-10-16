@@ -1,0 +1,24 @@
+{{#if section}}
+
+  {{screen-backend/sections/section/edit section=section cancel=(action 'cancel')}}
+
+{{else}}
+
+  {{ui-backend-header title='Choose new section type'}}
+
+  {{#ui-backend-block class='compact'}}
+    {{#each backend.sectionModels as |model|}}
+      {{#ui-backend-row action=(action 'select' model.name)}}
+        {{model.title}}
+        <span class="small">{{model.description}}</span>
+      {{/ui-backend-row}}
+    {{/each}}
+  {{/ui-backend-block}}
+
+  {{#ui-backend-block}}
+    {{#ui-backend-row}}
+      {{ui-backend-button title='Cancel' action=(action 'back')}}
+    {{/ui-backend-row}}
+  {{/ui-backend-block}}
+
+{{/if}}
