@@ -3,9 +3,9 @@
 {{/if}}
 
 {{#if section.images.isLoading}}
-  <div>Loading…</div>
+  <div class="message">Loading…</div>
 {{else if section.images.isError}}
-  <div>Sorry, images failed to load</div>
+  <div class="message">Sorry, images failed to load</div>
 {{else if section.images.isLoaded}}
   {{#if section.images.length}}
     <div class="images">
@@ -17,6 +17,6 @@
       {{/each}}
     </div>
   {{else}}
-    This gallery is empty
+    <div class="message">This gallery is empty</div>
   {{/if}}
 {{/if}}
