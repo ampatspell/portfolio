@@ -6,7 +6,7 @@ const {
 } = Ember;
 
 export default Base.extend({
-  classNameBindings: [ ':screen-backend-sections-new' ],
+  classNameBindings: [ ':screen-backend-sections-edit' ],
 
   section: null,
 
@@ -15,7 +15,7 @@ export default Base.extend({
     if(!name) {
       return;
     }
-    return `screen-backend/sections/edit/${name}`;
+    return `screen-backend/sections/section/edit/${name}`;
   }).readOnly(),
 
   actions: {

@@ -13,7 +13,7 @@ export default Base.extend({
     if(!section) {
       return;
     }
-    return `screen-backend/sections/index/${section.get('modelName')}`;
+    return `screen-backend/sections/section/index/${section.get('modelName')}`;
   }).readOnly(),
 
   subtitle: computed('section.modelScreenName', 'section.visible', function() {
