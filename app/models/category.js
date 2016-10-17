@@ -19,6 +19,8 @@ export default Section.extend({
 
   sortedVisibleSections: filterBy('sortedSections', 'visible', true),
 
+  isCategory: true,
+
   deleteNested() {
     return all(this.get('sections').map(section => section.deleteNested())).then(() => {
       return this.delete();
