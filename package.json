@@ -11,7 +11,7 @@
     "build": "ember build",
     "start": "ember server",
     "test": "ember test",
-    "bump": "npm version patch; hg ci -m \"bump `node -e \"console.log(require('./package.json').version)\"`\"; hg push",
+    "bump": "npm version patch",
     "deploy-staging": "ember deploy staging",
     "deploy": "npm run bump; npm run deploy-staging"
   },
@@ -22,7 +22,7 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "@ampatspell/ember-cli-sofa": "^2.0.0-pre.19",
+    "ember-cli-sofa": "^2.0.0-pre.20",
     "broccoli-asset-rev": "^2.4.5",
     "ember-ajax": "^2.4.1",
     "ember-cli": "2.9.0-beta.2",
