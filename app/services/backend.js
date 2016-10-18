@@ -1,14 +1,10 @@
 import Ember from 'ember';
-import config from '../config';
+import environment from '../config/environment';
 
 const {
   computed,
   getOwner
 } = Ember;
-
-const {
-  title
-} = config;
 
 const routes = [
   { icon: 'eye',       route: 'index' },
@@ -26,7 +22,7 @@ const sections = [
 
 export default Ember.Service.extend({
 
-  title,
+  title: environment.portfilio.title,
 
   navigationItems: computed(function() {
     const Item = getOwner(this).lookup('services/backend/navigation-item:main');

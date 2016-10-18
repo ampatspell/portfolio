@@ -1,7 +1,8 @@
 /* jshint node: true */
 
-let deploy = require('./couchdb');
-let db = `${deploy.url}/${deploy.name}`;
+let site = require('./site');
+let couchdb = require('./couchdb');
+let db = `${couchdb.url}/${site.database}`;
 
 module.exports = function(deployTarget) {
   var ENV = {

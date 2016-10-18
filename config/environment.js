@@ -1,6 +1,6 @@
 /* jshint node: true */
 
-let deploy = require('./couchdb');
+let site = require('./site');
 let pkg = require('../package');
 
 module.exports = function(environment) {
@@ -21,11 +21,12 @@ module.exports = function(environment) {
       version: pkg.version
     },
     portfolio: {
+      title: site.title,
       database: {
         url:  '/api',
         name: 'portfolio-dev'
       },
-      admins: [ '_admin', deploy.admin ],
+      admins: [ '_admin', site.admin ],
     }
   };
 
