@@ -29,7 +29,7 @@ export default Base.extend({
     if(!path) {
       return;
     }
-    return `${window.location.origin}/sections/${path}`;
-  }).readOnly()
+    return `${window.location.origin}/pages/${path}`;
+  }).readOnly(),
 
 });
