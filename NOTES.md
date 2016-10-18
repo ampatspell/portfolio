@@ -49,3 +49,23 @@ Sākam ar index + pa vienai bildei ar '<- 1 ->'
 * [done] Reorder sections
 * [done] Warnings on delete
 * [done] Markdown for posts and blog
+
+## Deployment
+
+```
+/sites
+  default.js { title, admin, database, theme }
+  amateurinmotion.js { title, admin, database, theme }
+  paulis.js { title, admin, database, theme }
+
+var app = new EmberApp({
+  lessOptions: {
+    paths: [
+      `app/styles/${theme}`
+    ]
+  }
+});
+
+SITE=amateurinmotion ember deploy
+SITE=amateurinmotion ember s
+```

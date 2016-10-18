@@ -1,6 +1,6 @@
 /* jshint node: true */
 
-let site = require('./site');
+let site = require('../sites/_current');
 let pkg = require('../package');
 
 module.exports = function(environment) {

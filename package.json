@@ -12,7 +12,9 @@
     "start": "ember server",
     "test": "ember test",
     "bump": "npm version patch",
-    "deploy": "ember deploy production"
+    "deploy-amateurinmotion": "SITE=amateurinmotion ember deploy production",
+    "deploy-paulis": "SITE=paulis ember deploy production",
+    "deploy-all": "npm run deploy-paulis; npm run deploy-amateurinmotion"
   },
   "repository": "",
   "engines": {

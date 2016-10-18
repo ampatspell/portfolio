@@ -2,10 +2,15 @@
 /* global require, module */
 var EmberApp = require('ember-cli/lib/broccoli/ember-app');
 var Funnel = require('broccoli-funnel');
+var site = require('./sites/_current');
 
 module.exports = function(defaults) {
   var app = new EmberApp(defaults, {
-    // Add options here
+    lessOptions: {
+      paths: [
+        `app/styles/${site.theme}`
+      ]
+    }
   });
 
   app.import('bower_components/speakingurl/lib/speakingurl.js');
