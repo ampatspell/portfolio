@@ -12,7 +12,7 @@ const notfound = () => {
 export default Ember.Route.extend({
 
   _find(path) {
-    let sections = this.get('store.db.main.sections');
+    let sections = this.get('store.db.main.sections.sortedRootSections');
     let components = path.trim().split('/');
 
     let parent = null;
