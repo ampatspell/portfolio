@@ -1,6 +1,6 @@
 @import "reset.less";
-@import url('https://fonts.googleapis.com/css?family=Roboto+Mono:400,500&subset=latin-ext');
-/* https://fonts.google.com/?selection.family=Roboto+Mono:400,500&query=roboto&category=Monospace&selection.subset=latin-ext */
+@import "media.less";
+@import "mixins.less";
 
 body {
   cursor: default;
@@ -18,10 +18,31 @@ body {
 
 a {
   color: #000;
+  text-decoration: none
 }
 
-@import "media.less";
-@import "mixins.less";
+img {
+  max-width: 100%;
+}
 
-@import "backend-app.less";
-@import "frontend-app.less";
+@import "ui-backend/addon-ui-backend.less";
+
+.portfolio-backend {
+  @import "screen-backend-session-new.less";
+  @import "screen-backend-sections-edit-gallery.less";
+  @import "screen-backend-sections-new.less";
+}
+
+@frontend-font-family: 'Roboto Mono', momospace;
+@frontend-font-size: 1.0;
+
+.frontend-font(@size: 13px, @lineheight: 1.5) {
+  font-family: @frontend-font-family;
+  @size_: ceil(@size * @frontend-font-size);
+  font-size: @size_;
+  line-height: ceil(@size_ * @lineheight);
+}
+
+@import "ui-frontend/addon-ui-frontend.less";
+
+@import "theme.less";
