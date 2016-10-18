@@ -1,3 +1,7 @@
+## 0.1.27
+
+* [new] site/<name>.js and per-site themes
+
 ## 0.1.19
 
 * [new] public section URLs now starts with `/pages`
