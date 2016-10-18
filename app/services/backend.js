@@ -22,7 +22,7 @@ const sections = [
 
 export default Ember.Service.extend({
 
-  title: environment.portfilio.title,
+  title: environment.portfolio.title,
 
   navigationItems: computed(function() {
     const Item = getOwner(this).lookup('services/backend/navigation-item:main');
