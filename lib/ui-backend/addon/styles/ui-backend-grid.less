@@ -32,8 +32,18 @@
           right: 10px;
           font-size: 12px;
         }
+        .ui-transition-opacity;
         &.dragging {
-          opacity: 0.5;
+          > .description,
+          > .delete {
+            opacity: 0.3;
+          }
+        }
+        &.dragging-delayed {
+          opacity: 0.2;
+          > .delete {
+            opacity: 0;
+          }
         }
       }
     }
