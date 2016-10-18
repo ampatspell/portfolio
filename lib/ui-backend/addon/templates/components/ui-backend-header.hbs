@@ -3,7 +3,5 @@
   {{#if subtitle}}
     <div class="subtitle">{{subtitle}}</div>
   {{/if}}
-  {{#if footer}}
-    <div class="footer"><input type="text" value={{footer}} disabled=true/></div>
-  {{/if}}
+  {{yield}}
 </div>
