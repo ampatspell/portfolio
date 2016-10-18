@@ -5,4 +5,4 @@ dist/
 
 npm-debug.log
 
-config.js
+config/couchdb.js

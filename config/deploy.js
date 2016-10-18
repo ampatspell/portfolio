@@ -1,8 +1,6 @@
 /* jshint node: true */
 
-let config = require('../config');
-let deploy = config.deploy;
-
+let deploy = require('./couchdb');
 let db = `${deploy.url}/${deploy.name}`;
 
 module.exports = function(deployTarget) {
