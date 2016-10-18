@@ -11,7 +11,7 @@
     "build": "ember build",
     "start": "ember server",
     "test": "ember test",
-    "bump": "npm version patch",
+    "bump": "npm version patch; git push",
     "deploy-staging": "ember deploy staging",
     "deploy": "npm run bump; npm run deploy-staging"
   },
