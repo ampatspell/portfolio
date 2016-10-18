@@ -11,10 +11,20 @@
     }
     > .footer {
       margin-top: 10px;
+      display: table;
+      width: 100%;
+      > .icon {
+        display: table-cell;
+        padding-right: 5px;
+        font-size: 12px;
+        width: 1%;
+      }
       > input {
+        display: table-cell;
         border: none;
         padding: 0;
         margin: 0;
+        width: 100%;
         .font(11px);
         &:disabled {
           color: #000;

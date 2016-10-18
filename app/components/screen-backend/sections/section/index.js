@@ -32,4 +32,10 @@ export default Base.extend({
     return `${window.location.origin}/pages/${path}`;
   }).readOnly(),
 
+  actions: {
+    open() {
+      this.transitionTo('sections.section', this.get('section'));
+    }
+  }
+
 });

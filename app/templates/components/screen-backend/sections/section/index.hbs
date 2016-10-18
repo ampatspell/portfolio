@@ -1,3 +1,5 @@
-{{ui-backend-header title=section.title_ subtitle=subtitle footer=url}}
+{{#ui-backend-header title=section.title_ subtitle=subtitle}}
+  <div class="footer"><div class="icon" {{action 'open'}}>{{fa-icon 'arrow-circle-right'}}</div><input type="text" value={{url}} disabled=true/></div>
+{{/ui-backend-header}}
 
 {{component componentName section=section}}
