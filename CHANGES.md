@@ -1,10 +1,14 @@
+## 0.1.33
+
+* [new] gallery settings (styles). right now `vertical` and `single`.
+
 ## 0.1.30
 
 * [new] fit all images in browser window minus additional paddings and parent element `max-width`
 
 ## 0.1.27
 
-* [new] site/<name>.js and per-site themes
+* [new] `site/<name>.js` and per-site themes
 
 ## 0.1.19
 
