@@ -1,3 +1,7 @@
+## 0.1.30
+
+* [new] fit all images in browser window minus additional paddings
+
 ## 0.1.27
 
 * [new] site/<name>.js and per-site themes
