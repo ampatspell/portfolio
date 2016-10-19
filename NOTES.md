@@ -37,36 +37,5 @@ Sākam ar index + pa vienai bildei ar '<- 1 ->'
 # TODO
 
 * Change password
-* Link section
 * Open requested page after login
-* Gallery representation style setting, list of available ones
 * Blog editor
-
-## DONE
-
-* [done] Galerijas apraksts
-* [done] Bilžu nosaukumi ir textarea
-* [done] login name autocapitalization=off
-* [done] Reorder sections
-* [done] Warnings on delete
-* [done] Markdown for posts and blog
-
-## Deployment
-
-```
-/sites
-  default.js { title, admin, database, theme }
-  amateurinmotion.js { title, admin, database, theme }
-  paulis.js { title, admin, database, theme }
-
-var app = new EmberApp({
-  lessOptions: {
-    paths: [
-      `app/styles/${theme}`
-    ]
-  }
-});
-
-SITE=amateurinmotion ember deploy
-SITE=amateurinmotion ember s
-```
