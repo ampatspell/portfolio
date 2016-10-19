@@ -11,7 +11,7 @@
     <div class="images">
       {{#each section.sortedImages as |image|}}
         <div class="image">
-          <div class="image">{{frontend-image src=image.attachments.original.url}}</div>
+          <div class="image">{{frontend-image src=image.attachments.original.url maxWidthSelector='.frontend-section'}}</div>
           {{markdown-convert content=image.description class='description markdown'}}
         </div>
       {{/each}}
