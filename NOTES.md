@@ -36,6 +36,7 @@ Sākam ar index + pa vienai bildei ar '<- 1 ->'
 
 # TODO
 
+* Change password
 * Link section
 * Open requested page after login
 * Gallery representation style setting, list of available ones
