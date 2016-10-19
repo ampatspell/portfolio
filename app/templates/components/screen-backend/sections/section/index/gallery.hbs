@@ -1,3 +1,9 @@
+{{#if (ui-not (ui-blank section.description))}}
+  {{#ui-backend-block}}
+    {{ui-backend-row-value value=section.description markdown=true}}
+  {{/ui-backend-block}}
+{{/if}}
+
 {{#ui-backend-block}}
   {{ui-backend-row-value value=section.description markdown=true}}
 {{/ui-backend-block}}
