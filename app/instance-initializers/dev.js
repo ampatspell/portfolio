@@ -10,7 +10,7 @@ export default {
     window.migrateGalleryTypes = () => {
       let type = app.lookup('service:backend').get('galleryTypes.firstObject.name');
       return db.insertDesignDocuments().then(() => {
-        db.find({ model: 'gallery', ddoc: 'gallery', view: 'all' });
+        return db.find({ model: 'gallery', ddoc: 'gallery', view: 'all' });
       }).then(galleries => {
         return Ember.RSVP.all(galleries.map(gallery => {
           if(gallery.get('galleryType')) {
