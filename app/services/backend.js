@@ -20,15 +20,18 @@ const sections = [
   { name: 'link',     title: 'Link',     description: 'External url' },
 ];
 
+const galleryTypes = [
+  { name: 'vertical', title: 'Vertical', description: 'Stack images vertically' },
+  { name: 'single',   title: 'Singles',  description: 'One image at a time' },
+];
+
 export default Ember.Service.extend({
 
   title: environment.portfolio.title,
 
   navigationItems: computed(function() {
     const Item = getOwner(this).lookup('services/backend/navigation-item:main');
-    return Ember.A(routes).map(props => {
-      return Item.create(props);
-    });
+    return Ember.A(routes).map(props => Item.create(props));
   }).readOnly(),
 
   sectionModels: computed(function() {
@@ -37,6 +40,15 @@ export default Ember.Service.extend({
 
   sectionModelByName(name) {
     return this.get('sectionModels').findBy('name', name);
+  },
+
+  galleryTypes: computed(function() {
+    const Type = getOwner(this).lookup('services/backend/gallery-type:main');
+    return Ember.A(galleryTypes).map(props => Type.create(props));
+  }).readOnly(),
+
+  galleryTypeByName(name) {
+    return this.get('galleryTypes').findBy('name', name);
   }
 
 });

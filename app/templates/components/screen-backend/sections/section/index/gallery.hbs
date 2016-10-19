@@ -1,5 +1,14 @@
+{{#if (ui-not (ui-blank section.description))}}
+  {{#ui-backend-block}}
+    {{ui-backend-row-value value=section.description markdown=true}}
+  {{/ui-backend-block}}
+{{/if}}
+
 {{#ui-backend-block}}
-  {{ui-backend-row-value value=section.description markdown=true}}
+  {{ui-backend-row-value
+      title='Gallery Type'
+      value=(ui-join section.galleryTypeModel.title section.galleryTypeModel.description delimiter=' – ')
+  }}
 {{/ui-backend-block}}
 
 {{#ui-backend-block}}

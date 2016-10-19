@@ -1,5 +1,18 @@
 /* global emit */
 
+const gallery = {
+  views: {
+    all: {
+      map(doc) {
+        if(doc.type !== 'section:gallery') {
+          return;
+        }
+        emit(doc._id);
+      }
+    }
+  }
+};
+
 const section = {
   views: {
     'all': {
@@ -27,6 +40,7 @@ const galleryimage = {
 };
 
 export default {
+  gallery,
   section,
   'gallery-image': galleryimage
 };
