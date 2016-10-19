@@ -14,7 +14,8 @@
     "bump": "npm version patch",
     "deploy-amateurinmotion": "SITE=amateurinmotion ember deploy production",
     "deploy-paulis": "SITE=paulis ember deploy production",
-    "deploy-all": "npm run deploy-paulis; npm run deploy-amateurinmotion"
+    "deploy-rutemartajansone": "SITE=rutemartajansone ember deploy production",
+    "deploy-all": "npm run deploy-paulis; npm run deploy-amateurinmotion; npm run deploy-rutemartajansone"
   },
   "repository": "",
   "engines": {
