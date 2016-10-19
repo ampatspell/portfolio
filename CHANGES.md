@@ -1,6 +1,6 @@
 ## 0.1.30
 
-* [new] fit all images in browser window minus additional paddings
+* [new] fit all images in browser window minus additional paddings and parent element `max-width`
 
 ## 0.1.27
 
