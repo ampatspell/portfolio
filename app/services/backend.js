@@ -13,16 +13,18 @@ const routes = [
   { icon: 'power-off', route: 'session.delete' }
 ];
 
-const sections = [
-  { name: 'category', title: 'Category', description: 'Section group' },
-  { name: 'gallery',  title: 'Gallery',  description: 'Image gallery' },
-  { name: 'text',     title: 'Page',     description: 'Single markdown formatted text page' },
-  { name: 'link',     title: 'Link',     description: 'External url' },
-];
-
 const galleryTypes = [
   { name: 'vertical', title: 'Vertical', description: 'Stack images vertically' },
   { name: 'single',   title: 'Singles',  description: 'One image at a time' },
+];
+
+const defaultGalleryType = galleryTypes[0].name;
+
+const sections = [
+  { name: 'category', title: 'Category', description: 'Section group' },
+  { name: 'gallery',  title: 'Gallery',  description: 'Image gallery', defaults: { galleryType: defaultGalleryType } },
+  { name: 'text',     title: 'Page',     description: 'Single markdown formatted text page' },
+  { name: 'link',     title: 'Link',     description: 'External url' },
 ];
 
 export default Ember.Service.extend({
@@ -35,7 +37,8 @@ export default Ember.Service.extend({
   }).readOnly(),
 
   sectionModels: computed(function() {
-    return Ember.A(sections);
+    const Model = getOwner(this).lookup('services/backend/section:main');
+    return Ember.A(sections).map(props => Model.create(props));
   }).readOnly(),
 
   sectionModelByName(name) {

@@ -15,7 +15,7 @@ export default Base.extend({
   section: null,
 
   actions: {
-    select(modelName) {
+    select(model) {
       let db = this.get('store.db.main');
       let position;
       let category = this.get('category');
@@ -24,7 +24,9 @@ export default Base.extend({
       } else {
         position = (db.get('sections.sortedRootSections.lastObject.position') || -1) + 1;
       }
-      let section = db.model(modelName, { category, position, visible: true });
+      let modelName = model.get('name');
+      let props = model.mergeDefaults({ category, position });
+      let section = db.model(modelName, props);
       this.set('section', section);
     },
     cancel() {
