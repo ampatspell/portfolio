@@ -35,7 +35,8 @@ export default Ember.Service.extend({
   }).readOnly(),
 
   sectionModels: computed(function() {
-    return Ember.A(sections);
+    const Model = getOwner(this).lookup('services/backend/section:main');
+    return Ember.A(sections).map(props => Model.create(props));
   }).readOnly(),
 
   sectionModelByName(name) {
