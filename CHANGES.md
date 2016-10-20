@@ -1,3 +1,7 @@
+## 0.1.34
+
+* [new] default to 'vertical' gallery style when creating new galleries
+
 ## 0.1.33
 
 * [new] gallery settings (styles). right now `vertical` and `single`.
