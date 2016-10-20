@@ -8,7 +8,7 @@
 
   {{#ui-backend-block class='title-description'}}
     {{#each backend.sectionModels as |model|}}
-      {{#ui-backend-row action=(action 'select' model.name)}}
+      {{#ui-backend-row action=(action 'select' model)}}
         <div class="title">{{model.title}}</div>
         <div class="description">{{model.description}}</div>
       {{/ui-backend-row}}
