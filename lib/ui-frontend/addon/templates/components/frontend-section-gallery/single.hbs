@@ -1,3 +1,7 @@
+{{#if (ui-not (ui-blank section.description))}}
+  {{markdown-convert content=section.description class='description markdown'}}
+{{/if}}
+
 {{#if section.images.isLoading}}
   <div class="message">Loading…</div>
 {{else if section.images.isError}}
@@ -9,17 +13,15 @@
       <div class="item index">{{selectedImageIndex.index}} / {{selectedImageIndex.length}}</div>
       <div class="item icon" {{action 'next'}}>{{fa-icon 'chevron-right'}}</div>
     </div>
-    {{#with selectedImage as |image|}}
-      <div class="image" {{action 'next'}}>
-        <div class="image">{{frontend-image src=image.attachments.original.url maxWidthSelector='.frontend-section'}}</div>
-        {{markdown-convert content=image.description class='description markdown'}}
-      </div>
-    {{/with}}
+    {{frontend-carousel
+        maxWidthSelector='.frontend-section'
+        class='images'
+        images=section.sortedImages
+        selectedImage=selectedImage
+        next=(action 'next')
+        prev=(action 'prev')
+    }}
   {{else}}
     <div class="message">This gallery is empty</div>
   {{/if}}
-{{/if}}
-
-{{#if (ui-not (ui-blank section.description))}}
-  {{markdown-convert content=section.description class='description markdown'}}
 {{/if}}
