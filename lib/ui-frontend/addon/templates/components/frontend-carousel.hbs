@@ -1,0 +1,8 @@
+<div class="translate" style={{translate}}>
+  {{#each images as |image|}}
+    <div class="image" style={{imageStyle}} {{action 'next'}}>
+      {{frontend-image src=image.attachments.original.url maxWidthSelector='.frontend-section'}}
+      {{markdown-convert content=image.description class='description markdown'}}
+    </div>
+  {{/each}}
+</div>
