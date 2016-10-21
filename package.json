@@ -11,7 +11,7 @@
     "build": "ember build",
     "start": "ember server",
     "test": "ember test",
-    "bump": "npm version patch",
+    "bump": "npm version patch; git push --follow-tags",
     "deploy-amateurinmotion": "SITE=amateurinmotion ember deploy production",
     "deploy-paulis": "SITE=paulis ember deploy production",
     "deploy-rutemartajansone": "SITE=rutemartajansone ember deploy production",
