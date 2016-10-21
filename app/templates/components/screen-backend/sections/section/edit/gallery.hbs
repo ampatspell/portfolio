@@ -9,9 +9,7 @@
 {{#if section.galleryTypeModel}}
   {{ui-backend-header title='Gallery type' subtitle=(ui-join section.galleryTypeModel.title section.galleryTypeModel.description delimiter=' – ') class='subheader'}}
   {{#ui-backend-block}}
-    {{#ui-backend-row class='faded'}}
-      This gallery type does not have any settings available
-    {{/ui-backend-row}}
+    {{ui-backend-row-checkbox title='Show image filename if image has no description' value=section.showImageFilenames}}
     {{#unless section.isNew}}
       {{#ui-backend-row}}
         {{ui-backend-button title='Change type' action=(action 'deselectType')}}

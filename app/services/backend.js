@@ -22,7 +22,7 @@ const defaultGalleryType = galleryTypes[0].name;
 
 const sections = [
   { name: 'category', title: 'Category', description: 'Section group' },
-  { name: 'gallery',  title: 'Gallery',  description: 'Image gallery', defaults: { galleryType: defaultGalleryType } },
+  { name: 'gallery',  title: 'Gallery',  description: 'Image gallery', defaults: { showImageFilenames: false, galleryType: defaultGalleryType } },
   { name: 'text',     title: 'Page',     description: 'Single markdown formatted text page' },
   { name: 'link',     title: 'Link',     description: 'External url' },
 ];

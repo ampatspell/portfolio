@@ -9,6 +9,10 @@
       title='Gallery Type'
       value=(ui-join section.galleryTypeModel.title section.galleryTypeModel.description delimiter=' – ')
   }}
+  {{ui-backend-row-value
+      title='If image has no description'
+      value=(if section.showImageFilenames 'Show filename without extension' 'Keep it blank')
+  }}
 {{/ui-backend-block}}
 
 {{#ui-backend-block}}
@@ -16,7 +20,7 @@
     {{#if section.images}}
       {{#ui-backend-grid class='images' array=section.sortedImages reorder=(action 'reorder') as |image|}}
         {{ui-backend-background-image class='image' url=image.attachments.original.url}}
-        <div class="description">{{if image.description image.description image.filename}}</div>
+        <div class="description">{{if (ui-blank image.description) image.filenameWithoutExtension image.description}}</div>
         <div class="delete" {{action 'deleteImage' image}}>{{fa-icon 'trash-o' class='icon'}}</div>
       {{/ui-backend-grid}}
     {{else}}

@@ -30,6 +30,8 @@ export default Section.extend({
   galleryType: attr('string'),
   galleryTypeModel: galleryTypeByName('galleryType'),
 
+  showImageFilenames: attr('boolean'),
+
   images: hasMany('gallery-image', { inverse: 'gallery', query: 'gallery-images' }),
   sortedImagesDesc: [ 'position' ],
   sortedImages: sort('images', 'sortedImagesDesc'),

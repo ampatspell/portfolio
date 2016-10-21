@@ -2,7 +2,7 @@
   {{#each images as |image|}}
     <div class="image" style={{imageStyle}} {{action 'next'}}>
       {{frontend-image src=image.attachments.original.url maxWidthSelector='.frontend-section'}}
-      {{markdown-convert content=image.description class='description markdown'}}
+      {{frontend-gallery-image-description image=image class='description'}}
     </div>
   {{/each}}
 </div>
