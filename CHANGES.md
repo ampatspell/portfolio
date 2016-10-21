@@ -1,3 +1,7 @@
+## 0.1.37
+
+* [new] option to show gallery image filenames as a description
+
 ## 0.1.35
 
 * [new] animated carousel for galleries
