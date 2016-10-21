@@ -24,7 +24,6 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "ember-cli-sofa": "^2.0.0-pre.22",
     "broccoli-asset-rev": "^2.4.5",
     "ember-ajax": "^2.4.1",
     "ember-cli": "2.9.0-beta.2",
@@ -35,6 +34,7 @@
     "ember-cli-deploy-build-plus": "0.1.8",
     "ember-cli-deploy-couchdb": "0.1.1",
     "ember-cli-deploy-couchdb-rewrites": "0.0.1",
+    "ember-cli-fastclick": "1.3.0",
     "ember-cli-htmlbars": "^1.0.10",
     "ember-cli-htmlbars-inline-precompile": "^0.3.3",
     "ember-cli-inject-live-reload": "^1.4.1",
@@ -42,6 +42,7 @@
     "ember-cli-less": "1.5.3",
     "ember-cli-qunit": "^3.0.1",
     "ember-cli-release": "^0.2.9",
+    "ember-cli-sofa": "^2.0.0-pre.22",
     "ember-cli-sri": "^2.1.0",
     "ember-cli-test-loader": "^1.1.0",
     "ember-cli-uglify": "^1.2.0",
