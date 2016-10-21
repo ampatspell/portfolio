@@ -1,3 +1,7 @@
+## 0.1.35
+
+* [new] animated carousel for galleries
+
 ## 0.1.34
 
 * [new] default to 'vertical' gallery style when creating new galleries
