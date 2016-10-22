@@ -1,9 +1,18 @@
 .ui-backend-tree {
+  overflow: hidden;
   .ui-backend-tree-item {
     position: relative;
+    z-index: 0;
     > .content {
       padding: 10px;
-      border-bottom: 1px solid #eee;
+      &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -1000px;
+        right: 0;
+        border-bottom: 1px solid #eee;
+      }
       > .title {
         .backend-font(15px, 18px);
         .ellipsis;
@@ -38,28 +47,18 @@
     }
     .ui-transition-opacity;
     &.dragging {
-      > .content {
-        border-bottom: 1px solid rgba(255,255,255,0);
+      > .content,
+      .ui-backend-tree-item > .content {
+        &:before {
+          opacity: 0;
+        }
       }
     }
     &.dragging-delayed {
       opacity: 0.5;
     }
     > .nested {
-      > .ui-backend-tree-item {
-        > .content {
-          padding-left: 30px;
-          border-top: none;
-        }
-        > .nested {
-          > .ui-backend-tree-item {
-            > .content {
-              padding-left: 60px;
-              border-top: none;
-            }
-          }
-        }
-      }
+      padding-left: 20px;
     }
   }
 }
