@@ -25,7 +25,6 @@
 
 # TODO
 
-* all sections can have subsections
 * kategorijām settings, vai kategorija by-default ir atvērta
 * full-screen podziņa, melns backgrounds
 * gallery index
@@ -41,3 +40,4 @@
 # DONE
 
 * `page` nerādās title, h1 ir title stilā
+* all sections can have subsections
