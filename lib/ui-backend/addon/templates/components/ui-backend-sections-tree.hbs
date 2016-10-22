@@ -3,5 +3,10 @@
 </div>
 
 {{#each sections.sortedRootSections as |model|}}
-  {{ui-backend-sections-tree-item model=model select=(action 'select') reorder=(action 'reorder')}}
+  {{ui-backend-sections-tree-item
+      model=model
+      select=(action 'select')
+      new=(action 'new')
+      reorder=(action 'reorder')
+  }}
 {{/each}}
