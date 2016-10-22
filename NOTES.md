@@ -25,7 +25,7 @@
 
 # TODO
 
-* `page` nerādās title, h1 ir title stilā
+* all sections can have subsections
 * kategorijām settings, vai kategorija by-default ir atvērta
 * full-screen podziņa, melns backgrounds
 * gallery index
@@ -37,3 +37,7 @@
 * Change password
 * Open requested page after login
 * Blog editor
+
+# DONE
+
+* `page` nerādās title, h1 ir title stilā
