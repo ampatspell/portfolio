@@ -19,7 +19,7 @@ export default Model.extend({
   slug: attr('string'),
   visible: attr('boolean'),
 
-  category: belongsTo('section', { inverse: 'sections' }),
+  category: belongsTo('section', { inverse: 'sections', polymorphic: true }),
 
   sections: hasMany('section', { inverse: 'category', persist: false }),
   sortedSectionsDesc: [ 'position' ],
