@@ -1,11 +1,12 @@
 import Ember from 'ember';
-import { Model, prefix, attr, belongsTo } from 'sofa';
+import { Model, prefix, attr, belongsTo, hasMany } from 'sofa';
 import id from '../util/make-id';
 import slugify from '../util/slugify';
 import { fallback } from '../util/computed';
 
 const {
-  RSVP: { resolve },
+  computed: { sort, filterBy },
+  RSVP: { resolve, all },
   inject: { service },
   computed
 } = Ember;
@@ -17,7 +18,13 @@ export default Model.extend({
   position: attr('integer'),
   slug: attr('string'),
   visible: attr('boolean'),
-  category: belongsTo('category', { inverse: 'sections' }),
+
+  category: belongsTo('section', { inverse: 'sections' }),
+
+  sections: hasMany('section', { inverse: 'category', persist: false }),
+  sortedSectionsDesc: [ 'position' ],
+  sortedSections: sort('sections', 'sortedSectionsDesc'),
+  sortedVisibleSections: filterBy('sortedSections', 'visible', true),
 
   pageTitle: attr('string'),
   pageTitle_: fallback('pageTitle', 'Untitled'),
@@ -77,7 +84,9 @@ export default Model.extend({
   },
 
   deleteNested() {
-    return this.delete();
+    return all(this.get('sections').map(section => section.deleteNested())).then(() => {
+      return this.delete();
+    });
   },
 
   loadNested() {
