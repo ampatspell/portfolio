@@ -16,9 +16,6 @@
 * Komercfotogāfija
 ```
 
-* route -- custom links
-* kategorija -- atverama, aizverama
-
 ``` plain
 / -- balta lapa
 /autordarbi --- kolekciju indekss, viena konkrēta bilde, nosaukums
@@ -26,15 +23,16 @@
 /autordarbi/pilsetvide/index -- "pilsētvide" bilžu indekss. augšā nosaukums, kolekcijas indekss
 ```
 
-Kolekcijām var būt vairāki reprezentācijas stili.
-
-Sākam ar index + pa vienai bildei ar '<- 1 ->'
-
-* Kolekcija ir bildes
-* Viens logins ar db _admin
-* Bildei var būt nosaukums, īss komentārs.
-
 # TODO
+
+* full-screen podziņa, melns backgrounds
+* gallery index
+* galerijas apraksts tikai galerijas indeksā
+* kategorijām settings, vai kategorija by-default ir atvērta
+* kategorijām ir index ar 1 bildi un nosaukumu katrai apakšsadaļai
+* visiem sectioniem ir titulbilde
+* `page` nerādās title, h1 ir title stilā
+* carousel galerija līdzīgi kā 52f
 
 * Change password
 * Open requested page after login
