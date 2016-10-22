@@ -15,15 +15,17 @@ export default {
         let all = json.rows.map(item => item.doc);
         return Ember.RSVP.all(all.map(doc => {
 
-          let title = doc.title;
-          delete doc.title;
-          doc.page_title = title;
+          if(doc.title) {
+            let title = doc.title;
+            delete doc.title;
+            doc.page_title = title;
+          }
 
           let category = doc.category;
           if(category && typeof category === 'string') {
             let cat = all.findBy('_id', category);
             let type = cat.type.split(':')[1];
-            category = {
+            doc.category = {
               id: cat._id,
               type
             };
