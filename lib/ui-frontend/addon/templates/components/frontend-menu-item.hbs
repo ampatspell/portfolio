@@ -1,7 +1,5 @@
 {{#if section.isLink}}
   <div class="title"><a href={{section.url}} rel="noopener noreferrer" target={{if section.tab '_blank'}}>{{section.menuTitle_}}</a></div>
-{{else if section.isCategory}}
-  <div class="title">{{section.menuTitle_}}</div>
 {{else}}
   <div class="title">{{#link-to 'sections.section' section}}{{section.menuTitle_}}{{/link-to}}</div>
 {{/if}}
