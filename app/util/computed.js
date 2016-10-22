@@ -4,9 +4,17 @@ const {
   computed
 } = Ember;
 
-export const fallback = (key, defaultValue) => {
-  return computed(key, function() {
-    return this.get(key) || defaultValue;
+export const fallback = (...args) => {
+  let defaultValue = args.pop();
+  return computed(...args, function() {
+    for(let i = 0; i < args.length; i++) {
+      let key = args[i];
+      let value = this.get(key);
+      if(value) {
+        return value;
+      }
+    }
+    return defaultValue;
   }).readOnly();
 };
 

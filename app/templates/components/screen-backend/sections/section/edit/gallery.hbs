@@ -1,7 +1,8 @@
 {{ui-backend-header title=(if section.isNew 'New gallery' 'Edit gallery')}}
 
 {{#ui-backend-block}}
-  {{ui-backend-row-input title='Title' value=section.title}}
+  {{ui-backend-row-input title='Title' value=section.pageTitle}}
+  {{ui-backend-row-input title='Menu title' value=section.menuTitle placeholder='Optional'}}
   {{ui-backend-row-textarea title='Description' value=section.description}}
   {{ui-backend-row-checkbox title='Gallery is public' value=section.visible}}
 {{/ui-backend-block}}

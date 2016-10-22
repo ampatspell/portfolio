@@ -19,12 +19,14 @@ export default Model.extend({
   visible: attr('boolean'),
   category: belongsTo('category', { inverse: 'sections' }),
 
-  title: attr('string'),
-  title_: fallback('title', 'Untitled'),
+  pageTitle: attr('string'),
+  pageTitle_: fallback('pageTitle', 'Untitled'),
 
-  slugifiedTitle: computed('title', function() {
-    let title = this.get('title') || 'untitled';
-    return slugify(title);
+  menuTitle: attr('string'),
+  menuTitle_: fallback('menuTitle', 'pageTitle', 'Untitled'),
+
+  slugifiedTitle: computed('menuTitle_', function() {
+    return slugify(this.get('menuTitle_'));
   }).readOnly(),
 
   createdAt: attr('date'),

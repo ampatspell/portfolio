@@ -1,9 +1,9 @@
 {{#if section.isLink}}
-  <div class="title"><a href={{section.url}} rel="noopener noreferrer" target={{if section.tab '_blank'}}>{{section.title_}}</a></div>
+  <div class="title"><a href={{section.url}} rel="noopener noreferrer" target={{if section.tab '_blank'}}>{{section.menuTitle_}}</a></div>
 {{else if section.isCategory}}
-  <div class="title">{{section.title_}}</div>
+  <div class="title">{{section.menuTitle_}}</div>
 {{else}}
-  <div class="title">{{#link-to 'sections.section' section}}{{section.title_}}{{/link-to}}</div>
+  <div class="title">{{#link-to 'sections.section' section}}{{section.menuTitle_}}{{/link-to}}</div>
 {{/if}}
 {{#if section.sortedVisibleSections}}
   <div class="nested">

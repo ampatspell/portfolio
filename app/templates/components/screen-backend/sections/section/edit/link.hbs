@@ -1,7 +1,8 @@
 {{ui-backend-header title=(if section.isNew 'New link' 'Edit link')}}
 
 {{#ui-backend-block}}
-  {{ui-backend-row-input title='Title' value=section.title}}
+  {{ui-backend-row-input title='Title' value=section.pageTitle}}
+  {{ui-backend-row-input title='Menu title' value=section.menuTitle placeholder='Optional'}}
   {{ui-backend-row-input title='URL' value=section.url}}
   {{ui-backend-row-checkbox title='Page opens in new tab' value=section.tab}}
   {{ui-backend-row-checkbox title='Link is visible' value=section.visible}}

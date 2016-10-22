@@ -1,13 +1,17 @@
 /* global emit */
 
-const gallery = {
+const main = {
   views: {
-    all: {
+    'by-type': {
       map(doc) {
-        if(doc.type !== 'section:gallery') {
-          return;
+        emit(doc.type, null);
+      }
+    },
+    'section': {
+      map(doc) {
+        if(doc.type && doc.type.indexOf('section:') === 0) {
+          emit(doc._id, null);
         }
-        emit(doc._id);
       }
     }
   }
@@ -40,7 +44,7 @@ const galleryimage = {
 };
 
 export default {
-  gallery,
+  main,
   section,
   'gallery-image': galleryimage
 };

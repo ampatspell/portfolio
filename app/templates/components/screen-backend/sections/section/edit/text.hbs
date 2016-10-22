@@ -1,7 +1,8 @@
 {{ui-backend-header title=(if section.isNew 'New text page' 'Edit text page')}}
 
 {{#ui-backend-block}}
-  {{ui-backend-row-input title='Title' value=section.title}}
+  {{ui-backend-row-input title='Title' value=section.pageTitle}}
+  {{ui-backend-row-input title='Menu title' value=section.menuTitle placeholder='Optional'}}
   {{ui-backend-row-textarea title='Body' value=section.body}}
   {{ui-backend-row-checkbox title='Page is visible' value=section.visible}}
   {{#ui-backend-row}}

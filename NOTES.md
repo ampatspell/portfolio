@@ -25,13 +25,13 @@
 
 # TODO
 
+* `page` nerādās title, h1 ir title stilā
+* kategorijām settings, vai kategorija by-default ir atvērta
 * full-screen podziņa, melns backgrounds
 * gallery index
 * galerijas apraksts tikai galerijas indeksā
-* kategorijām settings, vai kategorija by-default ir atvērta
 * kategorijām ir index ar 1 bildi un nosaukumu katrai apakšsadaļai
 * visiem sectioniem ir titulbilde
-* `page` nerādās title, h1 ir title stilā
 * carousel galerija līdzīgi kā 52f
 
 * Change password
