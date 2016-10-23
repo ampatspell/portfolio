@@ -41,22 +41,9 @@ $ ember s
 $ open http://127.0.0.1:5984
 ```
 
-## Insert design documents
+## Setup database
 
-Right now there is no automatic database setup. Sorry about that.
-
-Open the site, open javascript console and run:
-
-``` javascript
-// login
-store.get('session').setProperties({ name: 'admin', password: 'your couchdb _admin password' });
-store.get('session').save();
-```
-
-``` javascript
-// insert design documents
-db.insertDesignDocuments();
-```
+Open http://127.0.0.1:5984/_setup, login as a CouchDB admin. This will create database if missing and insert all necessary design documents.
 
 ## Customize site
 
