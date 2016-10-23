@@ -1,3 +1,7 @@
+## 0.1.39
+
+* [new] backend now supports mobiles and tablets
+
 ## 0.1.38
 
 * [new] any section no can have nested sections
