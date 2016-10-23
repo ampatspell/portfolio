@@ -1,0 +1,9 @@
+{{ui-backend-header title=(if section.isNew 'New delimiter' 'Edit delimiter')}}
+
+{{#ui-backend-block}}
+
+  {{screen-backend/sections/section/edit/ui-section-rows section=section}}
+
+  {{screen-backend/sections/section/edit/ui-section-actions section=section save=(action 'save') cancel=(action 'cancel')}}
+
+{{/ui-backend-block}}
