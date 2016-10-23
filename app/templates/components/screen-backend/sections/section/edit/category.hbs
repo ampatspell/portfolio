@@ -4,6 +4,7 @@
   {{ui-backend-row-input title='Title' value=section.pageTitle}}
   {{ui-backend-row-input title='Menu title' value=section.menuTitle placeholder='Optional'}}
   {{ui-backend-row-checkbox title='Category is visible' value=section.visible}}
+  {{ui-backend-row-checkbox title='Category expands subsections in menu by default' value=section.open}}
   {{#ui-backend-row}}
     {{ui-backend-button title='Save' action=(action 'save')}}
     {{#if section.isNew}}
