@@ -22,22 +22,19 @@ Deployed as a couchapp.
 $ git clone https://github.com/ampatspell/portfolio.git
 $ cd portfolio
 $ npm install; bower install
-$ cp config-example.js config.js
+$ cp sites/base-example.js sites/base.js
 ```
 
 ``` javascript
-// config.js
+// sites/base.js
 module.exports = {
-  title: 'Site title',
-  admin: '<admin_role_name>',
-  deploy: {
-    url: 'http://name:password@server.com:5984',
-    name: '<couchdb_database_name>'
-  }
+  url: 'http://remote:couchdb@server.url:5984'
 };
 ```
 
 ## Run locally
+
+This will run default site configuration.
 
 ```
 $ ember s
@@ -61,16 +58,36 @@ store.get('session').save();
 db.insertDesignDocuments();
 ```
 
+## Customize site
+
+```
+$ cp sites/default.js sites/yoursite.js
+```
+
+``` javascript
+// sites/yoursite.js
+module.exports = Object.assign({
+  title:    'Yoursite',
+  theme:    'yoursite',
+  admin:    'portfolio-yoursite-admin',
+  database: 'portfolio-yoursite'
+}, require('./base'));
+```
+
+```
+$ cp -r app/styles/default app/styles/yoursite
+```
+
 ## Deploy
 
 ``` plain
-$ npm run deploy
+$ SITE=yoursite ember deploy production
 ```
 
 Add CouchDB vhost:
 
 ``` plain
-vhosts -> www.site.com -> /<database_name>/_design/portfolio/_rewrite
+vhosts -> www.yoursite.com -> /<database_name>/_design/portfolio/_rewrite
 ```
 
 Add nginx host configuration:
