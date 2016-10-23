@@ -37,6 +37,7 @@ export default Section.extend({
   sortedImages: sort('images', 'sortedImagesDesc'),
 
   isGallery: true,
+  hasSummary: true,
 
   deleteNested() {
     return this.get('images.promise').then(images => {

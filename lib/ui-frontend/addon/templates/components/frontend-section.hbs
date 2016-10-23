@@ -1,6 +1,12 @@
 {{#unless section.isIndex}}
-  <div class="title">{{section.pageTitle_}}</div>
+  <div class="title">
+    {{section.pageTitle_}}
+    {{#if section.hasSummary}}
+      <div class='index'>{{#link-to 'sections.section.summary' section}}{{fa-icon 'th'}}{{/link-to}}</div>
+    {{/if}}
+  </div>
 {{/unless}}
+
 <div class="content">
   {{component componentName section=section}}
 </div>
