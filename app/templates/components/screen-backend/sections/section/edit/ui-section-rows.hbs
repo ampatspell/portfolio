@@ -1,12 +1,16 @@
-{{ui-backend-row-input title='Title' value=section.pageTitle}}
-{{ui-backend-row-input title='Menu title' value=section.menuTitle placeholder='Optional'}}
+{{#unless section.isDelimiter}}
+  {{ui-backend-row-input title='Title' value=section.pageTitle}}
+  {{ui-backend-row-input title='Menu title' value=section.menuTitle placeholder='Optional'}}
+{{/unless}}
 
 {{yield}}
 
 {{ui-backend-row-checkbox title=(ui-join section.modelScreenName 'is visible in menu' delimiter=' ') value=section.visible}}
 
-{{ui-backend-row-checkbox
-    title=(ui-join section.modelScreenName 'subsections in menu are always expanded' delimiter=' ')
-    value=section.open
-    disabled=section.isLink
-}}
+{{#unless section.isDelimiter}}
+  {{ui-backend-row-checkbox
+      title=(ui-join section.modelScreenName 'subsections in menu are always expanded' delimiter=' ')
+      value=section.open
+      disabled=section.isLink
+  }}
+{{/unless}}
