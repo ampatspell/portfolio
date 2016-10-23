@@ -3,7 +3,10 @@
 
 {{yield}}
 
-{{#unless section.isLink}}
-  {{ui-backend-row-checkbox title=(ui-join section.modelScreenName 'is visible' delimiter=' ') value=section.visible}}
-  {{ui-backend-row-checkbox title=(ui-join section.modelScreenName 'expands subsections in menu by default' delimiter=' ') value=section.open}}
-{{/unless}}
+{{ui-backend-row-checkbox title=(ui-join section.modelScreenName 'is visible in menu' delimiter=' ') value=section.visible}}
+
+{{ui-backend-row-checkbox
+    title=(ui-join section.modelScreenName 'subsections in menu are always expanded' delimiter=' ')
+    value=section.open
+    disabled=section.isLink
+}}
