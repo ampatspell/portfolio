@@ -1,3 +1,7 @@
+## 0.1.41
+
+* [new] `/_setup` route for database setup (create db, insert design documents)
+
 ## 0.1.40
 
 * [new] delimiter section
