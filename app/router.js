@@ -33,6 +33,8 @@ Router.map(function() {
     });
   });
 
+  this.route('setup', { path: '_setup' });
+
   this.route('notfound', { path: '*path' });
 
 });
