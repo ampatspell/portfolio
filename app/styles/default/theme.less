@@ -25,8 +25,8 @@
 
   > .frontend-gear {
     position: fixed;
-    top: 30px;
-    right: 30px;
+    top: 0;
+    right: 0;
     width: 40px;
     height: 40px;
     line-height: 40px;
@@ -72,9 +72,50 @@
   > .frontend-section {
     padding: 40px 40px 0 @menu-width-desktop + 20px;
     max-width: 1024px + @menu-width-desktop + 20px + 40px;
+    > .title {
+      .clearfix;
+      a {
+        font-size: 15px;
+      }
+      > .back {
+        display: inline-block;
+      }
+      > .index {
+        float: right;
+      }
+    }
     &.index {
       > .content {
         padding-top: 4px;
+      }
+    }
+    &.summary {
+      > .content {
+        > .gallery {
+          > .description {
+            display: block;
+            padding-bottom: 40px;
+          }
+          > .images {
+            madding-bottom: 20px;
+            .clearfix;
+            > .image {
+              float: left;
+              width: 200px;
+              height: 160px;
+              text-align: center;
+              > .image {
+                background: url('') no-repeat center;
+                background-size: contain;
+                width: 190px;
+                height: 130px;
+              }
+              > .description {
+                .frontend-font(11px);
+              }
+            }
+          }
+        }
       }
     }
   }
@@ -90,6 +131,24 @@
       padding: 40px 40px 0 40px;
       max-width: 100%;
       width: 100%;
+      &.summary {
+        > .content {
+          > .gallery {
+            > .images {
+              padding-bottom: 20px;
+              > .image {
+                width: 170px;
+                height: 140px;
+                > .image {
+                  background-color: #eee;
+                  width: 160px;
+                  height: 110px;
+                }
+              }
+            }
+          }
+        }
+      }
     }
 
   }
@@ -146,6 +205,26 @@
             }
             > .image {
               margin-bottom: 20px;
+            }
+          }
+        }
+      }
+      &.summary {
+        > .content {
+          > .gallery {
+            > .description {
+              padding: 0 20px 20px 20px;
+            }
+            > .images {
+              padding: 0 0 10px 20px;
+              > .image {
+                width: 170px;
+                height: 140px;
+                > .image {
+                  width: 160px;
+                  height: 110px;
+                }
+              }
             }
           }
         }
