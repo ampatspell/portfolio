@@ -1,0 +1,12 @@
+<div class="title">
+  <div class="back">{{#link-to 'sections.section' section}}{{fa-icon 'chevron-left'}}{{/link-to}}</div>
+  {{section.pageTitle_}}
+</div>
+
+{{#if componentName}}
+  <div class="content">
+    {{component componentName section=section}}
+  </div>
+{{else}}
+  <div class="message">This section has no index</div>
+{{/if}}

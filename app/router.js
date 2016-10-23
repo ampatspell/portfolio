@@ -15,6 +15,7 @@ Router.map(function() {
 
   this.route('sections', { path: 'pages' }, function() {
     this.route('section', { path: '/*path' }, function() {
+      this.route('summary', { path: '/index' });
     });
   });
 
