@@ -27,7 +27,16 @@
         font-weight: bold;
       }
       > .value {
-
+      }
+      &.pre {
+        > .value {
+          white-space: pre-wrap;
+        }
+      }
+      &.small {
+        > .value {
+          .backend-font(11px);
+        }
       }
     }
     &.faded {
