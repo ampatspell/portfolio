@@ -24,6 +24,13 @@ export default Database.extend({
       promises.push(this.get('documents.design').save(name, ddoc));
     }
     return all(promises);
+  },
+
+  didSelectSection(model) {
+    let models = [...model.ancestors(), model];
+    this.get('sections').forEach(model => {
+      model.set('isOpen', models.indexOf(model) !== -1);
+    });
   }
 
 });

@@ -20,9 +20,9 @@ export default Base.extend({
       let position;
       let category = this.get('category');
       if(category) {
-        position = (category.get('sortedSections.lastObject.position') || -1) + 1;
+        position = (category.get('sortedSections.lastObject.position') || 0) + 1;
       } else {
-        position = (db.get('sections.sortedRootSections.lastObject.position') || -1) + 1;
+        position = (db.get('sections.sortedRootSections.lastObject.position') || 0) + 1;
       }
       let modelName = model.get('name');
       let props = model.mergeDefaults({ category, position });

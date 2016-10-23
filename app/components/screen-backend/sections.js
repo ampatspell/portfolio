@@ -6,8 +6,12 @@ export default Base.extend({
   sections: null,
 
   actions: {
-    new() {
-      this.transitionTo('backend.sections.new');
+    new(parent) {
+      if(parent) {
+        this.transitionTo('backend.sections.section.new', parent);
+      } else {
+        this.transitionTo('backend.sections.new');
+      }
     }
   }
 

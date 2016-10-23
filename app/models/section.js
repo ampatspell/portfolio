@@ -1,14 +1,30 @@
 import Ember from 'ember';
-import { Model, prefix, attr, belongsTo } from 'sofa';
+import { Model, prefix, attr, belongsTo, hasMany } from 'sofa';
 import id from '../util/make-id';
 import slugify from '../util/slugify';
 import { fallback } from '../util/computed';
 
 const {
-  RSVP: { resolve },
+  computed: { sort, filterBy },
+  RSVP: { resolve, all },
   inject: { service },
   computed
 } = Ember;
+
+const isOpen = () => {
+  const lookup = model => {
+    return model.get('open') || model._isOpen || false;
+  };
+  return computed('open', {
+    get() {
+      return lookup(this);
+    },
+    set(key, value) {
+      this._isOpen = value;
+      return lookup(this);
+    }
+  });
+};
 
 export default Model.extend({
 
@@ -17,7 +33,16 @@ export default Model.extend({
   position: attr('integer'),
   slug: attr('string'),
   visible: attr('boolean'),
-  category: belongsTo('category', { inverse: 'sections' }),
+
+  category: belongsTo('section', { inverse: 'sections', polymorphic: true }),
+
+  sections: hasMany('section', { inverse: 'category', persist: false }),
+  sortedSectionsDesc: [ 'position' ],
+  sortedSections: sort('sections', 'sortedSectionsDesc'),
+  sortedVisibleSections: filterBy('sortedSections', 'visible', true),
+
+  open: attr('boolean'),
+  isOpen: isOpen(),
 
   pageTitle: attr('string'),
   pageTitle_: fallback('pageTitle', 'Untitled'),
@@ -58,6 +83,14 @@ export default Model.extend({
     return slug;
   }).readOnly(),
 
+  ancestors() {
+    let category = this.get('category');
+    if(category) {
+      return [ category, ...category.ancestors() ];
+    }
+    return [];
+  },
+
   willCreate() {
     this.set('id', id(12));
     let now = new Date();
@@ -77,11 +110,17 @@ export default Model.extend({
   },
 
   deleteNested() {
-    return this.delete();
+    return all(this.get('sections').map(section => section.deleteNested())).then(() => {
+      return this.delete();
+    });
   },
 
   loadNested() {
     return resolve();
+  },
+
+  didSelect() {
+    this.set('isOpen', true);
   }
 
 });

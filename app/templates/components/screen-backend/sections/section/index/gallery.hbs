@@ -4,7 +4,7 @@
   {{/ui-backend-block}}
 {{/if}}
 
-{{#ui-backend-block}}
+{{#screen-backend/sections/section/index/ui-section-rows section=section}}
   {{ui-backend-row-value
       title='Gallery Type'
       value=(ui-join section.galleryTypeModel.title section.galleryTypeModel.description delimiter=' – ')
@@ -13,7 +13,7 @@
       title='If image has no description'
       value=(if section.showImageFilenames 'Show filename without extension' 'Keep it blank')
   }}
-{{/ui-backend-block}}
+{{/screen-backend/sections/section/index/ui-section-rows}}
 
 {{#ui-backend-block}}
   {{#if section.images.isLoaded}}
@@ -31,6 +31,6 @@
   {{/if}}
 {{/ui-backend-block}}
 
-{{#screen-backend/sections/section/index/ui-actions section=section}}
+{{#screen-backend/sections/section/index/ui-section-actions section=section}}
   {{ui-backend-button title='Upload images' action=(action 'upload')}}
-{{/screen-backend/sections/section/index/ui-actions}}
+{{/screen-backend/sections/section/index/ui-section-actions}}

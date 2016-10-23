@@ -25,11 +25,10 @@
 
 # TODO
 
-* all sections can have subsections
-* kategorijām settings, vai kategorija by-default ir atvērta
 * full-screen podziņa, melns backgrounds
 * gallery index
 * galerijas apraksts tikai galerijas indeksā
+* single galerijai prev-next navigācija carousel
 * kategorijām ir index ar 1 bildi un nosaukumu katrai apakšsadaļai
 * visiem sectioniem ir titulbilde
 * carousel galerija līdzīgi kā 52f
@@ -41,3 +40,5 @@
 # DONE
 
 * `page` nerādās title, h1 ir title stilā
+* all sections can have subsections
+* kategorijām settings, vai kategorija by-default ir atvērta

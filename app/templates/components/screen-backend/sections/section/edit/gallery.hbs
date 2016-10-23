@@ -1,10 +1,9 @@
 {{ui-backend-header title=(if section.isNew 'New gallery' 'Edit gallery')}}
 
 {{#ui-backend-block}}
-  {{ui-backend-row-input title='Title' value=section.pageTitle}}
-  {{ui-backend-row-input title='Menu title' value=section.menuTitle placeholder='Optional'}}
-  {{ui-backend-row-textarea title='Description' value=section.description}}
-  {{ui-backend-row-checkbox title='Gallery is public' value=section.visible}}
+  {{#screen-backend/sections/section/edit/ui-section-rows section=section}}
+    {{ui-backend-row-textarea title='Description' value=section.description}}
+  {{/screen-backend/sections/section/edit/ui-section-rows}}
 {{/ui-backend-block}}
 
 {{#if section.galleryTypeModel}}
@@ -54,14 +53,10 @@
 
 {{#ui-backend-block}}
 
-  {{#ui-backend-row}}
+  {{#screen-backend/sections/section/edit/ui-section-actions section=section save=(action 'save') cancel=(action 'cancel')}}
     {{#if (ui-and section.isNew section.galleryTypeModel)}}
       {{ui-backend-button title='Change type' action=(action 'deselectType')}}
     {{/if}}
-    {{ui-backend-button title='Save' action=(action 'save')}}
-    {{#if section.isNew}}
-      {{ui-backend-button title='Cancel' action=(action 'cancel')}}
-    {{/if}}
-  {{/ui-backend-row}}
+  {{/screen-backend/sections/section/edit/ui-section-actions}}
 
 {{/ui-backend-block}}

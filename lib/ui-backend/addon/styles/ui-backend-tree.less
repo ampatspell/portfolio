@@ -21,7 +21,24 @@
         .backend-font(13px, 17px);
         .ellipsis;
       }
-      border-bottom: 1px solid #eee;
+      > .new {
+        font-size: 18px;
+        position: absolute;
+        right: 10px;
+        top: 17px;
+        opacity: 0;
+        color: #333;
+        .ui-transition-opacity(0.1s);
+        &:hover {
+          color: #000;
+        }
+      }
+      &:hover {
+        padding-right: 30px;
+        > .new {
+          opacity: 1;
+        }
+      }
     }
     &.action {
       .content {

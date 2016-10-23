@@ -1,11 +1,12 @@
 <div class="content" {{action 'click'}}>
   <div class="title">{{model.menuTitle_}}</div>
   <div class="info">{{model.modelScreenName}}</div>
+  <div class="new" {{action 'new' bubbles=false}}>{{fa-icon 'plus-square'}}</div>
 </div>
 {{#if model.sortedSections}}
   <div class="nested">
     {{#each model.sortedSections as |nestedModel|}}
-      {{ui-backend-sections-tree-item model=nestedModel select=attrs.select reorder=attrs.reorder}}
+      {{ui-backend-sections-tree-item model=nestedModel select=attrs.select new=attrs.new reorder=attrs.reorder}}
     {{/each}}
   </div>
 {{/if}}
