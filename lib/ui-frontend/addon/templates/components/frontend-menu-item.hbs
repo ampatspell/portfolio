@@ -3,9 +3,9 @@
 {{else}}
   <div class="title">{{#link-to 'sections.section' section}}{{section.menuTitle_}}{{/link-to}}</div>
 {{/if}}
-{{#if section.sortedVisibleSections}}
+{{#if subsections}}
   <div class="nested">
-    {{#each section.sortedVisibleSections as |section|}}
+    {{#each subsections as |section|}}
       {{frontend-menu-item section=section}}
     {{/each}}
   </div>

@@ -91,6 +91,9 @@ export default Model.extend({
 
   loadNested() {
     return resolve();
+  },
+
+  didSelect() {
   }
 
 });
