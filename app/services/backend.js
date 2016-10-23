@@ -26,7 +26,7 @@ const sections = [
   { name: 'gallery',   title: 'Gallery',   description: 'Image gallery', defaults: { showImageFilenames: false, galleryType: defaultGalleryType } },
   { name: 'text',      title: 'Page',      description: 'Single markdown formatted text page' },
   { name: 'link',      title: 'Link',      description: 'External url' },
-  { name: 'delimiter', title: 'Delimiter', description: 'Blank menu line' },
+  { name: 'delimiter', title: 'Delimiter', description: 'Blank menu line', defaults: { pageTitle: 'Delimiter' } },
 ];
 
 const sectionProps = (props) => {
