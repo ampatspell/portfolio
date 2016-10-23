@@ -11,6 +11,21 @@ const {
   computed
 } = Ember;
 
+const isOpen = () => {
+  const lookup = model => {
+    return model.get('open') || model._isOpen || false;
+  };
+  return computed('open', {
+    get() {
+      return lookup(this);
+    },
+    set(key, value) {
+      this._isOpen = value;
+      return lookup(this);
+    }
+  });
+};
+
 export default Model.extend({
 
   id: prefix(),
@@ -25,6 +40,9 @@ export default Model.extend({
   sortedSectionsDesc: [ 'position' ],
   sortedSections: sort('sections', 'sortedSectionsDesc'),
   sortedVisibleSections: filterBy('sortedSections', 'visible', true),
+
+  open: attr('boolean'),
+  isOpen: isOpen(),
 
   pageTitle: attr('string'),
   pageTitle_: fallback('pageTitle', 'Untitled'),
@@ -65,6 +83,14 @@ export default Model.extend({
     return slug;
   }).readOnly(),
 
+  ancestors() {
+    let category = this.get('category');
+    if(category) {
+      return [ category, ...category.ancestors() ];
+    }
+    return [];
+  },
+
   willCreate() {
     this.set('id', id(12));
     let now = new Date();
@@ -94,6 +120,7 @@ export default Model.extend({
   },
 
   didSelect() {
+    this.set('isOpen', true);
   }
 
 });
