@@ -30,6 +30,8 @@ Router.map(function() {
       });
     });
     this.route('settings', function() {
+      this.route('about');
+      this.route('changelog');
     });
   });
 

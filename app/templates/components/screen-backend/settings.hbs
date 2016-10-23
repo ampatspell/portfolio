@@ -1,0 +1,20 @@
+{{#ui-backend-master-detail class=masterDetailClass as |md|}}
+
+  {{#md.master}}
+    {{ui-backend-header title='Settings'}}
+
+    <div class="ui-backend-tree">
+      {{#each routes as |route|}}
+        <div class="ui-backend-tree-item" {{action transitionTo route.route}}>
+          <div class="content">{{route.title}}</div>
+        </div>
+      {{/each}}
+    </div>
+
+  {{/md.master}}
+
+  {{#md.detail}}
+    {{yield}}
+  {{/md.detail}}
+
+{{/ui-backend-master-detail}}

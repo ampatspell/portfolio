@@ -1,16 +1,11 @@
 import Ember from 'ember';
 import Base from './sections/-base';
+import createMasterDetailClass from './-master-detail-class';
 
-const {
-  inject: { service },
-  computed: { equal },
-} = Ember;
+const MasterDetailClass = createMasterDetailClass('backend.sections.index');
 
-export default Base.extend({
+export default Base.extend(MasterDetailClass, {
   classNameBindings: [ ':screen-backend-sections' ],
-
-  router: service(),
-  isIndex: equal('router.currentRouteName', 'backend.sections.index'),
 
   sections: null,
 

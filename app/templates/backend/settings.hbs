@@ -1,11 +1,3 @@
-{{#ui-backend-master-detail as |md|}}
-
-  {{#md.master}}
-    {{ui-backend-header title='Settings'}}
-  {{/md.master}}
-
-  {{#md.detail}}
-    {{outlet}}
-  {{/md.detail}}
-
-{{/ui-backend-master-detail}}
+{{#screen-backend/settings}}
+  {{outlet}}
+{{/screen-backend/settings}}
