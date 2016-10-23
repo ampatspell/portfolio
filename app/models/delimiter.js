@@ -1,4 +1,4 @@
-import { prefix, type, attr } from 'sofa';
+import { prefix, type } from 'sofa';
 import Section from './section';
 
 export default Section.extend({
