@@ -4,23 +4,42 @@
     top: 0;
     bottom: 0;
     @master: 320px;
-    @master-tablet: 180px;
     &.master {
       left: 0;
       width: @master;
       border-right: 1px solid #eee;
       overflow-y: scroll;
-      @media @tablet {
-        width: @master-tablet;
-      }
+      -webkit-overflow-scrolling: touch;
     }
     &.detail {
       left: @master;
       right: 0;
       overflow-y: scroll;
+      -webkit-overflow-scrolling: touch;
       padding-bottom: 20px;
-      @media @tablet {
-        left: @master-tablet;
+    }
+  }
+
+  @media @mobile, @tablet {
+    &.master {
+      > .ui-backend-master-detail-column {
+        &.master {
+          width: 100%;
+        }
+        &.detail {
+          display: none;
+        }
+      }
+    }
+    &.detail {
+      > .ui-backend-master-detail-column {
+        &.master {
+          display: none;
+        }
+        &.detail {
+          left: 0;
+          width: 100%;
+        }
       }
     }
   }

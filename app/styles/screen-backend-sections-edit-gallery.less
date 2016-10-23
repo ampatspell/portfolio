@@ -13,7 +13,10 @@
           width: 300px;
           height: 180px;
           vertical-align: top;
-
+          @media @mobile {
+            width: 220px;
+            height: 150px;
+          }
         }
       }
       > .info {
@@ -40,6 +43,27 @@
         > .image,
         > .info {
           border-top: 1px solid #eee;
+        }
+      }
+    }
+    @media @mobile {
+      display: block;
+      > .ui-backend-row.image {
+        display: block;
+        padding: 0;
+        &:first-child {
+          > .image,
+          > .info {
+            border-top: none;
+          }
+        }
+        > .image,
+        > .info {
+          display: block;
+          border-bottom: none;
+        }
+        > .info {
+          padding: 0 20px 40px 20px;
         }
       }
     }

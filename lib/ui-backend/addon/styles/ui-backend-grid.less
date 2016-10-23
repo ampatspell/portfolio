@@ -28,9 +28,13 @@
         }
         > .delete {
           position: absolute;
-          bottom: 4px;
-          right: 10px;
-          .backend-font(12px);
+          bottom: 0px;
+          right: 0;
+          .backend-font(12px, 30px);
+          width: 30px;
+          height: 30px;
+          text-align: center;
+          .pointer;
         }
         .ui-transition-opacity;
         &.dragging {
@@ -43,6 +47,22 @@
           opacity: 0.2;
           > .delete {
             opacity: 0;
+          }
+        }
+      }
+    }
+    @media @mobile {
+      > .content {
+        > .ui-backend-grid-item {
+          width: 150px;
+          height: 125px;
+          > .image {
+            width: 140px;
+            height: 90px;
+          }
+          > .delete {
+            bottom: -2px;
+            right: -7px;
           }
         }
       }
