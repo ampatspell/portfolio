@@ -25,9 +25,9 @@
 
 # TODO
 
-* full-screen podziņa, melns backgrounds
 * gallery index
 * galerijas apraksts tikai galerijas indeksā
+* full-screen podziņa, melns backgrounds
 * single galerijai prev-next navigācija carousel
 * kategorijām ir index ar 1 bildi un nosaukumu katrai apakšsadaļai
 * visiem sectioniem ir titulbilde
