@@ -1,8 +1,3 @@
-{{#ui-backend-block}}
-  {{ui-backend-row-value
-      title='Subsections'
-      value=(if section.open 'Are open by default' 'Are collapsed by default')
-  }}
-{{/ui-backend-block}}
+{{screen-backend/sections/section/index/ui-section-rows section=section}}
 
-{{screen-backend/sections/section/index/ui-actions section=section}}
+{{screen-backend/sections/section/index/ui-section-actions section=section}}

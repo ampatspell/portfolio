@@ -1,5 +1,9 @@
 {{ui-backend-row-input title='Title' value=section.pageTitle}}
 {{ui-backend-row-input title='Menu title' value=section.menuTitle placeholder='Optional'}}
+
 {{yield}}
-{{ui-backend-row-checkbox title=(ui-join section.modelScreenName 'is visible' delimiter=' ') value=section.visible}}
-{{ui-backend-row-checkbox title=(ui-join section.modelScreenName 'expands subsections in menu by default' delimiter=' ') value=section.open}}
+
+{{#unless section.isLink}}
+  {{ui-backend-row-checkbox title=(ui-join section.modelScreenName 'is visible' delimiter=' ') value=section.visible}}
+  {{ui-backend-row-checkbox title=(ui-join section.modelScreenName 'expands subsections in menu by default' delimiter=' ') value=section.open}}
+{{/unless}}

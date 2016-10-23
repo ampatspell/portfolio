@@ -1,0 +1,9 @@
+{{#ui-backend-block}}
+  {{#unless section.isLink}}
+    {{ui-backend-row-value
+        title='Subsections'
+        value=(if section.open 'Are open by default' 'Are collapsed by default')
+    }}
+  {{/unless}}
+  {{yield}}
+{{/ui-backend-block}}
