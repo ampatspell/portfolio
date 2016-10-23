@@ -1,3 +1,7 @@
+## 0.1.40
+
+* [new] delimiter section
+
 ## 0.1.39
 
 * [new] backend now supports mobiles and tablets
