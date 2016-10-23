@@ -1,3 +1,11 @@
+## 0.1.38
+
+* [new] any section no can have nested sections
+* [new] section can be setup to be expanded or collapsed by default (defaults to `true`)
+* [fix] backend tree nesting css
+* [fix] section initial position fixed
+* [fix] some progress with carousell UI
+
 ## 0.1.37
 
 * [new] option to show gallery image filenames as a description
