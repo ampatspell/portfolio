@@ -16,13 +16,3 @@
     <div class="message">This gallery is empty</div>
   {{/if}}
 {{/if}}
-
-<div class="navigation">
-  <div class="item icon" {{action 'prev'}}>{{fa-icon 'chevron-left'}}</div>
-  <div class="item index">{{selectedImageIndex.index}} / {{selectedImageIndex.length}}</div>
-  <div class="item icon" {{action 'next'}}>{{fa-icon 'chevron-right'}}</div>
-</div>
-
-{{#if (ui-not (ui-blank section.description))}}
-  {{markdown-convert content=section.description class='description markdown'}}
-{{/if}}
