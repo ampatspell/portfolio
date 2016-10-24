@@ -2,6 +2,7 @@
 
 let site = require('../sites/_current');
 let pkg = require('../package');
+let url = process.env.COUCH_URL;
 
 module.exports = function(environment) {
   var ENV = {
@@ -23,7 +24,7 @@ module.exports = function(environment) {
     portfolio: {
       title: site.title,
       database: {
-        url:  '/api',
+        url:  url || '/api',
         name: 'portfolio-dev'
       },
       admins: [ '_admin', site.admin ],

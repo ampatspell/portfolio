@@ -5,13 +5,21 @@ const {
   run: { scheduleOnce },
   Evented,
   $,
+  inject: { service },
+  computed: { reads }
 } = Ember;
 
 export default Ember.Service.extend(Evented, {
 
   size: null,
 
+  fastboot: service(),
+  isFastBoot: reads('fastboot.isFastBoot'),
+
   startListeningResizeEvents: on('init', function() {
+    if(this.get('isFastBoot')) {
+      return;
+    }
     this.updateWindowResize();
     $(window).on('resize', $.proxy(this._onWindowResize, this));
   }),

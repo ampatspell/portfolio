@@ -6,6 +6,9 @@ var site = require('./sites/_current');
 
 module.exports = function(defaults) {
   var app = new EmberApp(defaults, {
+    babel: {
+      includePolyfill: true
+    },
     lessOptions: {
       paths: [
         `app/styles/${site.theme}`
