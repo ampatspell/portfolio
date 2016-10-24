@@ -1,3 +1,7 @@
+## 0.1.44
+
+* [new] open markdown links in new tab, markdown css
+
 ## 0.1.43
 
 * [new] gallery indexes
