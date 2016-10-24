@@ -1,3 +1,8 @@
+## 0.1.43
+
+* [new] gallery indexes
+* [new] scroll to carousel
+
 ## 0.1.41
 
 * [new] `/_setup` route for database setup (create db, insert design documents)
