@@ -1,3 +1,7 @@
+## 0.1.47
+
+* [new] scroll to top when page content changes
+
 ## 0.1.44
 
 * [new] open markdown links in new tab, markdown css
