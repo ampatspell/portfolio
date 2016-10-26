@@ -25,11 +25,9 @@
 
 # TODO
 
-* gallery index
-* galerijas apraksts tikai galerijas indeksā
-* full-screen podziņa, melns backgrounds
-* single galerijai prev-next navigācija carousel
 * kategorijām ir index ar 1 bildi un nosaukumu katrai apakšsadaļai
+* single galerijai prev-next navigācija carousel
+* full-screen podziņa, melns backgrounds
 * visiem sectioniem ir titulbilde
 * carousel galerija līdzīgi kā 52f
 
@@ -42,3 +40,5 @@
 * `page` nerādās title, h1 ir title stilā
 * all sections can have subsections
 * kategorijām settings, vai kategorija by-default ir atvērta
+* gallery index
+* galerijas apraksts tikai galerijas indeksā
