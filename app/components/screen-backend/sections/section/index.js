@@ -1,11 +1,12 @@
 import Ember from 'ember';
 import Base from './-base';
+import ScrollTop from 'portfolio/util/scroll-top-component';
 
 const {
   computed
 } = Ember;
 
-export default Base.extend({
+export default Base.extend(ScrollTop, {
   classNameBindings: [ ':screen-sections-section-index' ],
 
   componentName: computed('section.modelName', function() {
