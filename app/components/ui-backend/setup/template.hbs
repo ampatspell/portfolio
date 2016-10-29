@@ -1,0 +1,29 @@
+{{#if done}}
+
+  {{ui-backend/header title='Setup portfolio' subtitle='Portfolio is ready'}}
+
+  {{#ui-backend/block class="compact"}}
+    {{#ui-backend/row}}
+      {{#link-to 'index'}}&larr; Return to home page{{/link-to}}
+    {{/ui-backend/row}}
+  {{/ui-backend/block}}
+
+{{else}}
+
+  {{ui-backend/header title='Setup portfolio' subtitle='Login as database admin'}}
+
+  {{#ui-backend/block class="compact"}}
+    {{ui-backend/row/input placeholder='name' value=session.name autocapitalize="off" autocorrect="off"}}
+    {{ui-backend/row/input placeholder='password' value=session.password type='password'}}
+    {{#ui-backend/row}}
+      {{ui-backend/button title='Login and setup database' action=(action 'perform')}}
+    {{/ui-backend/row}}
+  {{/ui-backend/block}}
+
+{{/if}}
+
+{{#if result}}
+  {{#ui-backend/block}}
+    {{ui-backend/row/value title='Status' value=resultString class='pre small'}}
+  {{/ui-backend/block}}
+{{/if}}
