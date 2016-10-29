@@ -6,7 +6,7 @@ const {
 } = Ember;
 
 export default Ember.Component.extend({
-  classNameBindings: [ ':ui-backend-screen' ],
+  classNameBindings: [ ':ui-backend-screen', 'hideMenu:no-menu:has-menu' ],
 
   backend: service(),
   navigationItems: oneWay('backend.navigationItems'),
