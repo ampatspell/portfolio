@@ -2,7 +2,8 @@ import Ember from 'ember';
 import Base from '../-base';
 
 const {
-  inject: { service }
+  inject: { service },
+  RSVP: { all }
 } = Ember;
 
 export default Base.extend({
