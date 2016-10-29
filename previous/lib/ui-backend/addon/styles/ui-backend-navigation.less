@@ -1,0 +1,37 @@
+.ui-backend-navigation {
+  .implementation(@width) {
+    margin-top: 20px;
+    display: table;
+    width: @width;
+    > .ui-backend-navigation-item {
+      display: table-row;
+      width: @width;
+      height: @ui-backend-columns-navigation-width - 5px;
+      cursor: pointer;
+      > a {
+        display: inline-block;
+        display: table-cell;
+        vertical-align: middle;
+        text-align: center;
+        > .fa {
+          color: #999;
+          font-size: 25px;
+        }
+      }
+      &.selected {
+        > a {
+          > .fa {
+            color: #fff;
+          }
+        }
+      }
+      &:hover {
+        background: #333;
+      }
+    }
+  }
+  .implementation(@ui-backend-columns-navigation-width);
+  @media @mobile {
+    .implementation(@ui-backend-columns-navigation-width-mobile);
+  }
+}

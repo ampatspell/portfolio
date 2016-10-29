@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono:400,500&subset=latin-ext');
+/* https://fonts.google.com/?selection.family=Roboto+Mono:400,500&query=roboto&category=Monospace&selection.subset=latin-ext */
+
+@menu-width-desktop: 230px;
+
+.frontend-font(@size: 13px, @lineheight: 1.5) {
+  font-family: @frontend-font-family;
+  @size_: ceil(@size * @frontend-font-size);
+  font-size: @size_;
+  line-height: ceil(@size_ * @lineheight);
+}
+
+#content-padding {
+  padding: 40px 40px 40px 250px;
+  @media @tablet {
+    padding: 10px 40px;
+  }
+  @media @mobile {
+    padding: 10px 0;
+  }
+}
+
+.ui-frontend {
+  .frontend-font;
+  a {
+    &.active {
+      font-weight: bold;
+    }
+  }
+}
+
+.ui-frontend-gear {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  > a {
+    .ui-transition-color;
+    color: rgba(0,0,0,0);
+  }
+  &:hover {
+    > a {
+      color: #000;
+    }
+  }
+  z-index: 1;
+}
+
+.ui-frontend-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: @menu-width-desktop;
+  padding: 44px 20px 20px 40px;
+  overflow-y: scroll;
+  .noselect;
+  > .title {
+    .ellipsis;
+    margin-bottom: 20px;
+  }
+  > .ui-frontend-menu-item {
+    > .title {
+      .ellipsis;
+      > a {
+        text-decoration: none;
+      }
+    }
+    > .nested {
+      margin-left: 15px;
+    }
+  }
+  @media @tablet, @mobile {
+    position: initial;
+    width: 100%;
+  }
+  @media @mobile {
+    padding: 20px 20px 40px 20px;
+  }
+}
+
+.ui-frontend-section {
+  padding: 40px 40px 0 @menu-width-desktop + 20px;
+  max-width: 1024px + @menu-width-desktop + 20px + 40px;
+  > .title {
+    .clearfix;
+    .frontend-font(17px);
+    margin-bottom: 40px;
+    a {
+      .frontend-font(15px);
+    }
+    > .back {
+      display: inline-block;
+    }
+    > .index {
+      float: right;
+    }
+  }
+  > .content {
+    > .ui-frontend-section-content {
+      &.gallery {
+        > .vertical {
+          > .description {
+            display: block;
+            margin-bottom: 40px;
+          }
+          > .images {
+            > .image {
+              margin-bottom: 40px;
+              text-align: center;
+              > .image {
+              }
+              > .description {
+              }
+            }
+          }
+        }
+        > .single {
+        }
+      }
+      &.text {
+        > .body {
+          display: block;
+        }
+      }
+    }
+  }
+  &.index {
+    > .content {
+      padding-top: 4px;
+    }
+  }
+  &.summary {
+    > .content {
+      > .gallery {
+        > .description {
+          display: block;
+          padding-bottom: 40px;
+        }
+        > .images {
+          madding-bottom: 20px;
+          .clearfix;
+          > .image {
+            float: left;
+            width: 200px;
+            height: 160px;
+            text-align: center;
+            > .image {
+              background: url('') no-repeat center;
+              background-size: contain;
+              width: 190px;
+              height: 130px;
+            }
+            > .description {
+              .frontend-font(11px);
+            }
+          }
+        }
+      }
+    }
+  }
+  @media @tablet, @mobile {
+    padding: 20px 20px 0 20px;
+    max-width: 100%;
+    width: 100%;
+  }
+}
+
+.ui-frontend-image-carousel {
+  overflow: hidden;
+  > .translate {
+    transition: transform 0.5s ease-in-out;
+    display: table;
+    height: 100%;
+    > .image {
+      text-align: center;
+      vertical-align: middle;
+      display: table-cell;
+    }
+  }
+}

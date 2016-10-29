@@ -1,0 +1,10 @@
+<div class="column navigation">
+  {{#ui-backend/navigation as |nav|}}
+    {{#each navigationItems as |item|}}
+      {{nav.item icon=item.icon selected=item.selected route=item.route}}
+    {{/each}}
+  {{/ui-backend/navigation}}
+</div>
+<div class="column content">
+  {{yield}}
+</div>

@@ -1,0 +1,79 @@
+.ui-backend-tree {
+  overflow: hidden;
+  .ui-backend-tree-item {
+    position: relative;
+    z-index: 0;
+    > .content {
+      padding: 10px;
+      &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -1000px;
+        right: 0;
+        border-bottom: 1px solid #eee;
+      }
+      > .title {
+        .backend-font(15px, 18px);
+        .ellipsis;
+      }
+      > .info {
+        .backend-font(13px, 17px);
+        .ellipsis;
+      }
+      > .new {
+        font-size: 18px;
+        position: absolute;
+        right: 10px;
+        top: 17px;
+        opacity: 0;
+        color: #333;
+        .ui-transition-opacity(0.1s);
+        &:hover {
+          color: #000;
+        }
+      }
+      &:hover {
+        padding-right: 30px;
+        > .new {
+          opacity: 1;
+        }
+      }
+    }
+    &.action {
+      .content {
+        .pointer;
+      }
+    }
+    .ui-transition-opacity;
+    &.dragging {
+      > .content,
+      .ui-backend-tree-item > .content {
+        &:before,
+        &:after {
+          opacity: 0;
+        }
+      }
+    }
+    &.dragging-delayed {
+      opacity: 0.5;
+    }
+    > .nested {
+      padding-left: 20px;
+    }
+  }
+  > .ui-backend-tree-item {
+    &:last-child {
+      > .content {
+        &:after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: -1000px;
+          right: 0;
+          border-bottom: 1px solid #eee;
+        }
+      }
+    }
+  }
+}

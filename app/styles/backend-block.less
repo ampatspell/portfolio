@@ -1,0 +1,69 @@
+.ui-backend-block {
+  > .ui-backend-row {
+    padding: 10px 20px;
+    &.action {
+      .pointer;
+    }
+    &.input,
+    &.textarea {
+      padding: 0 20px 10px 20px;
+      > .title {
+        .backend-font(13px);
+      }
+    }
+    &.checkbox {
+      display: table;
+      > input {
+        display: table-cell;
+        .backend-font(21px);
+      }
+      > .title {
+        display: table-cell;
+        width: 100%;
+      }
+    }
+    &.value {
+      > .title {
+        font-weight: bold;
+      }
+      > .value {
+      }
+      &.pre {
+        > .value {
+          white-space: pre-wrap;
+        }
+      }
+      &.small {
+        > .value {
+          .backend-font(11px);
+        }
+      }
+    }
+    &.faded {
+      color: lighten(#000, 75%);
+    }
+  }
+  &.padded {
+    > .ui-backend-row {
+      margin-bottom: 5px;
+    }
+  }
+  &.compact {
+    > .ui-backend-row {
+      padding: 5px 20px;
+      &.value {
+        > .title {
+          line-height: 15px;
+        }
+        > .value {
+          line-height: 19px;
+        }
+      }
+    }
+  }
+}
+
+.ui-backend-button {
+  display: inline-block;
+  margin-top: 7px;
+}

@@ -59,12 +59,5 @@
     "loader.js": "^4.0.10",
     "morgan": "^1.7.0",
     "ui-markdown": "0.1.12"
-  },
-  "ember-addon": {
-    "paths": [
-      "lib/ui-backend",
-      "lib/ui-draggable",
-      "lib/ui-frontend"
-    ]
   }
 }

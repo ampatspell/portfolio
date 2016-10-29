@@ -1,0 +1,37 @@
+body {
+  cursor: default;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: subpixel-antialiased;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+*[data-ember-action] {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  &,
+  &:hover,
+  &:visited,
+  &:active,
+  &:focus {
+    color: #000;
+  }
+}
+
+img {
+  max-width: 100%;
+}
+
+#content-padding {
+  position: absolute;
+  top: -1000px;
+  right: 1000px;
+  width: 10px;
+  height: 10px;
+}

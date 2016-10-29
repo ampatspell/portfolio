@@ -1,0 +1,7 @@
+{{#ui-backend/header title=section.pageTitle_ subtitle=(if section.isDelimiter '' subtitle)}}
+  {{#unless section.isDelimiter}}
+    <div class="footer"><div class="icon" {{action 'open'}}>{{fa-icon 'arrow-circle-right'}}</div><input type="text" value={{url}} disabled=true/></div>
+  {{/unless}}
+{{/ui-backend/header}}
+
+{{component componentName section=section}}

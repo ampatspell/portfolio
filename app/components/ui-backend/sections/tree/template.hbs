@@ -1,0 +1,12 @@
+<div class="ui-backend-tree-item">
+  <div class="content" {{action 'new'}}>Add new section</div>
+</div>
+
+{{#each sections.sortedRootSections as |model|}}
+  {{ui-backend/sections/tree/item
+      model=model
+      select=(action 'select')
+      new=(action 'new')
+      reorder=(action 'reorder')
+  }}
+{{/each}}
