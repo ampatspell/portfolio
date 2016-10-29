@@ -5,8 +5,8 @@ const {
 } = Ember;
 
 export default Ember.Component.extend({
-  classNameBindings: [ ':screen-frontend-unavailable' ],
+  classNameBindings: [ ':ui-frontend-standalone', ':unavailable' ],
 
-  backend: service(),
+  backend: service()
 
 });

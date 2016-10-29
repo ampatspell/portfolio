@@ -1,5 +1,5 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  classNameBindings: [ ':screen-frontend-error' ],
+  classNameBindings: [ ':ui-frontend-standalone', ':not-found' ]
 });
