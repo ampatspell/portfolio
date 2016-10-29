@@ -1,0 +1,45 @@
+.ui-backend {
+  .markdown {
+    h1 {
+      .backend-font(14px);
+      font-weight: bold;
+      margin: 20px 0 10px 0;
+    }
+    h2 {
+      .backend-font(14px);
+      margin: 20px 0 10px 0;
+    }
+    p {
+      margin: 10px 0 5px 0;
+    }
+    strong {
+      font-weight: bold;
+    }
+    em {
+      font-style: italic;
+    }
+    a {
+      border-bottom: 1px solid #eee;
+    }
+    ul {
+      margin: 10px 0 5px 0;
+      li {
+        position: relative;
+        padding-left: 15px;
+        &:before {
+          position: absolute;
+          top: 2px;
+          left: 0;
+          font-family: 'FontAwesome';
+          content: '\f054';
+          font-size: 10px;
+          line-height: 20px;
+          color: #333;
+        }
+      }
+    }
+    *:first-child {
+      margin-top: 0;
+    }
+  }
+}
