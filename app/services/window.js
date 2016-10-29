@@ -2,7 +2,7 @@ import Ember from 'ember';
 
 const {
   on,
-  run: { scheduleOnce },
+  run: { scheduleOnce, debounce },
   Evented,
   $,
   inject: { service },
@@ -21,7 +21,7 @@ export default Ember.Service.extend(Evented, {
       return;
     }
     this.updateWindowResize();
-    $(window).on('resize', $.proxy(this._onWindowResize, this));
+    $(window).on('resize', $.proxy(this.__onWindowResize, this));
   }),
 
   updateWindowResize() {
@@ -35,6 +35,10 @@ export default Ember.Service.extend(Evented, {
       return;
     }
     this.set("size", size);
+  },
+
+  __onWindowResize() {
+    debounce(this, this._onWindowResize, 100);
   },
 
   _onWindowResize() {

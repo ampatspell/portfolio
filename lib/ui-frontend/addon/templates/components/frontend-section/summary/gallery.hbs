@@ -2,11 +2,4 @@
   {{markdown-convert content=section.description class='description markdown'}}
 {{/if}}
 
-<div class="images">
-  {{#each section.sortedImages as |image|}}
-    <div class="image">
-      {{ui-backend-background-image url=image.attachments.original.url class='image'}}
-      {{frontend-gallery-image-description image=image class='description'}}
-    </div>
-  {{/each}}
-</div>
+{{frontend-section/summary/gallery/grid images=section.sortedImages class='images'}}
