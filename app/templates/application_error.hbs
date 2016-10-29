@@ -1,0 +1,7 @@
+{{#ui-frontend/screen}}
+  {{#if (ui-eq model.error 'not_found')}}
+    {{ui-frontend/unavailable}}
+  {{else}}
+    {{ui-frontend/error model=model}}
+  {{/if}}
+{{/ui-frontend/screen}}
