@@ -14,7 +14,7 @@ const fastboot = () => {
   return computed(function() {
     return getOwner(this).lookup('service:fastboot');
   }).readOnly();
-}
+};
 
 export default Ember.Service.extend(Evented, {
 
