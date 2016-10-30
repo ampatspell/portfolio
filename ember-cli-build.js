@@ -11,7 +11,7 @@ module.exports = function(defaults) {
     },
     lessOptions: {
       paths: [
-        `app/styles/${site.theme}`
+        `app/styles/themes/${site.theme}`
       ]
     }
   });
