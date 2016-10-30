@@ -10,10 +10,11 @@
 }
 
 .ui-frontend-section {
+  margin-top: 40px;
   > .title {
     .clearfix;
     .frontend-font(17px);
-    margin: 40px 0;
+    margin-bottom: 40px;
     a {
       .frontend-font(15px);
     }
@@ -23,6 +24,9 @@
     > .index {
       float: right;
     }
+  }
+  @media @tablet, @mobile {
+    margin-top: 20px;
   }
 }
 
