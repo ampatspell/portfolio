@@ -1,3 +1,8 @@
+## 0.1.48
+
+* [new] pod-based backend and frontend components
+* [fix] default theme cleaned up and made easier to work with
+
 ## 0.1.47
 
 * [new] scroll to top when page content changes
