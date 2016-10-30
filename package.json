@@ -34,7 +34,6 @@
     "ember-cli-deploy-build-plus": "0.1.8",
     "ember-cli-deploy-couchdb": "0.1.1",
     "ember-cli-deploy-couchdb-rewrites": "0.0.1",
-    "ember-cli-fastboot": "1.0.0-beta.11",
     "ember-cli-fastclick": "1.3.0",
     "ember-cli-htmlbars": "^1.0.10",
     "ember-cli-htmlbars-inline-precompile": "^0.3.3",

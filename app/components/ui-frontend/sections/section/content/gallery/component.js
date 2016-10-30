@@ -6,7 +6,7 @@ const {
 } = Ember;
 
 export default Base.extend({
-  classNameBindings: [ ':ui-frontend-section-content', ':gallery' ],
+  classNameBindings: [ ':gallery' ],
 
   shouldScrollTop: false,
 

@@ -2,125 +2,19 @@
 @import "markdown.less";
 
 #content-padding {
-  padding: 40px 40px 40px 250px;
+  padding: 40px 40px 40px @frontend-menu-width + 20px;
   @media @tablet {
-    padding: 10px 40px;
+    padding: 10px 20px;
+  }
+  @media @mobile {
+    padding: 10px 0;
   }
 }
 
 .ui-frontend {
   .frontend-font;
-  a {
-    &.active {
-      font-weight: bold;
-    }
-  }
-  .message {
-    > .faded {
-      color: #ddd;
-    }
-  }
-
-  .ui-frontend-standalone {
-    padding: 40px;
-  }
-
-  .ui-frontend-menu {
-    position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    width: @frontend-menu-width-desktop;
-    padding: 44px 20px 20px 40px;
-    overflow-y: scroll;
-    .noselect;
-    > .title {
-      .ellipsis;
-      margin-bottom: 20px;
-    }
-    > .ui-frontend-menu-item {
-      > .title {
-        .ellipsis;
-        > a {
-          text-decoration: none;
-        }
-      }
-      > .nested {
-        margin-left: 15px;
-      }
-    }
-  }
-
-  .ui-frontend-section {
-    padding: 40px 40px 0 @frontend-menu-width-desktop + 20px;
-    max-width: 1024px + @frontend-menu-width-desktop + 20px + 40px;
-    > .title {
-      .clearfix;
-      .frontend-font(17px);
-      margin-bottom: 40px;
-      a {
-        .frontend-font(15px);
-      }
-      > .back {
-        display: inline-block;
-      }
-      > .index {
-        float: right;
-      }
-    }
-    > .content {
-      > .ui-frontend-section-content {
-        &.gallery {
-          > .vertical {
-            > .description {
-              display: block;
-              margin-bottom: 40px;
-            }
-            > .images {
-              > .image {
-                margin-bottom: 40px;
-                text-align: center;
-                > .image {
-                }
-                > .description {
-                }
-              }
-            }
-          }
-          > .single {
-          }
-        }
-        &.text {
-          > .body {
-            display: block;
-          }
-        }
-      }
-    }
-    &.index {
-      > .content {
-        padding-top: 4px;
-      }
-    }
-    &.summary {
-      > .content {
-        > .gallery {
-          > .description {
-            display: block;
-            padding-bottom: 40px;
-          }
-          > .images {
-            padding-bottom: 20px;
-            > .image {
-              > .image {
-              }
-              > .description {
-                .frontend-font(11px);
-              }
-            }
-          }
-        }
-      }
-    }
-  }
+  @import "body.less";
+  @import "standalone.less";
+  @import "menu.less";
+  @import "content.less";
 }
