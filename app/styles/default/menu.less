@@ -1,0 +1,29 @@
+.ui-frontend-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: @frontend-menu-width;
+  padding: 44px 20px 20px 40px;
+  overflow-y: scroll;
+  .noselect;
+  > .title {
+    .ellipsis;
+    margin-bottom: 20px;
+  }
+  > .ui-frontend-menu-item {
+    > .title {
+      .ellipsis;
+      > a {
+        text-decoration: none;
+      }
+    }
+    > .nested {
+      margin-left: 15px;
+    }
+  }
+  @media @mobile, @tablet {
+    position: initial;
+    padding: 20px;
+  }
+}

@@ -1,0 +1,12 @@
+{{ui-backend/header title=(if section.isNew 'New link' 'Edit link')}}
+
+{{#ui-backend/block}}
+
+  {{#ui-backend/sections/section/edit/rows section=section}}
+    {{ui-backend/row/input title='URL' value=section.url}}
+    {{ui-backend/row/checkbox title='Link opens in new tab' value=section.tab}}
+  {{/ui-backend/sections/section/edit/rows}}
+
+  {{ui-backend/sections/section/edit/actions section=section save=(action 'save') cancel=(action 'cancel')}}
+
+{{/ui-backend/block}}

@@ -1,0 +1,7 @@
+{{#ui-backend/row}}
+  {{yield}}
+  {{ui-backend/button title='Save' action=attrs.save}}
+  {{#if section.isNew}}
+    {{ui-backend/button title='Cancel' action=attrs.cancel}}
+  {{/if}}
+{{/ui-backend/row}}

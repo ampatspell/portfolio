@@ -1,0 +1,7 @@
+{{#ui-backend/block class='compact narrow'}}
+  {{ui-backend/row/input placeholder='name' value=session.name autocapitalize="off" autocorrect="off"}}
+  {{ui-backend/row/input placeholder='password' value=session.password type='password'}}
+  {{#ui-backend/row}}
+    <button {{action 'save'}}>Login</button>
+  {{/ui-backend/row}}
+{{/ui-backend/block}}

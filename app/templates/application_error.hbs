@@ -1,7 +1,7 @@
-{{#screen-frontend}}
+{{#ui-frontend/screen}}
   {{#if (ui-eq model.error 'not_found')}}
-    {{screen-frontend/unavailable}}
+    {{ui-frontend/standalone/unavailable}}
   {{else}}
-    {{screen-frontend/error model=model}}
+    {{ui-frontend/standalone/error model=model}}
   {{/if}}
-{{/screen-frontend}}
+{{/ui-frontend/screen}}

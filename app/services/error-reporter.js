@@ -7,7 +7,11 @@ const {
 export default Ember.Service.extend({
 
   report(err) {
-    error(err.toJSON ? err.toJSON() : err.stack);
+    if(err.toJSON) {
+      error(err.toJSON(), err.stack);
+    } else {
+      error(err.message, err.stack);
+    }
   }
 
 });

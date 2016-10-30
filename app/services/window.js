@@ -5,15 +5,22 @@ const {
   run: { scheduleOnce },
   Evented,
   $,
-  inject: { service },
+  getOwner,
+  computed,
   computed: { reads }
 } = Ember;
+
+const fastboot = () => {
+  return computed(function() {
+    return getOwner(this).lookup('service:fastboot');
+  }).readOnly();
+}
 
 export default Ember.Service.extend(Evented, {
 
   size: null,
 
-  fastboot: service(),
+  fastboot: fastboot(),
   isFastBoot: reads('fastboot.isFastBoot'),
 
   startListeningResizeEvents: on('init', function() {

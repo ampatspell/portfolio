@@ -1,0 +1,9 @@
+{{#ui-backend/block}}
+  {{#unless section.isDelimiter}}
+    {{ui-backend/row/value
+        title='Subsections'
+        value=(if section.open 'Are always expanded' 'Are collapsed by default')
+    }}
+  {{/unless}}
+  {{yield}}
+{{/ui-backend/block}}

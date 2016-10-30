@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono:400,500&subset=latin-ext');
+/* https://fonts.google.com/?selection.family=Roboto+Mono:400,500&query=roboto&category=Monospace&selection.subset=latin-ext */
+
+@frontend-font-family: 'Roboto Mono', momospace;
+@frontend-font-size: 1.0;
+@frontend-menu-width: 230px;
+
+.frontend-font(@size: 13px, @lineheight: 1.5) {
+  font-family: @frontend-font-family;
+  @size_: ceil(@size * @frontend-font-size);
+  font-size: @size_;
+  line-height: ceil(@size_ * @lineheight);
+}

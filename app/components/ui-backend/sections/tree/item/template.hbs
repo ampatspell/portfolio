@@ -1,0 +1,16 @@
+<div class="content" {{action 'click'}}>
+  {{#unless model.isDelimiter}}
+    <div class="title">{{model.menuTitle_}}</div>
+  {{/unless}}
+  <div class="info">{{model.modelScreenName}}</div>
+  {{#unless model.isDelimiter}}
+    <div class="new" {{action 'new' bubbles=false}}>{{fa-icon 'plus-square'}}</div>
+  {{/unless}}
+</div>
+{{#if model.sortedSections}}
+  <div class="nested">
+    {{#each model.sortedSections as |nestedModel|}}
+      {{ui-backend/sections/tree/item model=nestedModel select=attrs.select new=attrs.new reorder=attrs.reorder}}
+    {{/each}}
+  </div>
+{{/if}}

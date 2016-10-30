@@ -1,9 +1,0 @@
-{
-  "name": "ui-frontend",
-  "dependencies": {
-    "ember-cli-htmlbars": "^1.0.10"
-  },
-  "keywords": [
-    "ember-addon"
-  ]
-}

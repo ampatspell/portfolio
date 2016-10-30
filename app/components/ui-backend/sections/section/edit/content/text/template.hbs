@@ -1,0 +1,11 @@
+{{ui-backend/header title=(if section.isNew 'New text page' 'Edit text page')}}
+
+{{#ui-backend/block}}
+
+  {{#ui-backend/sections/section/edit/rows section=section}}
+    {{ui-backend/row/textarea title='Body' value=section.body}}
+  {{/ui-backend/sections/section/edit/rows}}
+
+  {{ui-backend/sections/section/edit/actions section=section save=(action 'save') cancel=(action 'cancel')}}
+
+{{/ui-backend/block}}

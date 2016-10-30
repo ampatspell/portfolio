@@ -1,0 +1,9 @@
+{{ui-backend/header title=(if section.isNew 'New category' 'Edit category')}}
+
+{{#ui-backend/block}}
+
+  {{ui-backend/sections/section/edit/rows section=section}}
+
+  {{ui-backend/sections/section/edit/actions section=section save=(action 'save') cancel=(action 'cancel')}}
+
+{{/ui-backend/block}}

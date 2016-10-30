@@ -16,6 +16,8 @@ export default Ember.Service.extend({
       url: `/assets/${name}`,
       method: 'get',
       json: false
+    }).then(resp => {
+      return resp.text();
     });
   }
 

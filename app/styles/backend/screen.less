@@ -1,0 +1,40 @@
+.ui-backend-screen {
+  .backend-font;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  overflow: hidden;
+  .implementation(@width) {
+    > .column {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      &.navigation {
+        left: 0;
+        width: @width;
+        background: #222;
+        color: #fff;
+      }
+      &.content {
+        left: @width;
+        right: 0;
+      }
+    }
+  }
+  .implementation(@ui-backend-columns-navigation-width);
+  @media @mobile {
+    .implementation(@ui-backend-columns-navigation-width-mobile);
+  }
+  &.no-menu {
+    > .content {
+      left: 0;
+      padding: 20px 0;
+      .ui-backend-header {
+        margin-top: 0;
+        padding-top: 0;
+      }
+    }
+  }
+}
