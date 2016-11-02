@@ -73,12 +73,8 @@ export default Ember.Service.extend({
       return;
     }
 
-    let curr = component;
-    while(curr) {
-      if(curr.get('isDragging')) {
-        return;
-      }
-      curr = curr.get('parentView');
+    if(!component.onReorderableOver(dragging)) {
+      return;
     }
 
     let el = component.get('element');

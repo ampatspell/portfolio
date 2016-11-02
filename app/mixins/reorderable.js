@@ -72,6 +72,10 @@ export default Ember.Mixin.create({
     this.get('reorderableCoordinator').stop();
   },
 
+  onReorderableOver(component) {
+    return this.constructor.detectInstance(component);
+  },
+
   reorderModels(/* model, pos, relative */) {
   },
 

@@ -25,7 +25,6 @@
 
 # TODO
 
-* disable drag and drop between separate groups (tree & image grid)
 * allow to hide gallery images
 * kategorijām ir index ar 1 bildi un nosaukumu katrai apakšsadaļai
 * single galerijai prev-next navigācija carousel
@@ -44,3 +43,4 @@
 * kategorijām settings, vai kategorija by-default ir atvērta
 * gallery index
 * galerijas apraksts tikai galerijas indeksā
+* disable drag and drop between separate groups (tree & image grid)
