@@ -7,15 +7,20 @@
     }
   }
   &.images {
+    padding-left: 10px;
+    @media @mobile {
+      padding-left: 0;
+    }
     > .content {
       > .ui-backend-grid-item {
         margin-bottom: -1px;
         margin-right: -1px;
         position: relative;
         > .image {
+          margin-bottom: 1px;
         }
         > .description {
-          padding-top: 5px;
+          padding-top: 0;
           padding-left: 5px;
           padding-right: 10px;
           text-align: left;
@@ -24,7 +29,7 @@
         }
         > .delete {
           position: absolute;
-          bottom: 9px;
+          bottom: 12px;
           right: 2px;
           .backend-font(12px, 30px);
           width: 30px;
@@ -71,8 +76,8 @@
   }
 }
 
-.ui-backend-grid-item-size(150px, 125px);
+.ui-backend-grid-item-size(150px, 140px);
 
 @media @tablet {
-  .ui-backend-grid-item-size(170px, 150px);
+  .ui-backend-grid-item-size(170px, 147px);
 }
