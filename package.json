@@ -36,7 +36,7 @@
     "ember-cli-less": "^1.5.4",
     "ember-cli-qunit": "4.0.0",
     "ember-cli-shims": "1.1.0",
-    "ember-cli-sofa": "2.0.0-pre.31",
+    "ember-cli-sofa": "2.0.0-pre.32",
     "ember-cli-sri": "2.1.1",
     "ember-cli-uglify": "1.2.0",
     "ember-export-application-global": "2.0.0",
