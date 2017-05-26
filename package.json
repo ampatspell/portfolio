@@ -33,22 +33,23 @@
     "ember-cli-htmlbars": "2.0.1",
     "ember-cli-htmlbars-inline-precompile": "0.4.3",
     "ember-cli-inject-live-reload": "1.6.1",
+    "ember-cli-less": "^1.5.4",
     "ember-cli-qunit": "4.0.0",
     "ember-cli-shims": "1.1.0",
+    "ember-cli-sofa": "2.0.0-pre.31",
     "ember-cli-sri": "2.1.1",
     "ember-cli-uglify": "1.2.0",
     "ember-export-application-global": "2.0.0",
+    "ember-font-awesome": "3.0.5",
     "ember-load-initializers": "1.0.0",
+    "ember-network": "0.3.1",
     "ember-resolver": "4.1.0",
     "ember-source": "2.13.2",
     "ember-welcome-page": "3.0.0",
-    "loader.js": "4.4.0",
-    "ember-font-awesome": "3.0.5",
-    "ember-network": "0.3.1",
     "glob": "7.1.2",
     "http-proxy": "1.16.2",
+    "loader.js": "4.4.0",
     "morgan": "1.8.2",
-    "ui-markdown": "0.1.12",
-    "ember-cli-sofa": "2.0.0-pre.31"
+    "ui-markdown": "0.1.12"
   }
 }
