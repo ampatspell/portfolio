@@ -1,7 +1,6 @@
 /*jshint node:true*/
 /* global require, module */
 var EmberApp = require('ember-cli/lib/broccoli/ember-app');
-var Funnel = require('broccoli-funnel');
 var site = require('./sites/_current');
 
 module.exports = function(defaults) {
@@ -18,7 +17,5 @@ module.exports = function(defaults) {
 
   app.import('bower_components/speakingurl/lib/speakingurl.js');
 
-  var changes = new Funnel('CHANGES.md', { destDir: '/assets/CHANGES.md' });
-
-  return app.toTree(changes);
+  return app.toTree();
 };
