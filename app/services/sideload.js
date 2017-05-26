@@ -13,7 +13,7 @@ export default Ember.Service.extend({
 
   asset(name) {
     return this.get('request').send({
-      url: `/assets/${name}`,
+      url: `/${name}`,
       method: 'get',
       json: false
     }).then(resp => {

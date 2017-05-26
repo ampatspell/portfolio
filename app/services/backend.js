@@ -39,12 +39,12 @@ export default Ember.Service.extend({
   title: environment.portfolio.title,
 
   navigationItems: computed(function() {
-    const Item = getOwner(this).lookup('services/backend/navigation-item:main');
+    const Item = getOwner(this).factoryFor('services/backend/navigation-item:main');
     return Ember.A(routes).map(props => Item.create(props));
   }).readOnly(),
 
   sectionModels: computed(function() {
-    const Model = getOwner(this).lookup('services/backend/section:main');
+    const Model = getOwner(this).factoryFor('services/backend/section:main');
     return Ember.A(sections).map(props => Model.create(sectionProps(props)));
   }).readOnly(),
 
@@ -53,7 +53,7 @@ export default Ember.Service.extend({
   },
 
   galleryTypes: computed(function() {
-    const Type = getOwner(this).lookup('services/backend/gallery-type:main');
+    const Type = getOwner(this).factoryFor('services/backend/gallery-type:main');
     return Ember.A(galleryTypes).map(props => Type.create(props));
   }).readOnly(),
 
