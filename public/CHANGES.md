@@ -1,3 +1,7 @@
+## 0.1.52
+
+* [new] Ember.js 2.13.2 and ember-cli-sofa 2.0.0-pre.32
+
 ## 0.1.48
 
 * [new] pod-based backend and frontend components
