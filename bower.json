@@ -2,7 +2,6 @@
   "name": "portfolio",
   "dependencies": {
     "blob-util": "^1.2.1",
-    "speakingurl": "^10.0.0",
-    "showdown": "^1.4.0"
+    "speakingurl": "^10.0.0"
   }
 }
