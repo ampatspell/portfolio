@@ -15,7 +15,8 @@
     "deploy-amateurinmotion": "SITE=amateurinmotion ember deploy production",
     "deploy-paulis": "SITE=paulis ember deploy production",
     "deploy-rutemartajansone": "SITE=rutemartajansone ember deploy production",
-    "deploy-all": "npm run deploy-paulis; npm run deploy-amateurinmotion; npm run deploy-rutemartajansone"
+    "deploy-tuvojies": "SITE=tuvojies ember deploy production",
+    "deploy-all": "npm run deploy-paulis; npm run deploy-amateurinmotion; npm run deploy-rutemartajansone; npm run deploy-tuvojies"
   },
   "repository": "",
   "engines": {
