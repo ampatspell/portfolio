@@ -40,10 +40,11 @@ export default Section.extend({
   hasSummary: true,
 
   deleteNested() {
+    const _super = this._super;
     return this.get('images.promise').then(images => {
       return all(images.map(image => image.delete()));
     }).then(() => {
-      return this.delete();
+      return _super.call(this);
     });
   },
 
