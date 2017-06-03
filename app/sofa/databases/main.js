@@ -26,6 +26,12 @@ export default Database.extend({
     return all(promises);
   },
 
+  deselectSections() {
+    this.get('sections').forEach(model => {
+      model.set('isOpen', false);
+    });
+  },
+
   didSelectSection(model) {
     let models = [...model.ancestors(), model];
     this.get('sections').forEach(model => {
