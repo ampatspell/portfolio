@@ -1,3 +1,9 @@
+## 0.1.53
+
+* [fix] deselect all sections when backend is opened
+* [fix] delete nested gallery sections fixed
+* [new] ember-cli-sofa 2.0.0-pre.34 with ember-cli-couch as a dependency
+
 ## 0.1.52
 
 * [new] Ember.js 2.13.2 and ember-cli-sofa 2.0.0-pre.32
