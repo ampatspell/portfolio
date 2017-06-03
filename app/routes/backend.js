@@ -9,6 +9,7 @@ export default Ember.Route.extend({
     } else if(!session.get('isAdmin')) {
       return this.transitionTo('index');
     }
+    this.get('store.db.main').deselectSections();
   }
 
 });

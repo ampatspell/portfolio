@@ -1,6 +1,11 @@
+import Ember from 'ember';
 import environment from '../config/environment';
 
 const isDevelopment = environment.environment === 'development';
+
+const {
+  Logger: { info }
+} = Ember;
 
 export default {
   name: 'portfolio:dev',
@@ -12,6 +17,6 @@ export default {
     let db = store.get('db.main');
     window.db = db;
     window.store = store;
-    window.log = console.log.bind(console);
+    window.log = info;
   }
 };

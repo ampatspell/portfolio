@@ -13,7 +13,7 @@ export default Ember.Component.extend({
 
   title: alias('backend.title'),
 
-  sections: computed('store.db.main.sections.sortedVisibleRootSections.@each.slug', function() {
+  sections: computed('store.db.main.sections.sortedVisibleRootSections.@each.isIndex', function() {
     return this.get('store.db.main.sections.sortedVisibleRootSections').filter(section => !section.get('isIndex'));
   }),
 
