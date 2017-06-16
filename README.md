@@ -10,6 +10,8 @@ Deployed as a couchapp.
 
 ## Screenshots
 
+[![Video](/doc/changes-listener-video-preview.png)](https://vimeo.com/221892468)
+
 ![Gallery](/doc/1.png)
 
 ![Gallery](/doc/2.png)
