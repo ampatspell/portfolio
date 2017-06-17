@@ -1,4 +1,4 @@
-import { Changes } from 'sofa';
+import { DatabaseChanges } from 'sofa';
 import environment from '../../config/environment';
 
 const {
@@ -9,7 +9,7 @@ const {
   }
 } = environment;
 
-export default Changes.extend({
+export default DatabaseChanges.extend({
 
   feed
 
