@@ -4,7 +4,7 @@ import ObserveModelDeleteMixin from 'portfolio/mixins/route-observe-model-delete
 import { Error } from 'sofa';
 
 const {
-  RSVP: { reject }
+  RSVP: { resolve, reject }
 } = Ember;
 
 const notfound = () => {
@@ -48,6 +48,23 @@ export default Ember.Route.extend(
     return notfound();
   },
 
+  replaceWithParent(model) {
+    let parent = model.get('category');
+    if(!parent) {
+      this.replaceWith('index');
+    } else {
+      this.replaceWith(this.routeName, parent);
+    }
+  },
+
+  afterModel(model) {
+    return resolve(this._super(...arguments)).then(() => {
+      if(model.get('isDeleted')) {
+        this.replaceWithParent(model);
+      }
+    });
+  },
+
   serialize(model) {
     return {
       path: model.get('path')
@@ -61,7 +78,7 @@ export default Ember.Route.extend(
   },
 
   onModelDeleted(model) {
-    this.replaceWith('index');
+    this.replaceWithParent(model);
   }
 
 });
