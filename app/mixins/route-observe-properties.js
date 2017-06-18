@@ -43,7 +43,7 @@ export default Ember.Mixin.create({
     return this._super(...arguments);
   },
 
-  resetController(controller, isExisting, transition) {
+  resetController(controller) {
     let model = controller.get('model');
     this.stopObservingProperties(model);
     return this._super(...arguments);
