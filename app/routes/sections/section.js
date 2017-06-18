@@ -1,6 +1,7 @@
 import Ember from 'ember';
 import ObservePropertiesMixin from 'portfolio/mixins/route-observe-properties';
 import ObserveModelDeleteMixin from 'portfolio/mixins/route-observe-model-delete';
+import ObserveSectionDeleteMixin from 'portfolio/mixins/route-observe-section-delete';
 import { Error } from 'sofa';
 
 const {
@@ -13,7 +14,8 @@ const notfound = () => {
 
 export default Ember.Route.extend(
   ObservePropertiesMixin,
-  ObserveModelDeleteMixin, {
+  ObserveModelDeleteMixin,
+  ObserveSectionDeleteMixin, {
 
   _find(path) {
     let sections = this.get('store.db.main.sections.sortedRootSections');
@@ -42,27 +44,9 @@ export default Ember.Route.extend(
   model(params) {
     let model = this._find(params.path);
     if(model) {
-      window.model = model;
       return model;
     }
     return notfound();
-  },
-
-  replaceWithParent(model) {
-    let parent = model.get('category');
-    if(!parent) {
-      this.replaceWith('index');
-    } else {
-      this.replaceWith(this.routeName, parent);
-    }
-  },
-
-  afterModel(model) {
-    return resolve(this._super(...arguments)).then(() => {
-      if(model.get('isDeleted')) {
-        this.replaceWithParent(model);
-      }
-    });
   },
 
   serialize(model) {
@@ -75,10 +59,6 @@ export default Ember.Route.extend(
 
   onObservedPropertiesDidChange(model, key) {
     this.replaceWith(this.routeName, model.get('path'));
-  },
-
-  onModelDeleted(model) {
-    this.replaceWithParent(model);
   }
 
 });
