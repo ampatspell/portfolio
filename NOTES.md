@@ -25,6 +25,9 @@
 
 # TODO
 
+* transitionTo to new path on section.path change
+* transitionTo to parent section on section delete
+
 * allow to hide gallery images
 * kategorijām ir index ar 1 bildi un nosaukumu katrai apakšsadaļai
 * single galerijai prev-next navigācija carousel
