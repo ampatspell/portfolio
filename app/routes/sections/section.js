@@ -1,4 +1,5 @@
 import Ember from 'ember';
+import ObservePropertiesMixin from 'portfolio/mixins/route-observe-properties';
 import { Error } from 'sofa';
 
 const {
@@ -9,7 +10,7 @@ const notfound = () => {
   return reject(new Error({ error: 'not_found', reason: 'missing' }));
 };
 
-export default Ember.Route.extend({
+export default Ember.Route.extend(ObservePropertiesMixin, {
 
   _find(path) {
     let sections = this.get('store.db.main.sections.sortedRootSections');
@@ -38,6 +39,7 @@ export default Ember.Route.extend({
   model(params) {
     let model = this._find(params.path);
     if(model) {
+      window.model = model;
       return model;
     }
     return notfound();
@@ -47,6 +49,12 @@ export default Ember.Route.extend({
     return {
       path: model.get('path')
     };
+  },
+
+  observeProperties: [ 'path' ],
+
+  onObservedPropertiesDidChange(model, key) {
+    this.replaceWith(this.routeName, model.get('path'));
   }
 
 });
