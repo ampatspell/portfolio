@@ -28,6 +28,9 @@ module.exports = function(environment) {
         name: 'portfolio-dev'
       },
       admins: [ '_admin', site.admin ],
+      changes: {
+        feed: 'long-polling'
+      }
     }
   };
 
@@ -53,6 +56,7 @@ module.exports = function(environment) {
   if (environment === 'production') {
     ENV.portfolio.database.url = '/';
     ENV.portfolio.database.name = 'api';
+    ENV.portfolio.changes.feed = [ 'event-source', 'long-polling' ];
     ENV.rootURL = '/';
   }
 
