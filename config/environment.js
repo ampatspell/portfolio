@@ -31,6 +31,9 @@ module.exports = function(environment) {
       changes: {
         feed: 'long-polling'
       }
+    },
+    fastboot: {
+      hostWhitelist: [/^localhost:\d+$/]
     }
   };
 
