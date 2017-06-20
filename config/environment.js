@@ -57,6 +57,11 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
+    // Fastboot requires absolute url, browser -- relative
+
+    // ENV.portfolio.database.url = 'http://127.0.0.1:5984';
+    // ENV.portfolio.database.name = 'portfolio-dev';
+
     ENV.portfolio.database.url = '/';
     ENV.portfolio.database.name = 'api';
     ENV.portfolio.changes.feed = [ 'event-source', 'long-polling' ];
