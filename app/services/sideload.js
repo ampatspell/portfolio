@@ -8,7 +8,7 @@ const {
 export default Ember.Service.extend({
 
   request: computed(function() {
-    return getOwner(this).lookup('couch:request').create();
+    return getOwner(this).factoryFor('couch:request').create();
   }).readOnly(),
 
   asset(name) {
