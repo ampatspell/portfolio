@@ -1,3 +1,15 @@
+## 0.1.60
+
+* [fix] changelog load in settings fixed
+
+## 0.1.59
+
+* [new] migrate queries to new sofa query factory api
+
+## 0.1.57
+
+* [new] changes listener added
+
 ## 0.1.53
 
 * [fix] deselect all sections when backend is opened
