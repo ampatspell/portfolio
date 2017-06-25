@@ -32,7 +32,16 @@ export default Section.extend({
 
   showImageFilenames: attr('boolean'),
 
-  images: hasMany('gallery-image', { inverse: 'gallery', query: 'gallery-images' }),
+  images: hasMany('gallery-image', {
+    inverse: 'gallery',
+    query: {
+      name: 'view-with-key',
+      ddoc: 'gallery-image',
+      view: 'by-gallery',
+      key:  'model.docId'
+    }
+  }),
+
   sortedImagesDesc: [ 'position' ],
   sortedImages: sort('images', 'sortedImagesDesc'),
 
