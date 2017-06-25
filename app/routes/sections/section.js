@@ -5,7 +5,7 @@ import ObserveSectionDeleteMixin from 'portfolio/mixins/route-observe-section-de
 import { Error } from 'sofa';
 
 const {
-  RSVP: { resolve, reject }
+  RSVP: { reject }
 } = Ember;
 
 const notfound = () => {
@@ -25,7 +25,7 @@ export default Ember.Route.extend(
     let array = sections;
 
     let key;
-    do {
+    for(;;) {
       key = components.shift();
       if(!key) {
         return parent;
@@ -38,7 +38,7 @@ export default Ember.Route.extend(
         return;
       }
       array = parent.get('sections');
-    } while(true);
+    }
   },
 
   model(params) {
@@ -57,7 +57,7 @@ export default Ember.Route.extend(
 
   observeProperties: [ 'path' ],
 
-  onObservedPropertiesDidChange(model, key) {
+  onObservedPropertiesDidChange(model) {
     this.replaceWith(this.routeName, model.get('path'));
   }
 
