@@ -55,7 +55,7 @@
     "ember-source": "2.13.3",
     "glob": "7.1.2",
     "http-proxy": "1.16.2",
-    "loader.js": "4.4.0",
+    "loader.js": "4.5.1",
     "morgan": "1.8.2"
   },
   "fastbootDependencies": [
