@@ -23,7 +23,7 @@ export default Ember.Mixin.create({
     return this._super(...arguments);
   },
 
-  onModelDeleted(model) {
+  onModelDeleted() {
   }
 
 });

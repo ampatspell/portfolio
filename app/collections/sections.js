@@ -16,7 +16,7 @@ const root = visible => {
 export default Collection.extend({
 
   modelName: 'section',
-  queryName: 'sections',
+  query: { name: 'view', ddoc: 'section', view: 'all' },
 
   sortedVisibleRootSections: root(true),
   sortedRootSections:        root(null),

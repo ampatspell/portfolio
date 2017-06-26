@@ -49,7 +49,7 @@ export default Ember.Mixin.create({
     return this._super(...arguments);
   },
 
-  onObservedPropertiesDidChange(model, key) {
+  onObservedPropertiesDidChange(/*model, key*/) {
   }
 
 });
