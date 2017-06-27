@@ -9,9 +9,7 @@ export default Ember.Route.extend(
   indexRouteName: 'backend.sections',
 
   model(params) {
-    return this.get('store.db.main').load('section', params.section_id).then(section => {
-      return section.loadNested().then(() => section);
-    });
+    return this.get('store.db.main').load('section', params.section_id);
   }
 
 });
