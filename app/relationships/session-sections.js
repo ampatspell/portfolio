@@ -2,8 +2,7 @@ import Ember from 'ember';
 import { Relationship } from 'sofa';
 
 const {
-  computed,
-  getOwner
+  computed
 } = Ember;
 
 const Root = Ember.ArrayProxy.extend({

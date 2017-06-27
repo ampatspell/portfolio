@@ -7,12 +7,6 @@ const {
   RSVP: { all }
 } = Ember;
 
-const collection = name => {
-  return computed(function() {
-    return this.collection(name);
-  }).readOnly();
-};
-
 const session = key => {
   if(key) {
     return computed(key, function() {
