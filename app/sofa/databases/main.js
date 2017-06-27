@@ -13,9 +13,23 @@ const collection = name => {
   }).readOnly();
 };
 
+const session = key => {
+  if(key) {
+    return computed(key, function() {
+      return this.get(`session.${key}`);
+    }).readOnly();
+  } else {
+    return computed(function() {
+      return this.model('session', { id: 'singleton' });
+    }).readOnly();
+  }
+}
+
 export default Database.extend({
 
-  sections: collection('sections'),
+  session: session(),
+
+  sections: session('sections'), // collection('sections'),
 
   insertDesignDocuments() {
     let promises = [];
