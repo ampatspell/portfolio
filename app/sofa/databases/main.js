@@ -1,29 +1,20 @@
 import Ember from 'ember';
-import { Database } from 'sofa';
+import { Database, transient } from 'sofa';
 import design from '../../design';
 
 const {
-  computed,
+  computed: { reads },
   RSVP: { all }
 } = Ember;
 
 const session = key => {
-  if(key) {
-    return computed(key, function() {
-      return this.get(`session.${key}`);
-    }).readOnly();
-  } else {
-    return computed(function() {
-      return this.model('session', { id: 'singleton' });
-    }).readOnly();
-  }
+  return reads(`session.${key}`);
 }
 
 export default Database.extend({
 
-  session: session(),
-
-  sections: session('sections'), // collection('sections'),
+  session: transient('session', 'singleton'),
+  sections: session('sections'),
 
   insertDesignDocuments() {
     let promises = [];
