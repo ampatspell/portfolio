@@ -3,11 +3,14 @@ import Base from '../-base';
 import ScrollTop from 'portfolio/mixins/scroll-top';
 
 const {
-  computed
+  computed,
+  inject: { service }
 } = Ember;
 
 export default Base.extend(ScrollTop, {
   classNameBindings: [ ':ui-backend-sections-section-index' ],
+
+  fastboot: service(),
 
   componentName: computed('section.modelName', function() {
     let section = this.get('section');
@@ -26,6 +29,9 @@ export default Base.extend(ScrollTop, {
   }).readOnly(),
 
   url: computed('section.path', function() {
+    if(this.get('fastboot.isFastBoot')) {
+      return;
+    }
     let path = this.get('section.path');
     if(!path) {
       return;

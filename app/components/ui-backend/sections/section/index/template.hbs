@@ -1,6 +1,12 @@
 {{#ui-backend/header title=section.pageTitle_ subtitle=(if section.isDelimiter '' subtitle)}}
   {{#unless section.isDelimiter}}
-    <div class="footer"><div class="icon" {{action 'open'}}>{{fa-icon 'arrow-circle-right'}}</div><input type="text" value={{url}} disabled=true/></div>
+    <div class="footer">
+      {{#if url}}
+        <div class="icon" {{action 'open'}}>{{fa-icon 'arrow-circle-right'}}</div><input type="text" value={{url}} disabled=true/>
+      {{else}}
+        <div class="icon">{{fa-icon 'arrow-circle-right'}}</div><input type="text" value="Loading…" disabled=true/>
+      {{/if}}
+    </div>
   {{/unless}}
 {{/ui-backend/header}}
 
