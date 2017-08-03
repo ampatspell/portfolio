@@ -2,6 +2,7 @@
 
 let site = require('../sites/_current');
 let pkg = require('../package');
+
 let url = process.env.COUCH_URL;
 
 module.exports = function(environment) {
@@ -57,13 +58,10 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-    // Fastboot requires absolute url, browser -- relative
-
-    // ENV.portfolio.database.url = 'http://127.0.0.1:5984';
-    // ENV.portfolio.database.name = 'portfolio-dev';
-
+    // disable for fastboot
     ENV.portfolio.database.url = '/';
     ENV.portfolio.database.name = 'api';
+
     ENV.portfolio.changes.feed = [ 'event-source', 'long-polling' ];
     ENV.rootURL = '/';
   }
