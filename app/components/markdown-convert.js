@@ -1,5 +1,5 @@
 import Ember from 'ember';
-import Component from 'ui-markdown/components/markdown-convert';
+import Component from 'ember-cli-showdown/components/markdown-to-html';
 
 const {
   $

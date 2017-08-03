@@ -15,6 +15,9 @@ const css = (e, name) => {
 };
 
 const subtractPadding = (size) => {
+  if(!$) {
+    return {};
+  }
   let { width, height } = size;
   let el = $('#content-padding');
   if(el) {
@@ -25,6 +28,9 @@ const subtractPadding = (size) => {
 };
 
 const calculateMaxWidth = selector => {
+  if(!$) {
+    return {};
+  }
   if(!selector) {
     return;
   }

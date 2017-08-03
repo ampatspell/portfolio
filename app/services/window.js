@@ -18,7 +18,7 @@ const fastboot = () => {
 
 export default Ember.Service.extend(Evented, {
 
-  size: null,
+  size: {},
 
   fastboot: fastboot(),
   isFastBoot: reads('fastboot.isFastBoot'),
